@@ -1,0 +1,4 @@
+---
+deployment:
+  tasks:
+    - echo "Laravel app deployed via symlink - no file copying needed"
