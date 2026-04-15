@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products — Habtom Abadi Import Export</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#16a34a', light: '#22c55e', dark: '#15803d', deeper: '#14532d' },
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['DM Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .hero-bg { background: linear-gradient(135deg, #14532d 0%, #15803d 60%, #166534 100%); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#22c55e; transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .scroll-reveal { opacity:0; transform:translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .scroll-reveal.visible { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body class="bg-white" x-data="{
+  mobileOpen: false,
+  scrolled: false,
+  activeFilter: 'all',
+  activeProduct: null,
+  products: [
+    { id:1, name:'Ethiopian Coffee', amharic:'ቡና', type:'export', category:'Grains & Seeds', image:'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=600&q=80', origin:'Yirgacheffe, Sidama, Harrar', desc:'Ethiopia is the birthplace of coffee. We export premium Arabica coffee beans — washed, natural, and honey-processed — from the finest growing regions, meeting international specialty standards.', specs:['Moisture: ≤12%','Defects: Grade 2–5','Processing: Washed / Natural','Min Order: 20 tons'], badge:'Top Seller' },
+    { id:2, name:'Sesame · ሰሊጥ', amharic:'ሰሊጥ', type:'export', category:'Grains & Seeds', image:'https://images.unsplash.com/photo-1627484164729-7e3fa62bb463?w=600&q=80', origin:'Humera, Metema, Gondar', desc:'Ethiopian sesame (ሰሊጥ) is world-renowned for its superior oil content and purity. Our Humera sesame is among the most sought-after varieties in the Middle East and Asian markets.', specs:['Purity: 99.95%','Oil Content: 50–55%','Color: White / Mixed','Min Order: 25 tons'], badge:'High Demand' },
+    { id:3, name:'Haricot Beans', amharic:'', type:'export', category:'Pulses', image:'https://images.unsplash.com/photo-1590005354167-6da97870c757?w=600&q=80', origin:'Oromia, SNNPR', desc:'Premium white pea beans and red kidney beans from Ethiopia, cleaned and sorted to international food-grade standards. Popular in Europe and the Middle East for canning and direct consumption.', specs:['Moisture: ≤14%','Purity: 99%','Size: Bold','Min Order: 20 tons'], badge:'' },
+    { id:4, name:'Ethiopian Wheat', amharic:'', type:'export', category:'Grains & Seeds', image:'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80', origin:'Bale, Arsi, Shewa', desc:'Hard red wheat from the Ethiopian highlands, known for high protein content and excellent milling quality. Suitable for bread, pasta, and semolina production for international buyers.', specs:['Protein: 12–14%','Moisture: ≤13.5%','Test Weight: ≥78kg/hl','Min Order: 50 tons'], badge:'' },
+    { id:5, name:'Teff', amharic:'ጤፍ', type:'export', category:'Grains & Seeds', image:'https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=600&q=80', origin:'Amhara, Oromia', desc:'Teff (ጤፍ) is Ethiopia\'s ancient superfood grain — naturally gluten-free, rich in iron, calcium, and resistant starch. Growing global demand from health food markets in Europe and North America.', specs:['Variety: White / Brown / Mixed','Moisture: ≤12%','Purity: 99%','Min Order: 10 tons'], badge:'Superfood' },
+    { id:6, name:'Sorghum', amharic:'', type:'export', category:'Grains & Seeds', image:'https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=600&q=80', origin:'Tigray, Amhara, Afar', desc:'Drought-resistant, nutritious sorghum grain from Ethiopia\'s dryland regions. Used for food, feed, and brewing industries globally. Available in red, white, and yellow varieties.', specs:['Moisture: ≤13%','Purity: 98%','Varieties: Red, White, Yellow','Min Order: 30 tons'], badge:'' },
+    { id:7, name:'Tractors & Machinery', amharic:'', type:'import', category:'Equipment', image:'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80', origin:'Import — China, Europe', desc:'We import a range of farm tractors (25–130HP), combine harvesters, threshers, and multifunctional tillers suited for Ethiopian farming terrain and smallholder needs. Competitive pricing with after-sales support.', specs:['Power: 25–130HP','Brands: Lovol, YTO, John Deere','Warranty: 12 months','Lead Time: 45–60 days'], badge:'Import' },
+    { id:8, name:'Irrigation Systems', amharic:'', type:'import', category:'Equipment', image:'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80', origin:'Import — Israel, China', desc:'Drip irrigation, sprinkler systems, and solar-powered water pumps imported from leading manufacturers. Designed for Ethiopian agricultural conditions to maximize yield and water efficiency.', specs:['Types: Drip, Sprinkler, Flood','Power: Diesel / Solar','Coverage: 1–500 hectares','Installation: Included'], badge:'Import' },
+  ]
+}" @scroll.window="scrolled = window.scrollY > 50">
+
+  <!-- NAVBAR -->
+  <nav :class="scrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+          <span class="font-display font-black text-white text-lg">HA</span>
+        </div>
+        <div>
+          <div :class="scrolled ? 'text-gray-900' : 'text-white'" class="font-display font-bold text-base leading-tight">Habtom Abadi</div>
+          <div :class="scrolled ? 'text-primary' : 'text-green-300'" class="text-xs font-medium tracking-widest uppercase">Import · Export</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Home</a>
+        <a href="about.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">About</a>
+        <a href="services.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Services</a>
+        <a href="products.html" :class="scrolled ? 'text-primary font-semibold' : 'text-green-300 font-semibold'" class="nav-link text-sm">Products</a>
+        <a href="blog.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Resources</a>
+        <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Get a Quote</a>
+      </div>
+      <button @click="mobileOpen = !mobileOpen" :class="scrolled ? 'text-gray-800' : 'text-white'" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div x-show="mobileOpen" x-transition class="md:hidden bg-white shadow-xl px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+      <a href="about.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">About</a>
+      <a href="services.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Services</a>
+      <a href="products.html" class="block text-primary font-semibold py-2 border-b border-gray-100">Products</a>
+      <a href="blog.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Resources</a>
+      <a href="contact.html" class="block bg-primary text-white font-semibold px-5 py-3 rounded-full text-center">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-36 pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+      <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
+      <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Product Catalogue</h1>
+      <p class="text-green-100 text-lg max-w-2xl mx-auto">Premium Ethiopian exports and world-class imported agricultural equipment — all in one place.</p>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Filter tabs -->
+      <div class="flex flex-wrap gap-3 justify-center mb-12">
+        <button @click="activeFilter='all'" :class="activeFilter==='all' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">All Products</button>
+        <button @click="activeFilter='export'" :class="activeFilter==='export' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">🌾 Exports</button>
+        <button @click="activeFilter='import'" :class="activeFilter==='import' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">🚜 Imports</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <template x-for="product in products.filter(p => activeFilter === 'all' || p.type === activeFilter)" :key="product.id">
+          <div @click="activeProduct = product" class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+            <div class="relative overflow-hidden h-48">
+              <img :src="product.image" :alt="product.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+              <div class="absolute top-3 left-3 flex gap-2">
+                <span :class="product.type === 'export' ? 'bg-primary' : 'bg-amber-600'" class="text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase" x-text="product.type"></span>
+                <span x-show="product.badge" class="bg-white text-gray-800 text-xs font-bold px-2.5 py-1 rounded-full" x-text="product.badge"></span>
+              </div>
+            </div>
+            <div class="p-5">
+              <h3 class="font-display font-bold text-gray-900 text-lg" x-text="product.name"></h3>
+              <p class="text-gray-500 text-xs mt-1 mb-3" x-text="product.origin"></p>
+              <p class="text-gray-600 text-sm leading-relaxed line-clamp-2" x-text="product.desc"></p>
+              <button class="mt-4 w-full bg-primary/10 text-primary font-semibold text-sm py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">View Details</button>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT MODAL -->
+  <div x-show="activeProduct" x-transition.opacity class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4" @click.self="activeProduct = null">
+    <div x-show="activeProduct" x-transition.scale class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <template x-if="activeProduct">
+        <div>
+          <div class="relative h-64">
+            <img :src="activeProduct.image" class="w-full h-full object-cover" :alt="activeProduct.name"/>
+            <button @click="activeProduct = null" class="absolute top-4 right-4 bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-700 hover:text-red-500 transition-colors">✕</button>
+            <div class="absolute bottom-4 left-4">
+              <span :class="activeProduct.type === 'export' ? 'bg-primary' : 'bg-amber-600'" class="text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase" x-text="activeProduct.type"></span>
+            </div>
+          </div>
+          <div class="p-8">
+            <h2 class="font-display text-3xl font-black text-gray-900 mb-1" x-text="activeProduct.name"></h2>
+            <p class="text-primary text-sm font-medium mb-4">📍 <span x-text="activeProduct.origin"></span></p>
+            <p class="text-gray-600 leading-relaxed mb-6" x-text="activeProduct.desc"></p>
+            <div class="bg-gray-50 rounded-2xl p-5 mb-6">
+              <h4 class="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wide">Specifications</h4>
+              <ul class="space-y-2">
+                <template x-for="spec in activeProduct.specs" :key="spec">
+                  <li class="flex items-center gap-2 text-sm text-gray-700">
+                    <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
+                    <span x-text="spec"></span>
+                  </li>
+                </template>
+              </ul>
+            </div>
+            <a href="contact.html" class="block w-full bg-primary text-white font-bold py-4 rounded-2xl text-center hover:bg-primary-dark transition-colors">Request a Quote for This Product →</a>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <section class="py-20 hero-bg text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl font-black text-white mb-4">Don't See What You Need?</h2>
+      <p class="text-green-200 mb-8">We source custom quantities and varieties on request. Contact us and we'll find it for you.</p>
+      <a href="contact.html" class="bg-white text-primary font-bold px-10 py-4 rounded-full hover:bg-green-50 transition-colors shadow-xl inline-block">Contact Us Now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center">
+              <span class="font-display font-black text-white text-lg">HA</span>
+            </div>
+            <div>
+              <div class="text-white font-display font-bold">Habtom Abadi</div>
+              <div class="text-green-400 text-xs tracking-widest uppercase">Import · Export</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm">
+            <li>📍 Addis Ababa, Ethiopia</li>
+            <li>📞 +251 000 000 000</li>
+            <li>✉️ info@Habtomabadimx.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6 text-xs flex justify-between">
+        <span>© 2025 Habtom Abadi Import Export.</span>
+        <span>Developed by Empire Technological Solution</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

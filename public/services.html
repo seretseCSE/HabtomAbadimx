@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services — Habtom Abadi Import Export</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: { DEFAULT: '#16a34a', light: '#22c55e', dark: '#15803d', deeper: '#14532d' } },
+          fontFamily: { display: ['Playfair Display', 'serif'], body: ['DM Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .hero-bg { background: linear-gradient(135deg, #14532d 0%, #15803d 60%, #166534 100%); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#22c55e; transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .scroll-reveal { opacity:0; transform:translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .scroll-reveal.visible { opacity:1; transform:translateY(0); }
+  </style>
+</head>
+<body class="bg-white" x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50">
+
+  <!-- NAVBAR -->
+  <nav :class="scrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+          <span class="font-display font-black text-white text-lg">HA</span>
+        </div>
+        <div>
+          <div :class="scrolled ? 'text-gray-900' : 'text-white'" class="font-display font-bold text-base leading-tight">Habtom Abadi</div>
+          <div :class="scrolled ? 'text-primary' : 'text-green-300'" class="text-xs font-medium tracking-widest uppercase">Import · Export</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Home</a>
+        <a href="about.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">About</a>
+        <a href="services.html" :class="scrolled ? 'text-primary font-semibold' : 'text-green-300 font-semibold'" class="nav-link text-sm">Services</a>
+        <a href="products.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Products</a>
+        <a href="blog.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Resources</a>
+        <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Get a Quote</a>
+      </div>
+      <button @click="mobileOpen = !mobileOpen" :class="scrolled ? 'text-gray-800' : 'text-white'" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div x-show="mobileOpen" x-transition class="md:hidden bg-white shadow-xl px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+      <a href="about.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">About</a>
+      <a href="services.html" class="block text-primary font-semibold py-2 border-b border-gray-100">Services</a>
+      <a href="products.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Products</a>
+      <a href="blog.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Resources</a>
+      <a href="contact.html" class="block bg-primary text-white font-semibold px-5 py-3 rounded-full text-center">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-36 pb-24 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-20">
+      <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+      <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Offer</span>
+      <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Global Services</h1>
+      <p class="text-green-100 text-lg max-w-2xl mx-auto">End-to-end trade solutions — from sourcing to delivery, we handle every step of the journey.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">🌾</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Agricultural Commodity Export</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">We source, grade, and export premium Ethiopian agricultural commodities including coffee, sesame, grains, and pulses to buyers worldwide.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> Direct farm sourcing</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Quality grading & sorting</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Phytosanitary certification</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">🚜</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Agricultural Equipment Import</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">We import and supply tractors, irrigation systems, harvesters, and other farming machinery tailored for Ethiopian agricultural conditions.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> Sourced from trusted manufacturers</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Customs clearance support</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> After-sales & spare parts</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">🚢</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Freight & Logistics</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">We manage the full logistics chain — from inland transport in Ethiopia to sea freight and final delivery to international ports.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> FCL & LCL sea freight</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Port of Djibouti handling</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Real-time shipment tracking</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">📋</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Customs & Documentation</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">We handle all customs procedures, export permits, and documentation so you can focus on your business while we handle the paperwork.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> Export permits & licenses</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Bill of lading, COO, COA</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Customs clearance</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">🔬</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Quality Inspection & Testing</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Every shipment is tested and graded by certified inspectors before loading. We ensure your cargo meets international food safety and quality standards.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> SGS / ETQAE inspection</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Moisture & purity testing</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Certificate of Analysis</li>
+          </ul>
+        </div>
+
+        <div class="border border-gray-100 rounded-3xl p-8 hover:shadow-xl hover:border-primary/30 transition-all group scroll-reveal">
+          <div class="w-16 h-16 bg-green-50 group-hover:bg-primary rounded-2xl flex items-center justify-center mb-6 transition-colors">
+            <span class="text-3xl">🤝</span>
+          </div>
+          <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Trade Consultancy</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">New to trading with Ethiopia? We guide international buyers and local suppliers through the entire process — regulations, pricing, and partnerships.</p>
+          <ul class="space-y-1 text-sm text-gray-500">
+            <li class="flex gap-2"><span class="text-primary">✓</span> Market entry guidance</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Supplier matching</li>
+            <li class="flex gap-2"><span class="text-primary">✓</span> Contract negotiation support</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">How It Works</span>
+        <h2 class="font-display text-4xl font-black text-gray-900 mt-3">Our Simple Process</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center scroll-reveal">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-display font-black text-2xl">1</div>
+          <h4 class="font-bold text-gray-900 mb-2">Submit RFQ</h4>
+          <p class="text-gray-500 text-sm">Tell us what you need — product, quantity, destination, and timeline.</p>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-display font-black text-2xl">2</div>
+          <h4 class="font-bold text-gray-900 mb-2">Receive Offer</h4>
+          <p class="text-gray-500 text-sm">We respond within 24–48 hours with pricing, specs, and availability.</p>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-display font-black text-2xl">3</div>
+          <h4 class="font-bold text-gray-900 mb-2">Agree & Contract</h4>
+          <p class="text-gray-500 text-sm">We sign a trade agreement and begin sourcing, inspection, and packaging.</p>
+        </div>
+        <div class="text-center scroll-reveal">
+          <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 text-white font-display font-black text-2xl">4</div>
+          <h4 class="font-bold text-gray-900 mb-2">Ship & Deliver</h4>
+          <p class="text-gray-500 text-sm">Your cargo is shipped with full documentation and tracked to your destination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 hero-bg text-center">
+    <div class="max-w-3xl mx-auto px-6">
+      <h2 class="font-display text-4xl font-black text-white mb-4">Ready to Work Together?</h2>
+      <p class="text-green-200 mb-8">Contact us today and let's build a long-term trade partnership.</p>
+      <a href="contact.html" class="bg-white text-primary font-bold px-10 py-4 rounded-full hover:bg-green-50 transition-colors shadow-xl inline-block">Start Now →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center">
+              <span class="font-display font-black text-white text-lg">HA</span>
+            </div>
+            <div>
+              <div class="text-white font-display font-bold">Habtom Abadi</div>
+              <div class="text-green-400 text-xs tracking-widest uppercase">Import · Export</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm">
+            <li>📍 Addis Ababa, Ethiopia</li>
+            <li>📞 +251 000 000 000</li>
+            <li>✉️ info@Habtomabadimx.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6 text-xs flex justify-between">
+        <span>© 2025 Habtom Abadi Import Export.</span>
+        <span>Developed by Empire Technological Solution</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

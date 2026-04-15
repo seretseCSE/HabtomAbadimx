@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resources & Blog — Habtom Abadi Import Export</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: { DEFAULT: '#16a34a', light: '#22c55e', dark: '#15803d', deeper: '#14532d' } },
+          fontFamily: { display: ['Playfair Display', 'serif'], body: ['DM Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .hero-bg { background: linear-gradient(135deg, #14532d 0%, #15803d 60%, #166534 100%); }
+    .nav-link { position:relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:#22c55e; transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+  </style>
+</head>
+<body class="bg-white" x-data="{
+  mobileOpen: false,
+  scrolled: false,
+  activeCategory: 'All',
+  categories: ['All', 'Export Tips', 'Market Insights', 'Agriculture', 'Trade News'],
+  posts: [
+    { id:1, title:'Why Ethiopian Coffee Commands a Premium on Global Markets', category:'Market Insights', date:'May 12, 2025', read:'5 min', image:'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=600&q=80', excerpt:'Ethiopian Arabica coffee is the world\'s most complex and sought-after — but what exactly makes buyers pay a premium? We explore the origin story, flavor profiles, and why Yirgacheffe continues to lead.' },
+    { id:2, title:'A Complete Guide to Exporting Sesame from Ethiopia', category:'Export Tips', date:'Apr 28, 2025', read:'8 min', image:'https://images.unsplash.com/photo-1627484164729-7e3fa62bb463?w=600&q=80', excerpt:'From Humera fields to Asian ports — everything you need to know about grading, documentation, packaging, and pricing Ethiopian sesame for international buyers.' },
+    { id:3, title:'Teff: Ethiopia\'s Ancient Superfood Goes Global', category:'Market Insights', date:'Apr 10, 2025', read:'4 min', image:'https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=600&q=80', excerpt:'Gluten-free, iron-rich, and packed with nutrition — teff is capturing health food markets worldwide. Here\'s how Ethiopian exporters are positioning it for Europe and North America.' },
+    { id:4, title:'How to Import Agricultural Equipment into Ethiopia', category:'Export Tips', date:'Mar 22, 2025', read:'6 min', image:'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=600&q=80', excerpt:'A step-by-step overview of the import process for tractors, irrigation systems, and farm machinery into Ethiopia — including customs duties, permits, and financing options.' },
+    { id:5, title:'Understanding Phytosanitary Certificates for Grain Exports', category:'Trade News', date:'Mar 5, 2025', read:'5 min', image:'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80', excerpt:'Every grain shipment leaving Ethiopia requires a valid phytosanitary certificate. We explain what it is, who issues it, and how to ensure your cargo passes inspection.' },
+    { id:6, title:'Ethiopia\'s Agricultural Season 2025: What to Expect', category:'Agriculture', date:'Feb 18, 2025', read:'4 min', image:'https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?w=600&q=80', excerpt:'An overview of rainfall patterns, projected harvest volumes, and commodity price forecasts for Ethiopian coffee, sesame, and grains in the 2025 export season.' },
+  ]
+}" @scroll.window="scrolled = window.scrollY > 50">
+
+  <!-- NAVBAR -->
+  <nav :class="scrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center shadow-lg">
+          <span class="font-display font-black text-white text-lg">HA</span>
+        </div>
+        <div>
+          <div :class="scrolled ? 'text-gray-900' : 'text-white'" class="font-display font-bold text-base leading-tight">Habtom Abadi</div>
+          <div :class="scrolled ? 'text-primary' : 'text-green-300'" class="text-xs font-medium tracking-widest uppercase">Import · Export</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Home</a>
+        <a href="about.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">About</a>
+        <a href="services.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Services</a>
+        <a href="products.html" :class="scrolled ? 'text-gray-700' : 'text-white'" class="nav-link text-sm font-medium">Products</a>
+        <a href="blog.html" :class="scrolled ? 'text-primary font-semibold' : 'text-green-300 font-semibold'" class="nav-link text-sm">Resources</a>
+        <a href="contact.html" class="bg-primary hover:bg-primary-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors">Get a Quote</a>
+      </div>
+      <button @click="mobileOpen = !mobileOpen" :class="scrolled ? 'text-gray-800' : 'text-white'" class="md:hidden">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div x-show="mobileOpen" x-transition class="md:hidden bg-white shadow-xl px-6 py-4 space-y-3">
+      <a href="index.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Home</a>
+      <a href="about.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">About</a>
+      <a href="services.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Services</a>
+      <a href="products.html" class="block text-gray-800 font-medium py-2 border-b border-gray-100">Products</a>
+      <a href="blog.html" class="block text-primary font-semibold py-2 border-b border-gray-100">Resources</a>
+      <a href="contact.html" class="block bg-primary text-white font-semibold px-5 py-3 rounded-full text-center">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg pt-36 pb-24 relative overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+      <span class="text-green-300 font-medium text-sm tracking-widest uppercase">Knowledge Hub</span>
+      <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Resources & Insights</h1>
+      <p class="text-green-100 text-lg max-w-2xl mx-auto">Trade guides, market insights, and agricultural news to help you make smarter global trade decisions.</p>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- Category Filter -->
+      <div class="flex flex-wrap gap-3 mb-12">
+        <template x-for="cat in categories" :key="cat">
+          <button @click="activeCategory = cat" :class="activeCategory === cat ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'" class="px-5 py-2 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white" x-text="cat"></button>
+        </template>
+      </div>
+
+      <!-- Featured Post -->
+      <div class="mb-10">
+        <template x-for="post in posts.filter(p => activeCategory === 'All' || p.category === activeCategory).slice(0,1)" :key="post.id">
+          <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid md:grid-cols-2 group cursor-pointer hover:shadow-xl transition-shadow">
+            <div class="overflow-hidden h-64 md:h-auto">
+              <img :src="post.image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="post.title"/>
+            </div>
+            <div class="p-8 flex flex-col justify-center">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full" x-text="post.category"></span>
+                <span class="text-gray-400 text-xs" x-text="post.read + ' read'"></span>
+              </div>
+              <h2 class="font-display text-2xl font-bold text-gray-900 mb-4 leading-tight" x-text="post.title"></h2>
+              <p class="text-gray-600 leading-relaxed mb-6 text-sm" x-text="post.excerpt"></p>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-400 text-xs" x-text="post.date"></span>
+                <a href="#" class="text-primary font-semibold text-sm hover:underline">Read More →</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+
+      <!-- Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <template x-for="post in posts.filter(p => activeCategory === 'All' || p.category === activeCategory).slice(1)" :key="post.id">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 group cursor-pointer hover:shadow-xl transition-shadow">
+            <div class="overflow-hidden h-48">
+              <img :src="post.image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" :alt="post.title"/>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-full" x-text="post.category"></span>
+                <span class="text-gray-400 text-xs" x-text="post.read + ' read'"></span>
+              </div>
+              <h3 class="font-display font-bold text-gray-900 text-lg leading-tight mb-3" x-text="post.title"></h3>
+              <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2" x-text="post.excerpt"></p>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-400 text-xs" x-text="post.date"></span>
+                <a href="#" class="text-primary font-semibold text-sm hover:underline">Read →</a>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="py-20 hero-bg">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <h2 class="font-display text-3xl font-black text-white mb-4">Stay Updated on Trade & Markets</h2>
+      <p class="text-green-200 mb-8">Get commodity price updates, export guides, and trade news delivered to your inbox.</p>
+      <div class="flex gap-3 max-w-md mx-auto" x-data="{ email: '', subDone: false }">
+        <input x-show="!subDone" x-model="email" type="email" placeholder="Enter your email" class="flex-1 px-5 py-3.5 rounded-full text-sm focus:outline-none"/>
+        <button x-show="!subDone" @click="if(email) subDone=true" class="bg-white text-primary font-bold px-6 py-3.5 rounded-full hover:bg-green-50 transition-colors whitespace-nowrap">Subscribe</button>
+        <div x-show="subDone" class="w-full text-center text-white font-semibold py-3">✅ You're subscribed! Thank you.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-gray-400 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+        <div>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-11 h-11 rounded-xl bg-primary flex items-center justify-center">
+              <span class="font-display font-black text-white text-lg">HA</span>
+            </div>
+            <div>
+              <div class="text-white font-display font-bold">Habtom Abadi</div>
+              <div class="text-green-400 text-xs tracking-widest uppercase">Import · Export</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-primary transition-colors">Services</a></li>
+            <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+            <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm">
+            <li>📍 Addis Ababa, Ethiopia</li>
+            <li>📞 +251 000 000 000</li>
+            <li>✉️ info@Habtomabadimx.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 pt-6 text-xs flex justify-between">
+        <span>© 2025 Habtom Abadi Import Export.</span>
+        <span>Developed by Empire Technological Solution</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
