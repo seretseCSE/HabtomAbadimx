@@ -18,9 +18,11 @@ return new class extends Migration
             $table->string('contact_person');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->text('product_description');
+            $table->text('product');
             $table->integer('quantity');
-            $table->text('specifications')->nullable();
+            $table->text('requirements')->nullable();
+            $table->string('service_type')->nullable();
+            $table->string('destination')->nullable();
             $table->enum('status', ['New', 'In Review', 'Quoted', 'Closed'])->default('New');
             $table->text('internal_notes')->nullable();
             $table->decimal('quoted_price', 10, 2)->nullable();

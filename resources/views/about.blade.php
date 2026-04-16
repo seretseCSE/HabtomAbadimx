@@ -14,7 +14,7 @@
       <div class="animate-float">
         <span class="text-green-200 text-sm font-medium tracking-widest uppercase">About Us</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Habtom Abadi Import & Export</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">A trusted Addis Ababa-based trading company linking Ethiopia’s agriculture with the world and bringing in the machinery that drives national development.</p>
+        <p class="text-green-100 text-lg max-w-2xl mx-auto">Established in 2000, we've been a cornerstone of Ethiopia's international trade sector for over two decades, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.</p>
       </div>
     </div>
   </section>
@@ -31,7 +31,7 @@
       <div class="relative scroll-reveal">
         <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=700&q=80" class="rounded-3xl shadow-xl w-full h-96 object-cover" alt="Ethiopian trade and export" />
         <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
-          <div class="font-display text-3xl font-black">22</div>
+          <div class="font-display text-3xl font-black">24+</div>
           <div class="text-green-200 text-sm">Years of Experience</div>
         </div>
       </div>
@@ -47,20 +47,20 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
           <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Vision</h3>
-          <p class="text-gray-600 leading-relaxed">To be a vibrant, reliable and competent international trader known for driving Ethiopia’s growth through trade excellence.</p>
+          <p class="text-gray-600 leading-relaxed">To be one of the vibrant, reliable and competent international traders.</p>
         </div>
         <div class="bg-primary rounded-3xl p-8 shadow-sm scroll-reveal text-white">
           <h3 class="font-display text-2xl font-bold mb-4">Mission</h3>
-          <p class="leading-relaxed">Export high-quality Ethiopian agricultural products to earn foreign currency and import the machinery needed for construction, farming, and industry.</p>
+          <p class="leading-relaxed">Exporting standard quality Ethiopian agricultural products (coffee seeds, pulses, oilseeds, spices) to earn foreign currency, importing construction, agricultural and manufacturing machinery, and delivering national transport services.</p>
         </div>
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
           <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Core Values</h3>
           <ul class="space-y-3 text-gray-600 leading-relaxed">
             <li>Reliability</li>
-            <li>Keeping commitments</li>
-            <li>Customer-focused service</li>
-            <li>Progressive dynamism</li>
-            <li>Positive, can-do attitude</li>
+            <li>Respect Commitments</li>
+            <li>Customer based Service Delivery</li>
+            <li>Progressive Dynamism</li>
+            <li>Avoid Hopelessness</li>
             <li>Innovation</li>
           </ul>
         </div>

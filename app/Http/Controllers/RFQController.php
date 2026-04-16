@@ -41,7 +41,7 @@ class RFQController extends Controller
             'phone' => 'required|string|max:255',
             'service_type' => 'nullable|exists:services,id',
             'product' => 'required|string|max:255',
-            'quantity' => 'required|string|max:255',
+            'quantity' => 'required|integer|min:1',
             'destination' => 'nullable|string|max:255',
             'requirements' => 'nullable|string|max:5000',
             'website' => 'prohibited', // Honeypot field

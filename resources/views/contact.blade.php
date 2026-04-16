@@ -28,7 +28,7 @@
             <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl">📍</div>
             <div>
               <div class="font-bold text-gray-900">Office Address</div>
-              <div class="text-gray-500 text-sm">{{ $settings['address'] ?? 'Addis Ababa, Ethiopia' }}<br/>Ayat Area, Bole Sub-City</div>
+              <div class="text-gray-500 text-sm">Noah Real Estate Building, 7th Floor, Office No. 704<br/>22 Area, Wereda 04, Bole Sub-City, Addis Ababa, Ethiopia</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
@@ -186,6 +186,16 @@
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
                         <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('email') }}">
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('phone') }}">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company</label>
+                        <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('company') }}">
                     </div>
                 </div>
                 <div>
