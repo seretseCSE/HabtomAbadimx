@@ -9,7 +9,7 @@
   <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+      <img src="{{ asset('tractor.avif') }}" class="w-full h-full object-cover" alt="Tractor plowing field"/>
     </div>
     <!-- Decorative circles -->
     <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2"></div>
@@ -41,7 +41,7 @@
       <!-- Hero image card -->
       <div class="hidden md:block relative">
         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-          <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=700&q=80" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
+          <img src="{{ asset('tractor.avif') }}" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
         </div>
         <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
           <div class="text-xs text-gray-500 mb-1">Modern Equipment</div>

@@ -18,12 +18,8 @@ return new class extends Migration
             $table->string('contact_person');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->unsignedBigInteger('service_type')->nullable();
-            $table->string('product')->nullable();
             $table->text('product_description');
             $table->integer('quantity');
-            $table->string('destination')->nullable();
-            $table->text('requirements')->nullable();
             $table->text('specifications')->nullable();
             $table->enum('status', ['New', 'In Review', 'Quoted', 'Closed'])->default('New');
             $table->text('internal_notes')->nullable();
@@ -33,8 +29,6 @@ return new class extends Migration
             $table->timestamp('closed_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            
-            $table->index('status');
         });
     }
 
