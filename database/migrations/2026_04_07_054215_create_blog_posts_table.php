@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('excerpt')->nullable();
-            $table->longText('body');
+            $table->longText('body')->nullable();
             $table->string('cover_image')->nullable();
             $table->string('author')->nullable();
             $table->unsignedBigInteger('category_id')->nullable();

@@ -1,173 +1,25 @@
-<p align="center">
-  <strong>Habtom Abadi Import Export</strong>
-</p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel-11-red" alt="Laravel Version">
-  <img src="https://img.shields.io/badge/Filament-3.x-orange" alt="Filament Version">
-  <img src="https://img.shields.io/badge/PHP-8.2+-blue" alt="PHP Version">
-  <img src="https://img.shields.io/badge/MySQL-8.0+-green" alt="Database">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Habtom Abadi Import Export
+## About Laravel
 
-A comprehensive Laravel-based web application for managing import-export business operations with a modern Filament admin panel. This platform showcases products, services, certifications, partners, and client testimonials with a professional, responsive design.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-### Features
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-#### **Frontend**
-- **Modern Responsive Design**: Clean, professional UI with Tailwind CSS
-- **Product Catalog**: Browse and filter import-export products
-- **Service Management**: Display company services
-- **Certifications & Partners**: Show business credentials and partnerships
-- **Client Testimonials**: Customer reviews and ratings
-- **Contact & RFQ Forms**: Lead generation and quote requests
-- **Blog System**: Content management and SEO optimization
-
-#### **Admin Panel (Filament)**
-- **Resource Management**: Products, Services, Partners, Certifications, Testimonials
-- **File Upload**: Image and document management with public storage
-- **User Management**: Admin authentication and role-based access
-- **Settings Management**: Dynamic site configuration
-- **Analytics Dashboard**: Business metrics and statistics
-- **Content Management**: Blog posts and page content
-
-### Technical Stack
-
-- **Backend**: Laravel 11.x
-- **Admin Panel**: Filament 3.x
-- **Frontend**: Blade Templates, Tailwind CSS, Alpine.js
-- **Database**: MySQL 8.0+
-- **File Storage**: Laravel Public Storage
-- **Authentication**: Laravel Sanctum + Filament Auth
-
-### Key Implementations
-
-#### **File Upload System**
-- **Public Storage**: All uploads stored in `storage/app/public/`
-- **MIME Type Validation**: Proper file type checking
-- **Image Processing**: Built-in image editor and optimization
-- **Directory Organization**: Structured file storage by resource type
-
-#### **Database Architecture**
-- **Eloquent Models**: Proper relationships and scopes
-- **Migrations**: Version-controlled schema management
-- **Seeders**: Initial data population
-- **Indexes**: Performance optimization for common queries
-
-#### **Security Features**
-- **Form Protection**: CSRF and spam prevention
-- **Input Validation**: Comprehensive validation rules
-- **File Security**: Proper MIME type and size validation
-- **Authentication**: Secure admin panel access
-
-## Installation
-
-### Prerequisites
-- PHP 8.2+
-- MySQL 8.0+ or MariaDB 10.3+
-- Composer
-- Node.js & NPM (for frontend assets)
-
-### Setup Instructions
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/HabtomAbadimx.git
-   cd HabtomAbadimx
-   ```
-
-2. **Install dependencies**
-   ```bash
-   composer install
-   npm install
-   ```
-
-3. **Environment setup**
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-
-4. **Configure database**
-   ```bash
-   # Edit .env file with your database credentials
-   DB_DATABASE=habtomabadi_main
-   DB_USERNAME=your_username
-   DB_PASSWORD=your_password
-   ```
-
-5. **Run migrations and seeders**
-   ```bash
-   php artisan migrate
-   php artisan db:seed
-   ```
-
-6. **Create storage link**
-   ```bash
-   php artisan storage:link
-   ```
-
-7. **Compile frontend assets**
-   ```bash
-   npm run build
-   ```
-
-8. **Clear caches**
-   ```bash
-   php artisan optimize:clear
-   php artisan config:cache
-   php artisan route:cache
-   php artisan view:cache
-   ```
-
-9. **Start the development server**
-   ```bash
-   php artisan serve
-   ```
-
-### Admin Access
-
-- **URL**: `/admin`
-- **Default Credentials**: Check your database or create an admin user via seeder
-
-## Project Structure
-
-```
-app/
-  Http/Controllers/          # Web controllers
-  Models/                    # Eloquent models
-  Filament/
-    Resources/               # Filament admin resources
-    Pages/                   # Filament custom pages
-    Widgets/                 # Filament dashboard widgets
-
-resources/
-  views/                     # Blade templates
-  css/                       # Stylesheets
-  js/                        # JavaScript files
-
-database/
-  migrations/                # Database migrations
-  seeders/                   # Database seeders
-
-storage/app/public/          # Public file uploads
-  partners/logos/            # Partner logos
-  certifications/            # Certification documents
-  testimonials/photos/       # Testimonial photos
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Laravel
 
