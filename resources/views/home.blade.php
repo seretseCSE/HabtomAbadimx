@@ -9,7 +9,7 @@
   <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="https://unsplash.com/photos/a-tractor-is-plowing-a-field-with-a-trailer-PoisoMav1Jg?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+      <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
     </div>
     <!-- Decorative circles -->
     <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2"></div>
@@ -41,7 +41,7 @@
       <!-- Hero image card -->
       <div class="hidden md:block relative">
         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-          <img src="https://unsplash.com/photos/a-tractor-is-plowing-a-field-with-a-trailer-PoisoMav1Jg?w=700&q=80" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
+          <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=700&q=80" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
         </div>
         <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
           <div class="text-xs text-gray-500 mb-1">Modern Equipment</div>
@@ -127,7 +127,7 @@
         @foreach($products->take(8) as $product)
         <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal">
           <div class="aspect-square overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->name }}"/>
+            <img src="https://unsplash.com/photos/a-tractor-plowing-a-field-with-a-plow-cfD0LrqEMmk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->name }}"/>
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 product-overlay">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">

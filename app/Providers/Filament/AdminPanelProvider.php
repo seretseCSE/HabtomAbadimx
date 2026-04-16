@@ -41,7 +41,8 @@ class AdminPanelProvider extends PanelProvider
             ->darkMode(true)
             ->font('Inter')
             ->brandName('Habtom Abadi Import Export')
-            ->brandLogo(asset('Asset 2.png'))
+            ->brandLogo(asset('Asset 1.png'))
+            ->favicon(asset('Asset 1.png'))
             // ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->resources([
