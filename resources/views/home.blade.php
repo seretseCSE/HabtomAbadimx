@@ -9,7 +9,7 @@
   <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+      <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
     </div>
     <!-- Decorative circles -->
     <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2"></div>
@@ -41,12 +41,12 @@
       <!-- Hero image card -->
       <div class="hidden md:block relative">
         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80" class="w-full h-96 object-cover" alt="Heavy Agricultural Machinery"/>
+          <img src="https://images.unsplash.com/photo-1592984737242-3d0c0b5a5c6b?w=700&q=80" class="w-full h-96 object-cover" alt="Agricultural Machinery Plowing"/>
         </div>
         <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
-          <div class="text-xs text-gray-500 mb-1">Latest Equipment</div>
-          <div class="font-bold text-gray-900">Industrial Tractors</div>
-          <div class="text-primary text-xs font-medium mt-1">Imported from Germany</div>
+          <div class="text-xs text-gray-500 mb-1">Modern Equipment</div>
+          <div class="font-bold text-gray-900">Agricultural Machinery</div>
+          <div class="text-primary text-xs font-medium mt-1">Plowing Fields</div>
         </div>
         <div class="absolute -top-4 -right-4 bg-primary rounded-2xl p-4 shadow-2xl text-white">
           <div class="text-2xl font-black">15+</div>
