@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Certifications & Partners - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
+@section('title', 'Certifications & Partners - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
 <!-- HERO -->

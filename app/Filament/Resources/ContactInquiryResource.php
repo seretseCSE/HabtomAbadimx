@@ -34,6 +34,11 @@ class ContactInquiryResource extends Resource
 
     protected static ?int $navigationSort = 8;
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function form(Schema $form): Schema
     {
         return $form
@@ -280,9 +285,6 @@ class ContactInquiryResource extends Resource
                     })
                     ->deselectRecordsAfterCompletion()
                     ->color('warning'),
-            ])
-            ->emptyStateActions([
-                Actions\CreateAction::make(),
             ]);
     }
 
@@ -297,7 +299,6 @@ class ContactInquiryResource extends Resource
     {
         return [
             'index' => Pages\ListContactInquiries::route('/'),
-            'create' => Pages\CreateContactInquiry::route('/create'),
             'view' => Pages\ViewContactInquiry::route('/{record}'),
             'edit' => Pages\EditContactInquiry::route('/{record}/edit'),
         ];

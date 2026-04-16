@@ -27,15 +27,15 @@
         <div>
           <h4 class="text-white font-bold mb-4">Contact</h4>
           <ul class="space-y-3 text-sm">
-            <li>?? {{ $settings['address'] ?? 'Addis Ababa, Ethiopia' }}</li>
-            <li>?? {{ $settings['contact_phone'] ?? '+251 000 000 000' }}</li>
-            <li>?? {{ $settings['contact_email'] ?? 'info@habtomabadimx.com' }}</li>
-            <li>?? {{ $settings['working_hours'] ?? 'Mon-Sat: 8:00 AM - 5:00 PM' }}</li>
+            <li>{{ $settings['address_1'] ?? 'Addis Ababa, Ethiopia' }}</li>
+            <li>{{ $settings['phone_1'] ?? '+251 000 000 000' }}</li>
+            <li>{{ $settings['email_1'] ?? 'info@habtomabadimx.com' }}</li>
+            <li>{{ $settings['working_hours'] ?? 'Mon-Sat: 8:00 AM - 5:00 PM' }}</li>
           </ul>
         </div>
       </div>
       <div class="border-t border-gray-800 pt-6 text-xs flex justify-between">
-        <span>?? {{ date('Y') }} {{ $settings['company_name'] ?? 'Habtom Abadi Import Export' }}.</span>
+        <span>{{ date('Y') }} {{ $settings['site_name'] ?? 'Habtom Abadi Import Export' }}.</span>
         <span>Developed by
             <a href="https://empire.et" target="_blank" rel="noopener noreferrer" class="text-primary hover:text-gold transition-colors">
                 Empire Technological Solution

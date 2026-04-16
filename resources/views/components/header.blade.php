@@ -1,20 +1,24 @@
+@php
+$settings = \App\Models\Setting::pluck('value', 'key')->toArray();
+@endphp
+
 <header x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <!-- Top Bar with Contact Info -->
     <div class="bg-earth text-white py-3">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-center text-sm">
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="mailto:{{ $settings['company_email'] ?? 'info@habtomabadimx.com' }}" class="hover:text-gold transition-colors flex items-center">
+                    <a href="mailto:{{ $settings['email_1'] ?? 'info@habtomabadimx.com' }}" class="hover:text-gold transition-colors flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
-                        {{ $settings['company_email'] ?? 'info@habtomabadimx.com' }}
+                        {{ $settings['email_1'] ?? 'info@habtomabadimx.com' }}
                     </a>
-                    <a href="tel:{{ $settings['company_phone'] ?? '+251 000 000 000' }}" class="hover:text-gold transition-colors flex items-center">
+                    <a href="tel:{{ $settings['phone_1'] ?? '+251 000 000 000' }}" class="hover:text-gold transition-colors flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                        {{ $settings['company_phone'] ?? '+251 000 000 000' }}
+                        {{ $settings['phone_1'] ?? '+251 000 000 000' }}
                     </a>
                     <span class="flex items-center">
                         <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,11 +30,10 @@
 
                 <!-- Language Switcher (if needed) -->
                 <div class="flex items-center space-x-4">
-                    @if(1==1)
-                        <!-- $settings['whatsapp'] ?? '+251 000 000 000') -->
-                        <a href="#"
+                    @if(!empty($settings['phone_1']))
+                        <a href="https://wa.me/{{ preg_replace('/[^0-9+]/', '', $settings['phone_1']) }}"
                            target="_blank"
-                           class="hover:text-gold transition-colors flex items-center">
+                           class="hover:text-gold transition-colors flex items-center bg-green-600 hover:bg-green-700 px-3 py-1 rounded-lg text-white text-sm font-medium">
                             <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.646.134-.166.298-.346.447-.541.149-.199.149-.342.074-.541-.074-.199-.697-1.697-.967-2.321-.27-.623-.547-.539-.747-.539-.197 0-.423-.014-.65-.014-.227 0-.593.074-.904.372-.311.297-1.19 1.164-1.19 2.835 0 1.672 1.216 3.284 1.384 3.517.167.232 2.395 3.66 5.814 5.138 2.033.878 3.068 1.094 3.716 1.164.246.014.447.014.646-.014.99-.149 1.758-.867 2.006-1.647.247-.78.247-1.452.173-1.59-.074-.137-.27-.223-.547-.372z"/>
                                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
@@ -39,33 +42,13 @@
                         </a>
                     @endif
 
-                    <!-- Language Switcher Placeholder -->
-                    <!-- <div class="relative group">
-                        <button class="hover:text-gold transition-colors flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-                            </svg>
-                            EN
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">English</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Amharic</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">French</a>
-                        </div>
-                    </div> -->
+                  
                 </div>
             </div>
         </div>
 
     </div>
     <!-- Main Navigation -->
-    @php
-    $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
-@endphp
-
     <nav :class="scrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <br>
         <div class="max-w-7xl mx-auto px-6">
@@ -77,7 +60,7 @@
                              alt="Habtom Abadi Logo"
                              class="h-10 transition-all duration-300 rounded-lg">
                         <span class="text-xl font-bold" :class="scrolled ? 'text-primary' : 'text-white'" transition-colors duration-300">
-                            {{ $settings['company_name'] ?? 'Habtom Abadi Import Export' }}
+                            {{ $settings['site_name'] ?? 'Habtom Abadi Import Export' }}
                         </span>
                     </a>
                 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
+@section('title', 'Contact - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
 <div x-data="{ activeTab: 'rfq' }">
@@ -28,21 +28,21 @@
             <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl">📍</div>
             <div>
               <div class="font-bold text-gray-900">Office Address</div>
-              <div class="text-gray-500 text-sm">Noah Real Estate Building, 7th Floor, Office No. 704<br/>22 Area, Wereda 04, Bole Sub-City, Addis Ababa, Ethiopia</div>
+              <div class="text-gray-500 text-sm">{{ $settings['address_1'] ?? 'Noah Real Estate Building, 7th Floor, Office No. 704<br/>22 Area, Wereda 04, Bole Sub-City, Addis Ababa, Ethiopia' }}</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl">📞</div>
             <div>
               <div class="font-bold text-gray-900">Phone</div>
-              <div class="text-gray-500 text-sm">{{ $settings['contact_phone'] ?? '+251 000 000 000' }}<br/>+251 000 000 001</div>
+              <div class="text-gray-500 text-sm">{{ $settings['phone_1'] ?? '+251 000 000 000' }}<br/>{{ $settings['phone_2'] ?? '+251 000 000 001' }}</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">
             <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl">✉️</div>
             <div>
               <div class="font-bold text-gray-900">Email</div>
-              <div class="text-gray-500 text-sm">{{ $settings['contact_email'] ?? 'info@habtomabadimx.com' }}<br/>trade@habtomabadimx.com</div>
+              <div class="text-gray-500 text-sm">{{ $settings['email_1'] ?? 'info@habtomabadimx.com' }}<br/>{{ $settings['email_2'] ?? 'trade@habtomabadimx.com' }}</div>
             </div>
           </div>
           <div class="flex gap-4 items-start">

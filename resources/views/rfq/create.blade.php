@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Request Quote - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
+@section('title', 'Request Quote - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
 <!-- Hero Section -->

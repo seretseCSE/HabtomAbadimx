@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
+@section('title', 'Home - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
 <body class="bg-white text-gray-900 grain" x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50">
@@ -17,16 +17,16 @@
 
     <div class="relative max-w-7xl mx-auto px-6 pt-28 pb-20 grid md:grid-cols-2 gap-12 items-center">
       <div class="animate-float">
-        <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
+        <!-- <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
           <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
           <span class="text-green-200 text-xs font-medium tracking-wider uppercase">Since 2000</span>
-        </div>
-        <h1 class="font-display text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight mb-6">
+        </div> -->
+        <h1 class="font-display text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight mb-3">
           <!-- <img src="{{ asset('Asset 1.png') }}" alt="Habtom Abadi Logo" class="inline w-10 h-10 mr-4 rounded-xl shadow-lg"> -->
           Exporting Ethiopia's<br/>Finest to<br/><span class="text-green-300">Global Markets</span>
         </h1>
-        <p class="text-green-100 text-lg leading-relaxed mb-10 max-w-lg">
-          For over two decades, we've been bridging Ethiopia's rich agricultural resources with global markets while importing cutting-edge machinery to fuel national development.
+        <p class="text-green-100 text-lg leading-relaxed mb-4 max-w-lg">
+          For over two decades, we've been bridging Ethiopia's rich agricultural resources with global markets
         </p>
         <div class="flex flex-wrap gap-4">
           <a href="{{ route('products') }}" class="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-green-50 transition-colors shadow-xl">
@@ -39,12 +39,12 @@
       </div>
 
       <!-- Hero image card -->
-      <div class="hidden md:block relative">
+      <div class="hidden md:block relative mt-12">
         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
           <img src="{{ asset('tractor.avif') }}" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
         </div>
-        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
-          <div class="text-xs text-gray-500 mb-1">24+ Years</div>
+        <div class="absolute -bottom-0 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
+          <div class="text-xs text-gray-500 mb-1">16+ Years</div>
           <div class="font-bold text-gray-900">International Trade</div>
           <div class="text-primary text-xs font-medium mt-1">Excellence</div>
         </div>
@@ -60,7 +60,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden">
           <div class="stat-card p-6 text-center text-white">
-            <div class="text-3xl font-black mb-2">24+</div>
+            <div class="text-3xl font-black mb-2">16+</div>
             <div class="text-green-300 text-sm mt-1">Years Experience</div>
           </div>
           <div class="stat-card p-6 text-center text-white">

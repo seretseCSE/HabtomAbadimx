@@ -1,6 +1,6 @@
 ﻿@extends('layouts.app')
 
-@section('title', 'About Us - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
+@section('title', 'About Us - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
 <body class="bg-white" x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50">

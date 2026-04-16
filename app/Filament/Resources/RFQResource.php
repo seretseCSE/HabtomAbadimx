@@ -34,6 +34,11 @@ class RFQResource extends Resource
 
     protected static ?int $navigationSort = 3;
 
+    public static function canCreate(): bool
+    {
+        return false;
+    }
+
     public static function form(Schema $form): Schema
     {
         return $form
@@ -233,9 +238,6 @@ class RFQResource extends Resource
                     ->deselectRecordsAfterCompletion()
                     ->color('success')
                     ->requiresConfirmation(),
-            ])
-            ->emptyStateActions([
-                Actions\CreateAction::make(),
             ]);
     }
 
@@ -250,7 +252,6 @@ class RFQResource extends Resource
     {
         return [
             'index' => Pages\ListRFQs::route('/'),
-            'create' => Pages\CreateRFQ::route('/create'),
             'view' => Pages\ViewRFQ::route('/{record}'),
             'edit' => Pages\EditRFQ::route('/{record}/edit'),
         ];
