@@ -35,21 +35,20 @@ class RFQController extends Controller
         }
 
         $validated = $request->validate([
-            'company_name' => 'required|string|max:255',
-            'contact_person' => 'required|string|max:255',
+            'company' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone' => 'required|string|max:255',
-            'service_type' => 'nullable|exists:services,id',
-            'product' => 'required|string|max:255',
-            'quantity' => 'required|integer|min:1',
-            'destination' => 'nullable|string|max:255',
-            'requirements' => 'nullable|string|max:5000',
+            'phone' => 'nullable|string|max:255',
+            'country' => 'nullable|string|max:255',
+            'product_interest' => 'required|string|max:255',
+            'product_description' => 'nullable|string|max:5000',
+            'quantity' => 'nullable|string|max:255',
+            'unit' => 'nullable|string|max:255',
             'website' => 'prohibited', // Honeypot field
             'email_confirm' => 'prohibited', // Honeypot field
         ]);
         
-        // Generate unique RFQ number
-        $validated['rfq_number'] = 'RFQ-' . date('Y') . '-' . str_pad(RFQ::count() + 1, 4, '0', STR_PAD_LEFT);
+        // Set default status
         $validated['status'] = 'New';
         
         // Create RFQ
@@ -62,6 +61,6 @@ class RFQController extends Controller
         }
         
         return redirect()->route('rfq.create')
-            ->with('success', 'Thank you for your RFQ request! We will review your requirements and get back to you with a quote within 2 business days.');
+            ->with('success', 'Thank you for your RFQ request! We will review your requirements and get back to you');
     }
 }

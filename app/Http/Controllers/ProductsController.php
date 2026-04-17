@@ -21,7 +21,7 @@ class ProductsController extends Controller
         // Get products with pagination
         $products = Product::with('category')
             ->where('status', 'active')
-            ->orderBy('sort_order', 'asc')
+            ->orderBy('created_at', 'desc')
             ->paginate(12);
         
         return view('products', compact(

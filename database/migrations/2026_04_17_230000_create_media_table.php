@@ -13,23 +13,25 @@ return new class extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->id();
-            $table->string('model_type');
-            $table->unsignedBigInteger('model_id');
-            $table->uuid('uuid')->nullable()->unique();
-            $table->string('collection_name');
-            $table->string('name');
-            $table->string('file_name');
+            $table->string('model_type')->nullable();
+            $table->unsignedBigInteger('model_id')->nullable();
+            $table->string('uuid')->nullable();
+            $table->string('collection_name')->nullable();
+            $table->string('name')->nullable();
+            $table->string('file_name')->nullable();
             $table->string('mime_type')->nullable();
-            $table->string('disk');
-            $table->unsignedBigInteger('size')->nullable();
+            $table->string('disk')->nullable();
+            $table->string('conversions_disk')->nullable();
             $table->json('manipulations')->nullable();
             $table->json('custom_properties')->nullable();
-            $table->text('generated_conversions')->nullable();
-            $table->text('responsive_images')->nullable();
-            $table->integer('order_column')->nullable();
+            $table->json('generated_conversions')->nullable();
+            $table->json('responsive_images')->nullable();
+            $table->unsignedInteger('order_column')->nullable();
+            $table->unsignedInteger('size')->nullable();
             $table->timestamps();
             
             $table->index(['model_type', 'model_id']);
+            $table->index('uuid');
         });
     }
 

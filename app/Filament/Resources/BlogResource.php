@@ -76,15 +76,14 @@ class BlogResource extends Resource
                             ->helperText('Featured posts will be highlighted on homepage')
                             ->columnSpan(1),
 
-                        Forms\Components\Select::make('status')
+                        Forms\Components\Select::make('is_published')
                             ->label('Status')
                             ->options([
-                                'draft' => 'Draft',
-                                'scheduled' => 'Scheduled',
-                                'published' => 'Published',
+                                0 => 'Draft',
+                                1 => 'Published',
                             ])
                             ->required()
-                            ->default('draft')
+                            ->default(0)
                             ->columnSpan(1),
                     ])
                     ->columns(4),
@@ -97,7 +96,7 @@ class BlogResource extends Resource
                             ->helperText('Brief description for blog listings and social media')
                             ->columnSpanFull(),
 
-                        Forms\Components\RichEditor::make('content')
+                        Forms\Components\RichEditor::make('body')
                             ->label('Content')
                             ->required()
                             ->columnSpanFull()
@@ -121,12 +120,17 @@ class BlogResource extends Resource
 
                 Section::make('Featured Image')
                     ->schema([
+                        Forms\Components\TextInput::make('cover_image')
+                            ->label('Cover Image URL')
+                            ->helperText('Alternative to featured image upload')
+                            ->placeholder('https://example.com/image.jpg')
+                            ->url()
+                            ->columnSpanFull(),
+
                         SpatieMediaLibraryFileUpload::make('featured_image')
-                            ->label('Featured Image')
+                            ->label('Featured Image Upload')
                             ->collection('featured_image')
-                            ->image()
-                            ->imageEditor()
-                            ->directory('blog')
+                            ->image() 
                             ->visibility('public')
                             ->maxSize(2048)
                             ->helperText('Recommended size: 1200x630px')
@@ -136,25 +140,30 @@ class BlogResource extends Resource
 
                 Section::make('SEO Settings')
                     ->schema([
-                        Forms\Components\TextInput::make('meta_title')
-                            ->label('Meta Title')
-                            ->maxLength(60)
-                            ->helperText('SEO title (max 60 characters)')
-                            ->columnSpan(2),
-
-                        Forms\Components\Textarea::make('meta_description')
-                            ->label('Meta Description')
-                            ->maxLength(160)
-                            ->rows(3)
-                            ->helperText('SEO description (max 160 characters)')
-                            ->columnSpan(2),
-
-                        Forms\Components\TagsInput::make('meta_keywords')
-                            ->label('Meta Keywords')
-                            ->placeholder('Add keywords...')
+                        Forms\Components\TagsInput::make('tags')
+                            ->label('Tags')
+                            ->placeholder('Add tags...')
                             ->separator(',')
-                            ->helperText('Comma-separated keywords for SEO')
+                            ->helperText('Comma-separated tags for categorization')
                             ->columnSpan(2),
+
+                        Forms\Components\TextInput::make('reading_time')
+                            ->label('Reading Time (minutes)')
+                            ->numeric()
+                            ->helperText('Estimated reading time in minutes')
+                            ->columnSpan(2),
+
+                        Forms\Components\Toggle::make('is_published')
+                            ->label('Published')
+                            ->helperText('Make this post publicly visible')
+                            ->columnSpan(1),
+
+                        Forms\Components\TextInput::make('views')
+                            ->label('Views')
+                            ->numeric()
+                            ->default(0)
+                            ->helperText('Number of times this post has been viewed')
+                            ->columnSpan(1),
 
                         Forms\Components\DateTimePicker::make('published_at')
                             ->label('Publish Date')
@@ -171,11 +180,12 @@ class BlogResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('featured_image')
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('featured_image')
                     ->label('Image')
                     ->size(60)
                     ->circular()
-                    ->defaultImageUrl(url('/images/placeholder-blog.jpg')),
+                    ->defaultImageUrl(url('/images/placeholder-blog.jpg'))
+                    ->collection('featured_image'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
@@ -184,21 +194,36 @@ class BlogResource extends Resource
                     ->limit(70)
                     ->tooltip(fn ($record): string => $record->title),
 
+                Tables\Columns\TextColumn::make('author')
+                    ->label('Author')
+                    ->searchable()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: false),
+
                 Tables\Columns\TextColumn::make('category.name')
                     ->label('Category')
                     ->searchable()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: false),
 
-                Tables\Columns\TextColumn::make('status')
+                Tables\Columns\TextColumn::make('views')
+                    ->label('Views')
+                    ->sortable()
+                    ->alignEnd()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\TextColumn::make('reading_time')
+                    ->label('Read Time')
+                    ->formatStateUsing(fn ($state) => $state ? $state . ' min' : 'N/A')
+                    ->sortable()
+                    ->alignEnd()
+                    ->toggleable(isToggledHiddenByDefault: true),
+
+                Tables\Columns\TextColumn::make('is_published')
                     ->label('Status')
                     ->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'draft' => 'gray',
-                        'scheduled' => 'warning',
-                        'published' => 'success',
-                        default => 'gray',
-                    })
+                    ->color(fn (bool $state): string => $state ? 'success' : 'gray')
+                    ->formatStateUsing(fn (bool $state): string => $state ? 'Published' : 'Draft')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('published_at')
@@ -213,11 +238,10 @@ class BlogResource extends Resource
             ])
             ->defaultSort('published_at', 'desc')
             ->filters([
-                Tables\Filters\SelectFilter::make('status')
+                Tables\Filters\SelectFilter::make('is_published')
                     ->options([
-                        'draft' => 'Draft',
-                        'scheduled' => 'Scheduled',
-                        'published' => 'Published',
+                        1 => 'Published',
+                        0 => 'Draft',
                     ])
                     ->label('Status'),
 
@@ -246,14 +270,14 @@ class BlogResource extends Resource
                 Actions\BulkAction::make('publish')
                     ->label('Publish Posts')
                     ->icon('heroicon-o-check')
-                    ->action(fn (array $records) => $records->each->update(['status' => 'published', 'published_at' => now()]))
+                    ->action(fn (array $records) => $records->each->update(['is_published' => true, 'published_at' => now()]))
                     ->deselectRecordsAfterCompletion()
                     ->color('success')
                     ->requiresConfirmation(),
                 Actions\BulkAction::make('unpublish')
                     ->label('Unpublish Posts')
                     ->icon('heroicon-o-x-mark')
-                    ->action(fn (array $records) => $records->each->update(['status' => 'draft']))
+                    ->action(fn (array $records) => $records->each->update(['is_published' => false]))
                     ->deselectRecordsAfterCompletion()
                     ->color('danger')
                     ->requiresConfirmation(),

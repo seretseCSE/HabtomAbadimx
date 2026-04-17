@@ -14,7 +14,8 @@ class AboutController extends Controller
         $settings = Setting::pluck('value', 'key')->toArray();
         
         // Get team members
-        $teamMembers = TeamMember::orderBy('sort_order', 'asc')
+        $teamMembers = TeamMember::where('is_active', true)
+            ->orderBy('created_at', 'asc')
             ->get();
         
         // Get certifications

@@ -14,13 +14,10 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('key')->unique();
-            $table->json('value')->nullable();
-            $table->string('type')->default('text');
-            $table->text('description')->nullable();
+            $table->text('value');
             $table->timestamps();
             
             $table->index('key');
-            $table->index('type');
         });
     }
 

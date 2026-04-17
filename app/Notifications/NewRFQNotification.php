@@ -47,7 +47,7 @@ class NewRFQNotification extends Notification
             ->line('Phone: ' . $this->rfq->phone)
             ->line('Product: ' . $this->rfq->product)
             ->line('Quantity: ' . $this->rfq->quantity . ' ' . $this->rfq->unit)
-            ->action('View RFQ', route('admin.rfqs.show', $this->rfq))
+            ->action('View RFQ', route('filament.admin.resources.r-f-q-s.view', $this->rfq))
             ->line('Thank you for using our application!');
     }
 
@@ -69,7 +69,7 @@ class NewRFQNotification extends Notification
             'title' => 'New RFQ Request',
             'message' => $this->rfq->company_name . ' submitted a new RFQ for ' . $this->rfq->product,
             'type' => 'rfq',
-            'url' => route('admin.rfqs.show', $this->rfq),
+            'url' => route('filament.admin.resources.r-f-q-s.view', $this->rfq),
         ];
     }
 }

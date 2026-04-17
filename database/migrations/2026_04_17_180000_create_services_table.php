@@ -11,18 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('advantages', function (Blueprint $table) {
+        Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
+            $table->string('slug');
             $table->text('description');
+            $table->text('full_description');
             $table->string('icon')->nullable();
             $table->json('features')->nullable();
+            $table->json('benefits')->nullable();
+            $table->json('process')->nullable();
             $table->integer('sort_order')->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
             
             $table->index('is_active');
             $table->index('sort_order');
+            $table->index('slug');
         });
     }
 
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('advantages');
+        Schema::dropIfExists('services');
     }
 };

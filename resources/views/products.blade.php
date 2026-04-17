@@ -18,12 +18,7 @@
 <!-- FILTER + GRID -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Filter tabs -->
-        <div class="flex flex-wrap gap-3 justify-center mb-12" x-data="{ activeFilter: 'all' }">
-            <button @click="activeFilter='all'" :class="activeFilter==='all' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">All Products</button>
-            <button @click="filterByType('export')" :class="activeFilter==='export' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">🌾 Exports</button>
-            <button @click="filterByType('import')" :class="activeFilter==='import' ? 'bg-primary text-white' : 'bg-white text-gray-700 border border-gray-200'" class="px-6 py-2.5 rounded-full text-sm font-semibold transition-colors hover:bg-primary hover:text-white">🚜 Imports</button>
-        </div>
+        <!-- Filter tabs --> 
 
         <!-- Category Filter Tabs -->
         @if($categories->isNotEmpty())
@@ -78,10 +73,12 @@
 </section>
 
 <!-- PRODUCT MODAL -->
-<div id="productModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4" onclick="closeProductModal(event)">
-    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
-        <div id="modalContent">
-            <!-- Content will be loaded dynamically -->
+<div id="productModal" class="fixed inset-0 bg-black/80 z-50 hidden" onclick="closeProductModal(event)">
+    <div class="min-h-screen flex items-center justify-center p-4" onclick="event.stopPropagation()">
+        <div class="bg-white rounded-3xl max-w-6xl w-full overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div id="modalContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
         </div>
     </div>
 </div>
@@ -147,57 +144,84 @@ function showProductModal(productId) {
             const isImport = data.category && (data.category.name.toLowerCase().includes('equipment') || data.category.name.toLowerCase().includes('machinery') || data.category.name.toLowerCase().includes('tractor'));
             
             modalContent.innerHTML = `
-                <div>
-                    <div class="relative h-64">
+                <div class="grid lg:grid-cols-2 gap-0">
+                    <!-- Image Section -->
+                    <div class="relative h-96 lg:h-full bg-gray-100">
                         ${data.images && data.images.length > 0 ? 
                             `<img src="${data.images[0].url}" class="w-full h-full object-cover" alt="${data.name}"/>` :
-                            `<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" class="w-full h-full object-cover" alt="${data.name}"/>`
+                            `<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80" class="w-full h-full object-cover" alt="${data.name}"/>`
                         }
-                        <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-700 hover:text-red-500 transition-colors">✕</button>
-                        <div class="absolute bottom-4 left-4">
-                            <span class="${isImport ? 'bg-amber-600' : 'bg-primary'} text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase">${isImport ? 'Import' : 'Export'}</span>
+                        <button onclick="closeProductModal()" class="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full w-12 h-12 flex items-center justify-center shadow-lg text-gray-700 hover:text-red-500 transition-all duration-300 hover:scale-110">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                        <div class="absolute bottom-6 left-6">
+                            <span class="${isImport ? 'bg-amber-600' : 'bg-primary'} text-white text-sm font-bold px-4 py-2 rounded-full uppercase shadow-lg">${isImport ? 'Import' : 'Export'}</span>
                         </div>
                     </div>
-                    <div class="p-8">
-                        <h2 class="font-display text-3xl font-black text-gray-900 mb-1">${data.name}</h2>
-                        <p class="text-primary text-sm font-medium mb-4">📍 ${data.origin_country || 'Ethiopia'}</p>
-                        <p class="text-gray-600 leading-relaxed mb-6">${data.description || 'Premium quality product available for international trade.'}</p>
+                    
+                    <!-- Content Section -->
+                    <div class="p-8 lg:p-12">
+                        <div class="mb-6">
+                            <h1 class="font-display text-4xl lg:text-5xl font-black text-gray-900 mb-4">${data.name}</h1>
+                            <div class="flex items-center gap-4 text-gray-600 mb-6">
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    ${data.origin_country || 'Ethiopia'}
+                                </span>
+                                <span class="flex items-center gap-2">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                                    </svg>
+                                    ${data.unit || 'kg'}
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="prose prose-lg text-gray-600 mb-8">
+                            <p>${data.description || 'Premium quality product available for international trade. Sourced from the finest producers and processed to meet international standards.'}</p>
+                        </div>
                         
                         ${data.specifications && Object.keys(data.specifications).length > 0 ? `
-                            <div class="bg-gray-50 rounded-2xl p-5 mb-6">
-                                <h4 class="font-bold text-gray-900 mb-3 text-sm uppercase tracking-wide">Specifications</h4>
-                                <ul class="space-y-2">
+                            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 mb-8">
+                                <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Product Specifications</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     ${Object.entries(data.specifications).map(([key, value]) => `
-                                        <li class="flex items-center gap-2 text-sm text-gray-700">
-                                            <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span>
-                                            <span class="font-medium">${key}:</span>
-                                            <span>${value}</span>
-                                        </li>
+                                        <div class="flex items-start gap-3 p-3 bg-white rounded-xl">
+                                            <div class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2"></div>
+                                            <div>
+                                                <div class="font-semibold text-gray-900 capitalize">${key.replace(/_/g, ' ')}</div>
+                                                <div class="text-gray-600 text-sm">${value}</div>
+                                            </div>
+                                        </div>
                                     `).join('')}
-                                </ul>
+                                </div>
                             </div>
                         ` : ''}
                         
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div>
-                                <span class="text-gray-500 text-sm">Category:</span>
-                                <p class="font-medium">${data.category?.name || 'N/A'}</p>
+                        <div class="grid grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                                <div class="text-sm text-gray-500 mb-2">Category</div>
+                                <div class="font-semibold text-gray-900">${data.category?.name || 'General'}</div>
                             </div>
-                            <div>
-                                <span class="text-gray-500 text-sm">Unit:</span>
-                                <p class="font-medium">${data.unit || 'kg'}</p>
-                            </div>
-                            <div>
-                                <span class="text-gray-500 text-sm">Origin:</span>
-                                <p class="font-medium">${data.origin_country || 'Ethiopia'}</p>
-                            </div>
-                            <div>
-                                <span class="text-gray-500 text-sm">HS Code:</span>
-                                <p class="font-medium">${data.hs_code || 'N/A'}</p>
+                            <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                                <div class="text-sm text-gray-500 mb-2">HS Code</div>
+                                <div class="font-semibold text-gray-900">${data.hs_code || 'N/A'}</div>
                             </div>
                         </div>
                         
-                        <a href="{{ route('rfq.create') }}?product=${productId}" class="block w-full bg-primary text-white font-bold py-4 rounded-2xl text-center hover:bg-primary-dark transition-colors">Request a Quote for This Product →</a>
+                        <div class="flex gap-4">
+                            <a href="{{ route('rfq.create') }}?product=${productId}" class="flex-1 bg-primary text-white font-bold py-4 px-8 rounded-2xl text-center hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-xl">
+                                Request Quote ? Get Pricing
+                            </a>
+                            <button onclick="closeProductModal()" class="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300">
+                                Close
+                            </button>
+                        </div>
                     </div>
                 </div>
             `;

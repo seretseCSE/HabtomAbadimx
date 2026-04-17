@@ -151,6 +151,14 @@ class ContactInquiryResource extends Resource
                     ->limit(25)
                     ->tooltip(fn ($record): string => $record->email),
 
+                Tables\Columns\TextColumn::make('phone')
+                    ->label('Phone')
+                    ->searchable()
+                    ->sortable()
+                    ->placeholder('N/A')
+                    ->limit(20)
+                    ->tooltip(fn ($record): string => $record->phone ?? 'N/A'),
+
                 Tables\Columns\TextColumn::make('company')
                     ->label('Company')
                     ->searchable()

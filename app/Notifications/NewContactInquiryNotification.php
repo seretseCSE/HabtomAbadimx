@@ -6,7 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use App\Models\Contact;
+use App\Models\ContactInquiry;
 
 class NewContactInquiryNotification extends Notification
 {
@@ -17,7 +17,7 @@ class NewContactInquiryNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(Contact $contact)
+    public function __construct(ContactInquiry $contact)
     {
         $this->contact = $contact;
     }
@@ -45,7 +45,7 @@ class NewContactInquiryNotification extends Notification
             ->line('Email: ' . $this->contact->email)
             ->line('Subject: ' . $this->contact->subject)
             ->line('Message: ' . $this->contact->message)
-            ->action('View Inquiry', route('admin.contacts.show', $this->contact))
+            ->action('View Inquiry', route('filament.admin.resources.contact-inquiries.view', $this->contact))
             ->line('Thank you for using our application!');
     }
 
@@ -63,9 +63,9 @@ class NewContactInquiryNotification extends Notification
             'subject' => $this->contact->subject,
             'message' => $this->contact->message,
             'title' => 'New Contact Inquiry',
-            'message' => $this->contact->name . ' sent a new message: ' . $this->contact->subject,
+            'summary' => $this->contact->name . ' sent a new message: ' . $this->contact->subject,
             'type' => 'contact',
-            'url' => route('admin.contacts.show', $this->contact),
+            'url' => route('filament.admin.resources.contact-inquiries.view', $this->contact),
         ];
     }
 }

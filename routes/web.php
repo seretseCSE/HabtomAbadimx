@@ -48,6 +48,9 @@ Route::get('/test-admin-access', function () {
 
 // Public web routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/login', function () {
+    return redirect()->route('home');
+})->name('login');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServicesController::class, 'index'])->name('services');
 Route::get('/services/{service}', [ServicesController::class, 'show'])->name('services.show');

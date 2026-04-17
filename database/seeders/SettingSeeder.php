@@ -12,26 +12,55 @@ class SettingSeeder extends Seeder
      */
     public function run(): void
     {
-        $defaultSettings = [
-            'site_name' => 'Habtom Abadi Import Export',
-            'site_description' => 'Your trusted partner in international trade',
-            'site_url' => 'https://habtomabadimx.com',
-            'contact_email' => 'info@habtomabadimx.com',
-            'contact_phone' => '+251 XXX XXX XXX',
-            'whatsapp_number' => '+251 XXX XXX XXX',
-            'company_name' => 'Habtom Abadi Import Export',
-            'company_address' => '123 Business Street, Addis Ababa, Ethiopia',
-            'company_registration' => 'REG123456',
-            'tax_id' => 'TAX789012',
-            'facebook_url' => null,
-            'twitter_url' => null,
-            'linkedin_url' => null,
-            'instagram_url' => null,
-            'youtube_url' => null,
+        $settings = [
+            [
+                'key' => 'site_name',
+                'value' => 'Habtom Abadi Import Export',
+            ],
+            [
+                'key' => 'site_description',
+                'value' => 'Leading Ethiopian import-export company specializing in agricultural products and machinery since 2000.',
+            ],
+            [
+                'key' => 'contact_email',
+                'value' => 'info@habtomabadimx.com',
+            ],
+            [
+                'key' => 'contact_phone',
+                'value' => '+251 11 234 5678',
+            ],
+            [
+                'key' => 'address',
+                'value' => 'Bole, Addis Ababa, Ethiopia',
+            ],
+            [
+                'key' => 'about_us',
+                'value' => 'Established in 2000, we\'ve been a cornerstone of Ethiopia\'s international trade sector for over two decades, bridging Ethiopia\'s rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.',
+            ],
+            [
+                'key' => 'mission',
+                'value' => 'To be the leading Ethiopian import-export company by providing premium agricultural products, reliable machinery imports, and exceptional trade services that contribute to Ethiopia\'s economic growth and development.',
+            ],
+            [
+                'key' => 'vision',
+                'value' => 'To be the preferred partner for international trade, known for quality, reliability, and innovation in agricultural products and machinery.',
+            ],
+            [
+                'key' => 'facebook_url',
+                'value' => 'https://facebook.com/habtomabadi',
+            ],
+            [
+                'key' => 'twitter_url',
+                'value' => 'https://twitter.com/habtomabadi',
+            ],
+            [
+                'key' => 'linkedin_url',
+                'value' => 'https://linkedin.com/company/habtomabadi',
+            ],
         ];
 
-        foreach ($defaultSettings as $key => $value) {
-            Setting::setValue($key, $value);
+        foreach ($settings as $setting) {
+            Setting::updateOrCreate(['key' => $setting['key']], ['value' => $setting['value']]);
         }
     }
 }

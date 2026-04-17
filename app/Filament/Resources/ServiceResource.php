@@ -181,18 +181,6 @@ class ServiceResource extends Resource
             ])
             ->bulkActions([
                 Actions\DeleteBulkAction::make(),
-                Actions\BulkAction::make('activate')
-                    ->label('Activate Services')
-                    ->icon('heroicon-o-check')
-                    ->action(fn (array $records) => $records->each->update(['is_active' => true]))
-                    ->deselectRecordsAfterCompletion()
-                    ->color('success'),
-                Actions\BulkAction::make('deactivate')
-                    ->label('Deactivate Services')
-                    ->icon('heroicon-o-x-mark')
-                    ->action(fn (array $records) => $records->each->update(['is_active' => false]))
-                    ->deselectRecordsAfterCompletion()
-                    ->color('danger'),
             ])
             ->emptyStateActions([
                 Actions\CreateAction::make(),

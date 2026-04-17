@@ -66,10 +66,29 @@ class BlogPost extends Model implements HasMedia
     /**
      * Get the featured image URL.
      */
+    // public function getFeaturedImageUrlAttribute(): ?string
+    // {
+    //     $media = $this->getFirstMedia('featured_image');
+    //     if ($media) {
+    //         // Check if media URL is already full URL
+    //         $url = $media->getUrl();
+    //         if (str_starts_with($url, 'http')) {
+    //             return $url;
+    //         }
+    //         return asset('storage/' . $media->directory . '/' . $media->file_name);
+    //     }
+    //     return $this->cover_image ? asset('storage/' . $this->cover_image) : null;
+    // }
+
     public function getFeaturedImageUrlAttribute(): ?string
     {
-        $media = $this->getFirstMedia('featured_image');
-        return $media ? $media->getUrl() : ($this->cover_image ? asset('storage/' . $this->cover_image) : null);
+        $mediaUrl = $this->getFirstMediaUrl('featured_image');
+        
+        if ($mediaUrl) {
+            return $mediaUrl;
+        }
+        
+        return $this->cover_image ?? null;
     }
 
     /**
@@ -79,6 +98,7 @@ class BlogPost extends Model implements HasMedia
     {
         $this->addMediaCollection('featured_image')
             ->singleFile()
+            ->useDisk('public')
             ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp']);
     }
 

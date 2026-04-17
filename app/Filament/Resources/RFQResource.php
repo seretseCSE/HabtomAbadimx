@@ -45,59 +45,56 @@ class RFQResource extends Resource
             ->schema([
                 Section::make('RFQ Information')
                     ->schema([
-                        Forms\Components\TextInput::make('rfq_number')
-                            ->label('RFQ Number')
-                            ->disabled()
-                            ->dehydrated(false)
+                        Forms\Components\TextInput::make('name')
+                            ->label('Contact Name')
+                            ->required()
                             ->columnSpan(2),
 
-                        Forms\Components\TextInput::make('company_name')
+                        Forms\Components\TextInput::make('company')
                             ->label('Company Name')
-                            ->disabled()
-                            ->columnSpan(2),
-
-                        Forms\Components\TextInput::make('contact_person')
-                            ->label('Contact Person')
-                            ->disabled()
                             ->columnSpan(2),
 
                         Forms\Components\TextInput::make('email')
                             ->label('Email')
                             ->email()
-                            ->disabled()
+                            ->required()
                             ->columnSpan(2),
 
                         Forms\Components\TextInput::make('phone')
                             ->label('Phone')
                             ->tel()
-                            ->disabled()
+                            ->columnSpan(2),
+
+                        Forms\Components\TextInput::make('country')
+                            ->label('Country')
                             ->columnSpan(2),
                     ])
                     ->columns(4),
 
                 Section::make('Product Details')
                     ->schema([
+                        Forms\Components\TextInput::make('product_interest')
+                            ->label('Product of Interest')
+                            ->required()
+                            ->columnSpan(2),
+
                         Forms\Components\Textarea::make('product_description')
                             ->label('Product Description')
                             ->rows(3)
-                            ->disabled()
                             ->columnSpan(2),
 
                         Forms\Components\TextInput::make('quantity')
                             ->label('Quantity')
-                            ->numeric()
-                            ->disabled()
-                            ->columnSpan(2),
+                            ->columnSpan(1),
 
-                        Forms\Components\Textarea::make('specifications')
-                            ->label('Specifications')
-                            ->rows(4)
-                            ->disabled()
-                            ->columnSpan(4),
+                        Forms\Components\TextInput::make('unit')
+                            ->label('Unit')
+                            ->placeholder('e.g., kg, tons, units')
+                            ->columnSpan(1),
                     ])
                     ->columns(4),
 
-                Section::make('Status & Pricing')
+                Section::make('Status & Notes')
                     ->schema([
                         Forms\Components\Select::make('status')
                             ->label('Status')
@@ -110,62 +107,41 @@ class RFQResource extends Resource
                             ->required()
                             ->columnSpan(2),
 
-                        Forms\Components\TextInput::make('quoted_price')
-                            ->label('Quoted Price')
-                            ->numeric()
-                            ->step(0.01)
-                            ->prefix('$')
+                        Forms\Components\Textarea::make('notes')
+                            ->label('Internal Notes')
+                            ->rows(3)
                             ->columnSpan(2),
 
-                        Forms\Components\TextInput::make('quoted_by')
-                            ->label('Quoted By')
-                            ->disabled()
-                            ->columnSpan(2),
-
-                        Forms\Components\DateTimePicker::make('quoted_at')
-                            ->label('Quoted At')
-                            ->disabled()
-                            ->columnSpan(2),
-
-                        Forms\Components\DateTimePicker::make('closed_at')
-                            ->label('Closed At')
-                            ->disabled()
+                        Forms\Components\Toggle::make('is_archived')
+                            ->label('Archived')
                             ->columnSpan(2),
                     ])
                     ->columns(4),
 
-                Section::make('Internal Notes')
-                    ->schema([
-                        Forms\Components\Textarea::make('internal_notes')
-                            ->label('Internal Notes')
-                            ->rows(6)
-                            ->helperText('Internal notes for team members only')
-                            ->columnSpanFull(),
-                    ])
-                    ->collapsible(),
-            ]);
+                ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('rfq_number')
-                    ->label('RFQ #')
+                Tables\Columns\TextColumn::make('name')
+                    ->label('Contact Name')
                     ->searchable()
                     ->sortable()
                     ->weight('bold'),
 
-                Tables\Columns\TextColumn::make('company_name')
+                Tables\Columns\TextColumn::make('company')
                     ->label('Company')
                     ->searchable()
                     ->sortable()
                     ->limit(30),
 
-                Tables\Columns\TextColumn::make('contact_person')
-                    ->label('Contact')
+                Tables\Columns\TextColumn::make('product_interest')
+                    ->label('Product Interest')
                     ->searchable()
-                    ->sortable(),
+                    ->sortable()
+                    ->limit(30),
 
                 Tables\Columns\TextColumn::make('email')
                     ->label('Email')
@@ -173,6 +149,14 @@ class RFQResource extends Resource
                     ->copyable()
                     ->copyMessage('Email address copied')
                     ->copyMessageDuration(1500),
+
+                Tables\Columns\TextColumn::make('phone')
+                    ->label('Phone')
+                    ->searchable()
+                    ->sortable()
+                    ->placeholder('N/A')
+                    ->limit(20)
+                    ->tooltip(fn ($record): string => $record->phone ?? 'N/A'),
 
                 Tables\Columns\TextColumn::make('status')
                     ->label('Status')
@@ -186,12 +170,11 @@ class RFQResource extends Resource
                     })
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('quoted_price')
-                    ->label('Quoted Price')
-                    ->money('USD')
+                Tables\Columns\TextColumn::make('created_at')
+                    ->label('Created')
+                    ->dateTime()
                     ->sortable()
-                    ->alignEnd()
-                    ->formatStateUsing(fn ($state) => $state ? '$' . number_format($state, 2) : 'N/A'),
+                    ->alignEnd(),
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('status')
@@ -209,7 +192,7 @@ class RFQResource extends Resource
                     ->label('Send Email')
                     ->icon('heroicon-o-envelope')
                     ->color('primary')
-                    ->url(fn ($record): string => 'mailto:' . $record->email . '?subject=Re: RFQ ' . $record->rfq_number)
+                    ->url(fn ($record): string => 'mailto:' . $record->email . '?subject=Re: Your RFQ Request')
                     ->openUrlInNewTab(),
                 Actions\EditAction::make(),
                 Actions\DeleteAction::make(),

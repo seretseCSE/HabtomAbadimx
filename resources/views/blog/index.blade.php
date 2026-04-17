@@ -111,7 +111,7 @@
 </section>
 
 <!-- NEWSLETTER -->
-<section class="py-20 hero-bg">
+<!-- <section class="py-20 hero-bg">
     <div class="max-w-2xl mx-auto px-6 text-center">
         <h2 class="font-display text-3xl font-black text-white mb-4">Stay Updated on Trade & Markets</h2>
         <p class="text-green-200 mb-8">Get commodity price updates, export guides, and trade news delivered to your inbox.</p>
@@ -121,5 +121,5 @@
             <div x-show="subDone" class="w-full text-center text-white font-semibold py-3">✅ You're subscribed! Thank you.</div>
         </div>
     </div>
-</section>
+</section> -->
 @endsection

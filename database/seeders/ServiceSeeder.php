@@ -12,77 +12,91 @@ class ServiceSeeder extends Seeder
      */
     public function run(): void
     {
-        // First, let's see what columns we actually have
-        try {
-            $services = Service::all();
-        } catch (\Exception $e) {
-            // If there's an error, we'll create minimal service data
-            $this->createMinimalServices();
-            return;
-        }
-
-        if ($services->count() === 0) {
-            $this->createMinimalServices();
-        }
-    }
-
-    private function createMinimalServices(): void
-    {
-        // Create services with only the columns that exist
         $services = [
             [
-                'title' => 'Import Services',
-                'slug' => 'import-services',
-                'description' => 'Comprehensive import solutions for businesses looking to source quality products from global markets.',
-                'full_description' => 'Our import services handle everything from supplier verification to customs clearance.',
-                'icon' => 'truck',
+                'name' => 'Export Documentation & Compliance',
+                'slug' => 'export-documentation-compliance',
+                'description' => 'Complete export documentation services including certificates of origin, phytosanitary certificates, customs clearance, and trade compliance documentation.',
+                'full_description' => 'Our experienced team handles all aspects of export documentation, ensuring your shipments meet international standards and regulatory requirements. We provide comprehensive documentation packages that include all necessary certificates, quality inspections, and compliance documentation required for smooth customs clearance.',
+                'features' => json_encode([
+                    'Certificates of Origin',
+                    'Phytosanitary Certificates',
+                    'Customs Documentation',
+                    'Quality Inspections',
+                    'Trade Compliance',
+                    'Documentation Management',
+                ]),
+                'benefits' => json_encode([
+                    'Regulatory Compliance',
+                    'Faster Customs Clearance',
+                    'Risk Mitigation',
+                    'Professional Documentation',
+                ]),
+                'is_active' => true,
                 'sort_order' => 1,
-                'is_active' => true,
             ],
             [
-                'title' => 'Export Services',
-                'slug' => 'export-services',
-                'description' => 'Expert export facilitation for Ethiopian products to reach global markets with ease.',
-                'full_description' => 'We help Ethiopian businesses export their products to international markets.',
-                'icon' => 'globe-alt',
+                'name' => 'International Shipping & Logistics',
+                'slug' => 'international-shipping-logistics',
+                'description' => 'End-to-end shipping solutions from Ethiopia to global markets, including freight forwarding, customs brokerage, and logistics coordination.',
+                'full_description' => 'We provide comprehensive international shipping services that connect Ethiopian producers with global markets. Our logistics network spans major shipping routes, ensuring timely delivery of your cargo to any destination worldwide.',
+                'features' => json_encode([
+                    'Freight Forwarding',
+                    'Customs Brokerage',
+                    'Cargo Insurance',
+                    'Port Operations',
+                    'Supply Chain Management',
+                ]),
+                'benefits' => json_encode([
+                    'Global Network',
+                    'Cost Efficiency',
+                    'Real-time Tracking',
+                    'Risk Management',
+                ]),
+                'is_active' => true,
                 'sort_order' => 2,
-                'is_active' => true,
             ],
             [
-                'title' => 'Logistics Solutions',
-                'slug' => 'logistics-solutions',
-                'description' => 'End-to-end logistics management for seamless supply chain operations.',
-                'full_description' => 'Our logistics solutions cover warehousing, transportation, inventory management, and last-mile delivery.',
-                'icon' => 'truck',
+                'name' => 'Quality Assurance & Inspection',
+                'slug' => 'quality-assurance-inspection',
+                'description' => 'Professional quality inspection services for agricultural products and commodities before export.',
+                'full_description' => 'Our quality assurance team conducts thorough inspections of agricultural products according to international standards. We provide detailed inspection reports, quality certifications, and pre-shipment verification services.',
+                'features' => json_encode([
+                    'Pre-shipment Inspection',
+                    'Quality Certification',
+                    'Laboratory Testing',
+                    'Compliance Verification',
+                    'Reporting Services',
+                ]),
+                'benefits' => json_encode([
+                    'International Standards',
+                    'Quality Assurance',
+                    'Market Access',
+                    'Risk Reduction',
+                ]),
+                'is_active' => true,
                 'sort_order' => 3,
-                'is_active' => true,
             ],
             [
-                'title' => 'Trade Consulting',
-                'slug' => 'trade-consulting',
-                'description' => 'Expert advice on international trade regulations and market opportunities.',
-                'full_description' => 'Our trade consulting services provide expert guidance on international trade regulations.',
-                'icon' => 'briefcase',
+                'name' => 'Market Research & Analysis',
+                'slug' => 'market-research-analysis',
+                'description' => 'In-depth market analysis and research services for Ethiopian agricultural products and international trade opportunities.',
+                'full_description' => 'Our market research team provides comprehensive analysis of global market trends, price forecasts, competitor analysis, and market entry strategies for Ethiopian agricultural products.',
+                'features' => json_encode([
+                    'Market Intelligence',
+                    'Price Analysis',
+                    'Competitor Research',
+                    'Market Entry Strategy',
+                    'Trade Data Analytics',
+                ]),
+                'benefits' => json_encode([
+                    'Informed Decisions',
+                    'Market Opportunities',
+                    'Competitive Advantage',
+                    'Risk Assessment',
+                ]),
+                'is_active' => true,
                 'sort_order' => 4,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'Quality Assurance',
-                'slug' => 'quality-assurance',
-                'description' => 'Comprehensive quality control and certification services for international trade.',
-                'full_description' => 'Our quality assurance services ensure your products meet international standards.',
-                'icon' => 'shield-check',
-                'sort_order' => 5,
-                'is_active' => true,
-            ],
-            [
-                'title' => 'Documentation Services',
-                'slug' => 'documentation-services',
-                'description' => 'Complete documentation support for international trade requirements.',
-                'full_description' => 'We handle all documentation requirements for international trade.',
-                'icon' => 'document-text',
-                'sort_order' => 6,
-                'is_active' => true,
             ],
         ];
 

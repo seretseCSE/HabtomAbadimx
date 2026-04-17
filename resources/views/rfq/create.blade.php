@@ -33,16 +33,16 @@
                 </div>
             @endif
             
-            <form action="{{ route('rfq.store') }}" method="POST" class="space-y-6">
+            <form action="{{ route('rfq.store') }}" method="POST" class="space-y-6" onsubmit="console.log('Form submitted with data:', new FormData(this));">
                 @csrf
                 <div class="grid md:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name *</label>
-                        <input type="text" name="company_name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('company_name') }}">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Company Name</label>
+                        <input type="text" name="company" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('company') }}">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Contact Person *</label>
-                        <input type="text" name="contact_person" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('contact_person') }}">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                        <input type="text" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('name') }}">
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6">
@@ -51,34 +51,31 @@
                         <input type="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('email') }}">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
-                        <input type="tel" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('phone') }}">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                        <input type="tel" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('phone') }}">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
-                    <select name="service_type" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        <option value="">Select Service</option>
-                        @foreach($services as $service)
-                            <option value="{{ $service->id }}" {{ old('service_type') == $service->id ? 'selected' : '' }}>{{ $service->name }}</option>
-                        @endforeach
-                    </select>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                    <input type="text" name="country" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('country') }}">
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Product/Commodity *</label>
-                    <input type="text" name="product" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('product') }}">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Product of Interest *</label>
+                    <input type="text" name="product_interest" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('product_interest') }}">
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Quantity</label>
+                        <input type="text" name="quantity" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('quantity') }}">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Unit</label>
+                        <input type="text" name="unit" placeholder="e.g., kg, tons, units" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('unit') }}">
+                    </div>
                 </div>
                 <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Quantity *</label>
-                    <input type="text" name="quantity" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('quantity') }}">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Target Market/Destination</label>
-                    <input type="text" name="destination" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" value="{{ old('destination') }}">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Additional Requirements</label>
-                    <textarea name="requirements" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">{{ old('requirements') }}</textarea>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Product Description</label>
+                    <textarea name="product_description" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">{{ old('product_description') }}</textarea>
                 </div>
                 <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-semibold transition-all duration-300">
                     Submit RFQ Request

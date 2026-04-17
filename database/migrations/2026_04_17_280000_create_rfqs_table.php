@@ -13,24 +13,26 @@ return new class extends Migration
     {
         Schema::create('rfqs', function (Blueprint $table) {
             $table->id();
-            $table->string('rfq_number')->unique();
-            $table->string('company_name');
-            $table->string('contact_person');
+            $table->string('name');
             $table->string('email');
             $table->string('phone')->nullable();
-            $table->text('product');
-            $table->integer('quantity');
-            $table->text('requirements')->nullable();
-            $table->string('service_type')->nullable();
-            $table->string('destination')->nullable();
+            $table->string('company')->nullable();
+            $table->string('country')->nullable();
+            $table->string('product_interest');
+            $table->text('product_description')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('unit')->nullable();
             $table->enum('status', ['New', 'In Review', 'Quoted', 'Closed'])->default('New');
-            $table->text('internal_notes')->nullable();
-            $table->decimal('quoted_price', 10, 2)->nullable();
-            $table->string('quoted_by')->nullable();
-            $table->timestamp('quoted_at')->nullable();
-            $table->timestamp('closed_at')->nullable();
+            $table->text('notes')->nullable();
+            $table->boolean('is_archived')->default(false);
             $table->timestamps();
+            
             $table->softDeletes();
+            
+            $table->index('status');
+            $table->index('email');
+            $table->index('created_at');
+            $table->index('deleted_at');
         });
     }
 

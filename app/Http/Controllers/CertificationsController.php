@@ -14,7 +14,8 @@ class CertificationsController extends Controller
         $settings = Setting::pluck('value', 'key')->toArray();
         
         // Get all active certifications
-        $certifications = Certification::where('is_active', true)
+        $certifications = Certification::with('media')
+            ->where('is_active', true)
             ->orderBy('sort_order', 'asc')
             ->get();
         

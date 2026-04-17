@@ -19,17 +19,14 @@ return new class extends Migration
             $table->string('company')->nullable();
             $table->string('subject');
             $table->text('message');
-            $table->enum('status', ['new', 'in_progress', 'responded', 'closed', 'spam'])->default('new');
-            $table->text('internal_notes')->nullable();
-            $table->boolean('is_read')->default(false);
-            $table->boolean('is_starred')->default(false);
-            $table->timestamp('responded_at')->nullable();
-            $table->timestamp('closed_at')->nullable();
+            $table->enum('status', ['New', 'In Review', 'Quoted', 'Closed'])->default('New');
+            $table->text('notes')->nullable();
+            $table->boolean('is_archived')->default(false);
             $table->timestamps();
             
             $table->index('status');
-            $table->index('is_read');
-            $table->index('is_starred');
+            $table->index('email');
+            $table->index('created_at');
         });
     }
 

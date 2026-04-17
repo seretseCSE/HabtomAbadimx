@@ -13,7 +13,8 @@ class ServicesController extends Controller
         $settings = Setting::pluck('value', 'key')->toArray();
 
         // Get all active services
-        $services = Service::where('is_active', true)
+        $services = Service::with('media')
+            ->where('is_active', true)
             ->orderBy('sort_order', 'asc')
             ->get();
 

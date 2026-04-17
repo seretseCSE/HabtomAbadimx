@@ -31,7 +31,11 @@
             <div class="bg-gray-50 rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 group">
                 <!-- Certification Logo -->
                 <div class="flex justify-center mb-6">
-                    @if($cert->logo)
+                    @if($cert->logo_url)
+                        <img src="{{ $cert->logo_url }}" 
+                             alt="{{ $cert->name }}" 
+                             class="w-24 h-24 object-contain group-hover:scale-105 transition-transform duration-300">
+                    @elseif($cert->logo)
                         <img src="{{ asset('storage/' . $cert->logo) }}" 
                              alt="{{ $cert->name }}" 
                              class="w-24 h-24 object-contain group-hover:scale-105 transition-transform duration-300">

@@ -119,6 +119,7 @@ class ProductResource extends Resource
                     ->getStateUsing(fn ($record) => $record->getFirstMediaUrl('images'))
                     ->size(60)
                     ->circular()
+                    // ->public()
                     ->defaultImageUrl(url('/images/placeholder-product.jpg')),
 
                 Tables\Columns\TextColumn::make('name')
@@ -151,12 +152,7 @@ class ProductResource extends Resource
                     })
                     ->sortable(),
             ])
-            ->filters([
-                Tables\Filters\SelectFilter::make('category_id')
-                    ->relationship('category', 'name')
-                    ->searchable()
-                    ->preload()
-                    ->label('Category'),
+            ->filters([ 
 
                 Tables\Filters\SelectFilter::make('status')
                     ->options([
@@ -180,19 +176,7 @@ class ProductResource extends Resource
                 Actions\DeleteAction::make(),
             ])
             ->bulkActions([
-                Actions\DeleteBulkAction::make(),
-                Actions\BulkAction::make('mark_featured')
-                    ->label('Mark as Featured')
-                    ->icon('heroicon-o-star')
-                    ->action(fn (array $records) => $records->each->update(['featured' => true]))
-                    ->deselectRecordsAfterCompletion()
-                    ->color('success'),
-                Actions\BulkAction::make('unmark_featured')
-                    ->label('Remove Featured')
-                    ->icon('heroicon-o-star')
-                    ->action(fn (array $records) => $records->each->update(['featured' => false]))
-                    ->deselectRecordsAfterCompletion()
-                    ->color('warning'),
+                Actions\DeleteBulkAction::make(), 
             ])
             ->emptyStateActions([
                 Actions\CreateAction::make(),

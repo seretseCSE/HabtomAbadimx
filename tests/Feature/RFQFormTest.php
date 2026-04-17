@@ -34,17 +34,17 @@ class RFQFormTest extends TestCase
     public function it_blocks_submission_with_filled_honeypot_fields()
     {
         $data = [
-            'company_name' => 'Test Company',
-            'contact_person' => 'John Doe',
+            'company' => 'Test Company',
+            'name' => 'John Doe',
             'email' => 'john@example.com',
             'phone' => '+1234567890',
-            'service_type' => 1,
-            'product' => 'Coffee',
+            'country' => 'Ethiopia',
+            'product_interest' => 'Coffee',
+            'product_description' => 'Quality beans only',
             'quantity' => '100',
-            'destination' => 'Addis Ababa',
-            'requirements' => 'Quality beans only',
+            'unit' => 'kg',
             'website' => 'http://spam.com', // Honeypot field
-            'email_confirmation' => 'spam@spam.com', // Honeypot field
+            'email_confirm' => 'spam@spam.com', // Honeypot field
         ];
 
         $response = $this->post('/rfq', $data);
@@ -57,15 +57,15 @@ class RFQFormTest extends TestCase
     public function it_blocks_submission_with_filled_honeypot_phone2_field()
     {
         $data = [
-            'company_name' => 'Test Company',
-            'contact_person' => 'John Doe',
+            'company' => 'Test Company',
+            'name' => 'John Doe',
             'email' => 'john@example.com',
             'phone' => '+1234567890',
-            'service_type' => 1,
-            'product' => 'Coffee',
+            'country' => 'Ethiopia',
+            'product_interest' => 'Coffee',
+            'product_description' => 'Quality beans only',
             'quantity' => '100',
-            'destination' => 'Addis Ababa',
-            'requirements' => 'Quality beans only',
+            'unit' => 'kg',
             'website' => 'http://spam.com', // Honeypot field
             'email_confirm' => 'spam@spam.com', // Honeypot field
             'phone2' => '+1234567890', // Honeypot field
@@ -118,15 +118,15 @@ class RFQFormTest extends TestCase
     public function it_validates_email_format()
     {
         $data = [
-            'company_name' => 'Test Company',
-            'contact_person' => 'John Doe',
+            'company' => 'Test Company',
+            'name' => 'John Doe',
             'email' => 'invalid-email', // Invalid email
             'phone' => '+1234567890',
-            'service_type' => 1,
-            'product' => 'Coffee',
+            'country' => 'Ethiopia',
+            'product_interest' => 'Coffee',
+            'product_description' => 'Quality beans only',
             'quantity' => '100',
-            'destination' => 'Addis Ababa',
-            'requirements' => 'Quality beans only',
+            'unit' => 'kg',
         ];
 
         $response = $this->post('/rfq', $data);
@@ -139,15 +139,15 @@ class RFQFormTest extends TestCase
     public function it_validates_phone_format()
     {
         $data = [
-            'company_name' => 'Test Company',
-            'contact_person' => 'John Doe',
+            'company' => 'Test Company',
+            'name' => 'John Doe',
             'email' => 'john@example.com',
             'phone' => '123', // Invalid phone format
-            'service_type' => 1,
-            'product' => 'Coffee',
+            'country' => 'Ethiopia',
+            'product_interest' => 'Coffee',
+            'product_description' => 'Quality beans only',
             'quantity' => '100',
-            'destination' => 'Addis Ababa',
-            'requirements' => 'Quality beans only',
+            'unit' => 'kg',
         ];
 
         $response = $this->post('/rfq', $data);

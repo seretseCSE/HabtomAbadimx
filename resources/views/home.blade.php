@@ -3,77 +3,98 @@
 @section('title', 'Home - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
 @section('content')
-<body class="bg-white text-gray-900 grain" x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50">
+<main id="main-content" class="bg-white text-gray-900">
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('tractor.avif') }}" class="w-full h-full object-cover" alt="Tractor plowing field"/>
+      <img src="{{ asset('tractor.avif') }}"
+           class="w-full h-full object-cover lazy-load"
+           alt="Ethiopian agricultural landscape showcasing our export products"
+           loading="eager" />
     </div>
-    <!-- Decorative circles -->
-    <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold opacity-10 rounded-full -translate-x-1/2 translate-y-1/2"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 pt-28 pb-20 grid md:grid-cols-2 gap-12 items-center">
+    <!-- Enhanced Decorative elements -->
+    <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold opacity-10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1s;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-24 grid md:grid-cols-2 gap-16 items-center">
       <div class="animate-float">
-        <!-- <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
-          <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-          <span class="text-green-200 text-xs font-medium tracking-wider uppercase">Since 2000</span>
-        </div> -->
-        <h1 class="font-display text-5xl md:text-6xl xl:text-7xl font-black text-white leading-tight mb-3">
-          <!-- <img src="{{ asset('Asset 1.png') }}" alt="Habtom Abadi Logo" class="inline w-10 h-10 mr-4 rounded-xl shadow-lg"> -->
-          Exporting Ethiopia's<br/>Finest to<br/><span class="text-green-300">Global Markets</span>
+        <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm premium-card">
+          <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
+          <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2000</span>
+        </div>
+
+        <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-8">
+          Ethiopia's Premier<br/>International Trade<br/><span class="text-green-300">Excellence</span>
         </h1>
-        <p class="text-green-100 text-lg leading-relaxed mb-4 max-w-lg">
-          For over two decades, we've been bridging Ethiopia's rich agricultural resources with global markets
+
+        <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
+          For over two decades, Habtom Abadi Import and Export has been a cornerstone of Ethiopia's international trade sector, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.
         </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="{{ route('products') }}" class="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-green-50 transition-colors shadow-xl">
-            View Products
+
+        <div class="flex flex-col sm:flex-row gap-6">
+          <a href="{{ route('products') }}"
+             class="btn-primary text-white font-bold px-10 py-4 rounded-full focus-visible">
+            <span class="relative z-10">Explore Our Products</span>
           </a>
-          <a href="{{ route('contact') }}" class="border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors">
-            Request a Quote
+          <a href="{{ route('contact') }}"
+             class="border-2 border-white/40 text-white font-semibold px-10 py-4 rounded-full hover:bg-white/20 transition-all duration-300 focus-visible backdrop-blur-sm hover:backdrop-blur-lg">
+            Contact Us Today
           </a>
         </div>
       </div>
 
-      <!-- Hero image card -->
-      <div class="hidden md:block relative mt-12">
-        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white/10">
-          <img src="{{ asset('tractor.avif') }}" class="w-full h-96 object-cover" alt="Tractor Plowing Field"/>
+      <!-- Enhanced Hero image card -->
+      <div class="hidden md:block relative mt-16 animate-slide-in-right">
+        <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card">
+          <img src="{{ asset('tractor.avif') }}"
+               class="w-full h-96 object-cover"
+               alt="Modern agricultural tractor in Ethiopian farmland"
+               loading="eager" />
         </div>
-        <div class="absolute -bottom-0 -left-6 bg-white rounded-2xl p-4 shadow-2xl">
-          <div class="text-xs text-gray-500 mb-1">16+ Years</div>
-          <div class="font-bold text-gray-900">International Trade</div>
-          <div class="text-primary text-xs font-medium mt-1">Excellence</div>
+
+        <!-- Enhanced Floating stats cards -->
+        <div class="absolute -bottom-8 -left-8 premium-card p-6 animate-float" style="animation-delay: 0.2s;">
+          <div class="text-xs text-gray-500 mb-2 font-semibold">24+ Years</div>
+          <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
+          <div class="text-primary text-sm font-medium mt-1">Since 2000</div>
         </div>
-        <div class="absolute -top-4 -right-4 bg-primary rounded-2xl p-4 shadow-2xl text-white">
-          <div class="text-2xl font-black">15+</div>
-          <div class="text-green-200 text-xs">Countries Served</div>
+
+        <div class="absolute -top-6 -right-6 bg-primary rounded-3xl p-6 shadow-2xl text-white animate-float" style="animation-delay: 0.4s;">
+          <div class="text-3xl font-black">15+</div>
+          <div class="text-green-200 text-sm font-medium">Countries Served</div>
         </div>
       </div>
     </div>
 
-    <!-- Stats bar -->
+    <!-- Enhanced Stats Bar -->
     <div class="absolute bottom-0 left-0 right-0">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden">
-          <div class="stat-card p-6 text-center text-white">
-            <div class="text-3xl font-black mb-2">16+</div>
-            <div class="text-green-300 text-sm mt-1">Years Experience</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
+          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">24+</div>
+            <div class="text-green-300 text-sm mt-2">Years Experience</div>
+            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
-          <div class="stat-card p-6 text-center text-white">
-            <div class="text-3xl font-black mb-2">20+</div>
-            <div class="text-green-300 text-sm mt-1">Fuel Trucks</div>
+
+          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">20+</div>
+            <div class="text-green-300 text-sm mt-2">Fuel Trucks</div>
+            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
-          <div class="stat-card p-6 text-center text-white">
-            <div class="text-3xl font-black mb-2">15+</div>
-            <div class="text-green-300 text-sm mt-1">Countries Served</div>
+
+          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">15+</div>
+            <div class="text-green-300 text-sm mt-2">Countries Served</div>
+            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
-          <div class="stat-card p-6 text-center text-white">
-            <div class="text-3xl font-black mb-2">2008</div>
-            <div class="text-green-300 text-sm mt-1">Founded</div>
+
+          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">2008</div>
+            <div class="text-green-300 text-sm mt-2">Founded</div>
+            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
         </div>
       </div>
@@ -81,53 +102,85 @@
   </section>
 
   <!-- SERVICES -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <div class="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-4">
-          <span class="w-2 h-2 bg-primary rounded-full"></span>
-          <span class="text-primary text-xs font-medium tracking-wider uppercase">Our Services</span>
+  <section class="py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-20 scroll-reveal">
+        <div class="inline-flex items-center gap-3 bg-primary/10 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
+          <span class="w-3 h-3 bg-primary rounded-full animate-pulse-glow" aria-hidden="true"></span>
+          <span class="text-primary text-sm font-semibold tracking-wider uppercase">Our Services</span>
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">What We Do</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Exporting Ethiopia's finest agricultural products while importing cutting-edge machinery and technology</p>
+        <h2 class="font-display text-display-lg font-black text-gray-900 mb-8">Export & Import Excellence</h2>
+        <p class="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">We specialize in exporting Ethiopia's finest agricultural products while importing cutting-edge machinery and technology to drive national development</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-        <div class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 scroll-reveal">
-          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="group premium-card p-10 scroll-reveal">
+          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
             </svg>
           </div>
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Export Division</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">Premium Ethiopian agricultural products for global markets</p>
-          <ul class="text-gray-600 space-y-2 text-sm">
-            <li> Premium Arabica coffee beans</li>
-            <li> Sesame, Niger seeds, soybeans, peanuts, linseed</li>
-            <li> Chickpeas, red kidney beans, white pea beans, faba beans</li>
-            <li> Spices and other high-value commodities</li>
+          <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Export Division</h3>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Bringing Ethiopia's finest organic products to global markets with uncompromising quality standards</p>
+          <ul class="text-gray-600 space-y-4 mb-8">
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Premium Arabica coffee beans with world-renowned flavors and aromatic profiles</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">High-quality sesame seeds, Niger seeds, soybeans, peanuts, linseed</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Chickpeas, red kidney beans, white pea beans, faba beans</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Premium spices and high-value agricultural commodities</span>
+            </li>
           </ul>
-          <a href="{{ route('products') }}" class="inline-flex items-center text-primary font-semibold mt-6 group-hover:text-primary-dark transition-colors">
-            View Products <span class="ml-2 group-hover:translate-x-1 transition-transform">-></span>
+          <a href="{{ route('products') }}"
+             class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
+            <span class="relative z-10">Explore Products</span>
+            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
-        
-        <div class="group bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all duration-300 scroll-reveal">
-          <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+        <div class="group premium-card p-10 scroll-reveal">
+          <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Import Division</h3>
-          <p class="text-gray-600 leading-relaxed mb-4">Essential technology and machinery for national development</p>
-          <ul class="text-gray-600 space-y-2 text-sm">
-            <li> Electric, hybrid, and gas-powered vehicles</li>
-            <li> Industrial construction machinery</li>
-            <li> Modern tractors, harvesters and farm inputs</li>
-            <li> Custom sourcing for commercial needs</li>
+          <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Import Division</h3>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Engineering national growth through essential technology and cutting-edge machinery</p>
+          <ul class="text-gray-600 space-y-4 mb-8">
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Electric, hybrid, and gas-powered vehicles including buses</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Industrial-grade construction machinery and specialized inputs</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Modern tractors, harvesters, and agricultural equipment</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span class="text-body-sm">Versatile sourcing for industrial and commercial applications</span>
+            </li>
           </ul>
-          <a href="{{ route('contact') }}" class="inline-flex items-center text-primary font-semibold mt-6 group-hover:text-primary-dark transition-colors">
-            Request Quote <span class="ml-2 group-hover:translate-x-1 transition-transform">-></span>
+          <a href="{{ route('contact') }}"
+             class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
+            <span class="relative z-10">Request Import Services</span>
+            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
         </div>
       </div>
@@ -171,81 +224,114 @@
   </section>
 
   <!-- TRANSPORTATION -->
-  <section class="py-24 bg-primary">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <div class="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 mb-4">
-          <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-          <span class="text-white text-xs font-medium tracking-wider uppercase">National Transport</span>
+  <section class="py-32 bg-primary relative overflow-hidden">
+    <!-- Enhanced background elements -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1.5s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-8 relative">
+      <div class="text-center mb-20 scroll-reveal">
+        <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
+          <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
+          <span class="text-white text-sm font-semibold tracking-wider uppercase">National Transport</span>
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Reliable Transportation Services</h2>
-        <p class="text-xl text-green-100 max-w-3xl mx-auto">Delivering cargo and liquid transport services nationwide with our expanding fleet</p>
+        <h2 class="font-display text-display-lg font-black text-white mb-8">Reliable Transportation Services</h2>
+        <p class="text-body-lg text-green-100 max-w-4xl mx-auto leading-relaxed">Delivering all types of cargo and liquid transport services nationwide with our expanding fleet and experienced logistics team</p>
       </div>
-      
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="text-white scroll-reveal">
-          <h3 class="font-display text-3xl font-black mb-6">Our Fleet Growth</h3>
-          <div class="space-y-6">
-            <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold">2021</span>
+
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div class="text-white scroll-reveal animate-slide-in-left space-y-8">
+          <h3 class="font-display text-3xl font-black mb-8">Our Fleet Growth</h3>
+          
+          <div class="space-y-8">
+            <div class="premium-card p-8 backdrop-blur-md">
+              <div class="flex items-center gap-6 mb-4">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
+                  <span class="text-white font-bold text-lg">2021</span>
                 </div>
-                <h4 class="font-bold text-xl">Transportation Launch</h4>
+                <div>
+                  <h4 class="font-bold text-2xl mb-2">Transportation Launch</h4>
+                  <p class="text-gray-600 text-body-sm">Established our national transportation division</p>
+                </div>
               </div>
-              <p class="text-green-100">Started with 2 cargo trucks, beginning our national transport services</p>
+              <p class="text-gray-700 text-body-md leading-relaxed">Launched national transportation with two cargo trucks, marking our entry into logistics services</p>
             </div>
-            
-            <div class="bg-white/10 rounded-2xl p-6 backdrop-blur-sm">
-              <div class="flex items-center gap-4 mb-3">
-                <div class="w-12 h-12 bg-green-400 rounded-full flex items-center justify-center">
-                  <span class="text-white font-bold">2023</span>
+
+            <div class="premium-card p-8 backdrop-blur-md">
+              <div class="flex items-center gap-6 mb-4">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
+                  <span class="text-white font-bold text-lg">2023</span>
                 </div>
-                <h4 class="font-bold text-xl">Major Expansion</h4>
+                <div>
+                  <h4 class="font-bold text-2xl mb-2">Major Expansion</h4>
+                  <p class="text-gray-600 text-body-sm">Significant fleet growth</p>
+                </div>
               </div>
-              <p class="text-green-100">Expanded to 20 fuel trucks, significantly increasing our transport capacity</p>
+              <p class="text-gray-700 text-body-md leading-relaxed">Expanded transportation capacity to 20 fuel trucks, dramatically increasing our service capabilities</p>
             </div>
           </div>
-          
-          <div class="mt-8 flex flex-wrap gap-4">
-            <div class="bg-white/20 rounded-2xl px-6 py-3 text-center">
-              <div class="text-3xl font-black text-white">20+</div>
-              <div class="text-green-200 text-sm">Fuel Trucks</div>
+
+          <div class="grid grid-cols-3 gap-6 mt-12">
+            <div class="premium-card p-6 text-center backdrop-blur-md">
+              <div class="text-4xl font-black text-white mb-3">20+</div>
+              <div class="text-green-200 text-sm font-medium">Fuel Trucks</div>
             </div>
-            <div class="bg-white/20 rounded-2xl px-6 py-3 text-center">
-              <div class="text-3xl font-black text-white">2</div>
-              <div class="text-green-200 text-sm">Cargo Trucks</div>
+            <div class="premium-card p-6 text-center backdrop-blur-md">
+              <div class="text-4xl font-black text-white mb-3">2</div>
+              <div class="text-green-200 text-sm font-medium">Cargo Trucks</div>
             </div>
-            <div class="bg-white/20 rounded-2xl px-6 py-3 text-center">
-              <div class="text-3xl font-black text-white">Nation</div>
-              <div class="text-green-200 text-sm">Wide Coverage</div>
+            <div class="premium-card p-6 text-center backdrop-blur-md">
+              <div class="text-4xl font-black text-white mb-3">Nation</div>
+              <div class="text-green-200 text-sm font-medium">Wide Coverage</div>
             </div>
           </div>
         </div>
-        
-        <div class="relative scroll-reveal">
-          <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-            <h4 class="font-bold text-2xl text-white mb-4">Transport Services</h4>
-            <ul class="space-y-3 text-green-100">
-              <li class="flex items-center gap-3">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                All types of cargo transportation
+
+        <div class="relative scroll-reveal animate-slide-in-right">
+          <div class="premium-card p-10 backdrop-blur-lg">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 018-1V6a1 1 0 00-1-1h-1m-4 4h8m-4 0v8m-4-8h8"></path>
+                </svg>
+              </div>
+              <h4 class="font-bold text-3xl text-white">Transport Services</h4>
+            </div>
+            <ul class="space-y-6 text-green-100">
+              <li class="flex items-start gap-4 group">
+                <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
+                <div>
+                  <div class="font-semibold text-lg mb-1">All Types of Cargo</div>
+                  <p class="text-body-sm">Comprehensive cargo transportation solutions for all industries</p>
+                </div>
               </li>
-              <li class="flex items-center gap-3">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                Liquid fuel transport services
+              <li class="flex items-start gap-4 group">
+                <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
+                <div>
+                  <div class="font-semibold text-lg mb-1">Liquid Fuel Transport</div>
+                  <p class="text-body-sm">Specialized fuel transportation with modern fleet</p>
+                </div>
               </li>
-              <li class="flex items-center gap-3">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                Nationwide delivery coverage
+              <li class="flex items-start gap-4 group">
+                <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
+                <div>
+                  <div class="font-semibold text-lg mb-1">Nationwide Coverage</div>
+                  <p class="text-body-sm">Complete delivery network across Ethiopia</p>
+                </div>
               </li>
-              <li class="flex items-center gap-3">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                Experienced drivers and logistics team
+              <li class="flex items-start gap-4 group">
+                <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
+                <div>
+                  <div class="font-semibold text-lg mb-1">Expert Team</div>
+                  <p class="text-body-sm">Experienced drivers and logistics professionals</p>
+                </div>
               </li>
-              <li class="flex items-center gap-3">
-                <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                Reliable and timely service
+              <li class="flex items-start gap-4 group">
+                <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
+                <div>
+                  <div class="font-semibold text-lg mb-1">Timely Delivery</div>
+                  <p class="text-body-sm">Reliable and punctual service guarantee</p>
+                </div>
               </li>
             </ul>
           </div>
@@ -259,9 +345,9 @@
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-medium tracking-wider uppercase">Trusted Partners</span>
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Our Global Partners</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Working with leading companies across the globe to deliver exceptional trading solutions</p>
+        <span class="text-primary text-xs font-medium tracking-wider uppercase">Global Reach</span>
+        <h2 class="font-display text-display-lg font-bold text-gray-900 mb-6">Serving 15+ Countries Worldwide</h2>
+        <p class="text-body-lg text-gray-600 max-w-3xl mx-auto">Our export division brings Ethiopia's finest agricultural products to international markets across the globe</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -308,23 +394,40 @@
   @endif
 
   <!-- CTA -->
-  <section class="py-24 bg-primary">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Partner with Ethiopia's Trading Excellence</h2>
-        <p class="text-xl text-green-100 mb-10">Join us in exporting Ethiopia's finest agricultural products while importing the technology that drives national development</p>
-        <div class="flex flex-wrap gap-4 justify-center">
-          <a href="{{ route('contact') }}" class="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-green-50 transition-colors shadow-xl">
-            Get Started
+  <section class="py-32 bg-primary relative overflow-hidden">
+    <!-- Enhanced background elements -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold/10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 2s;"></div>
+    
+    <div class="max-w-5xl mx-auto px-8 relative">
+      <div class="text-center scroll-reveal">
+        <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
+          <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
+          <span class="text-white text-sm font-semibold tracking-wider uppercase">Partner With Us</span>
+        </div>
+        
+        <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with Ethiopia's Premier International Trader</h2>
+        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable and competent international traders. Join us in our mission to export standard quality Ethiopian agricultural products and import cutting-edge machinery for national development.</p>
+        
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href="{{ route('contact') }}"
+             class="btn-primary text-white font-bold px-12 py-5 rounded-full focus-visible text-lg inline-flex items-center group">
+            <span class="relative z-10">Start Your Partnership</span>
+            <svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
           </a>
-          <a href="{{ route('rfq.create') }}" class="border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-colors">
-            Request Quote
+          <a href="{{ route('rfq.create') }}"
+             class="border-2 border-white/40 text-white font-semibold px-12 py-5 rounded-full hover:bg-white/20 transition-all duration-300 focus-visible backdrop-blur-sm hover:backdrop-blur-lg text-lg inline-flex items-center group">
+            Request a Quote
+            <svg class="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-</body>
-</html>
+</main>
 @endsection

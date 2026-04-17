@@ -11,42 +11,44 @@ class BlogController extends Controller
 {
     public function index(Request $request)
     {
-        // Get site settings
         $settings = Setting::pluck('value', 'key')->toArray();
         
-        // Get categories
         $categories = BlogCategory::where('is_active', true)
             ->orderBy('sort_order', 'asc')
             ->get();
         
-        // Build query
-        $query = BlogPost::with('category')
+        $query = BlogPost::with('category', 'media')
             ->where('is_published', true)
             ->orderBy('published_at', 'desc');
         
-        // Filter by category
         if ($request->filled('category')) {
             $query->where('category_id', $request->category);
         }
         
-        // Search functionality
         if ($request->filled('search')) {
             $searchTerm = $request->search;
             $query->where(function ($q) use ($searchTerm) {
                 $q->where('title', 'like', "%{$searchTerm}%")
-                  ->orWhere('excerpt', 'like', "%{$searchTerm}%")
-                  ->orWhere('body', 'like', "%{$searchTerm}%");
+                ->orWhere('excerpt', 'like', "%{$searchTerm}%")
+                ->orWhere('body', 'like', "%{$searchTerm}%");
             });
         }
         
-        // Get posts with pagination
         $posts = $query->paginate(12);
+
+        // TEMPORARY DEBUG
+        // $firstPost = $posts->first();
+        // if ($firstPost) {
+        //     dd([
+        //         'featured_image_url' => $firstPost->featured_image_url,
+        //         'getFirstMediaUrl' => $firstPost->getFirstMediaUrl('featured_image'),
+        //         'media_count' => $firstPost->getMedia('featured_image')->count(),
+        //         'cover_image' => $firstPost->cover_image,
+        //         'media' => $firstPost->getMedia('featured_image')->first()?->toArray(),
+        //     ]);
+        // }
         
-        return view('blog.index', compact(
-            'settings',
-            'categories',
-            'posts'
-        ));
+        return view('blog.index', compact('settings', 'categories', 'posts'));
     }
     
     public function show($slug)
@@ -55,7 +57,7 @@ class BlogController extends Controller
         $settings = Setting::pluck('value', 'key')->toArray();
         
         // Get the post
-        $post = BlogPost::with('category')
+        $post = BlogPost::with('category', 'media')
             ->where('slug', $slug)
             ->where('is_published', true)
             ->firstOrFail();

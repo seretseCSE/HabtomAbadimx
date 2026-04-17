@@ -60,6 +60,11 @@ class Service extends Model implements HasMedia
             ->useDisk('public')
             ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/webp'])
             ->singleFile();
+            
+        $this->addMediaCollection('service_icons')
+            ->useDisk('public')
+            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
+            ->singleFile();
     }
 
     public function registerMediaConversions(Media $media = null): void
@@ -81,6 +86,15 @@ class Service extends Model implements HasMedia
                 'size' => $this->formatBytes($media->size),
             ];
         });
+    }
+
+    public function getIconUrlAttribute(): ?string
+    {
+        $iconMedia = $this->getFirstMedia('service_icons');
+        if ($iconMedia) {
+            return $iconMedia->getUrl();
+        }
+        return $this->icon ?? null;
     }
 
     private function formatBytes($bytes, $precision = 2)
