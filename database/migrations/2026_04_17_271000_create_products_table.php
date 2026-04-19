@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('slug');
             $table->text('description');
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->string('origin_country');
-            $table->string('unit');
-            $table->string('hs_code');
-            $table->string('sku');
+            $table->string('origin_country')->nullable();
+            $table->string('unit')->nullable();
+            $table->string('hs_code')->nullable();
+            $table->string('sku')->nullable();
             $table->json('images')->nullable();
             $table->json('specifications')->nullable();
             $table->string('status');
