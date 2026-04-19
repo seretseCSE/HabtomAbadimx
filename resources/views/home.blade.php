@@ -267,15 +267,15 @@
 
           <div class="grid grid-cols-3 gap-6 mt-12">
             <div class="premium-card p-6 text-center backdrop-blur-md">
-              <div class="text-4xl font-black text-white mb-3">20+</div>
+              <div class="text-4xl font-black text-black mb-3">20+</div>
               <div class="text-green-700 text-sm font-medium">Fuel Trucks</div>
             </div>
             <div class="premium-card p-6 text-center backdrop-blur-md">
-              <div class="text-4xl font-black text-white mb-3">2</div>
+              <div class="text-4xl font-black text-black mb-3">2</div>
               <div class="text-green-700 text-sm font-medium">Cargo Trucks</div>
             </div>
             <div class="premium-card p-6 text-center backdrop-blur-md">
-              <div class="text-4xl font-black text-white mb-3">Nation</div>
+              <div class="text-4xl font-black text-black mb-3">Nation</div>
               <div class="text-green-700 text-sm font-medium">Wide Coverage</div>
             </div>
           </div>
@@ -289,7 +289,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 018-1V6a1 1 0 00-1-1h-1m-4 4h8m-4 0v8m-4-8h8"></path>
                 </svg>
               </div>
-              <h4 class="font-bold text-3xl text-white">Transport Services</h4>
+              <h4 class="font-bold text-3xl text-black">Transport Services</h4>
             </div>
             <ul class="space-y-6 text-green-700">
               <li class="flex items-start gap-4 group">
