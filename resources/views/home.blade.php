@@ -23,7 +23,7 @@
       <div class="animate-float">
         <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm premium-card">
           <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
-          <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2000</span>
+          <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2008</span>
         </div>
 
         <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-8">
@@ -35,13 +35,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
-          <a href="{{ route('products') }}"
-             class="btn-primary text-white font-bold px-10 py-4 rounded-full focus-visible">
-            <span class="relative z-10">Explore Our Products</span>
-          </a>
-          <a href="{{ route('contact') }}"
-             class="border-2 border-white/40 text-white font-semibold px-10 py-4 rounded-full hover:bg-white/20 transition-all duration-300 focus-visible backdrop-blur-sm hover:backdrop-blur-lg">
-            Contact Us Today
+           tact Us Today
           </a>
         </div>
       </div>
@@ -57,9 +51,9 @@
 
         <!-- Enhanced Floating stats cards -->
         <div class="absolute -bottom-8 -left-8 premium-card p-6 animate-float" style="animation-delay: 0.2s;">
-          <div class="text-xs text-gray-500 mb-2 font-semibold">24+ Years</div>
+          <div class="text-xs text-gray-500 mb-2 font-semibold">16+ Years</div>
           <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
-          <div class="text-primary text-sm font-medium mt-1">Since 2000</div>
+          <div class="text-primary text-sm font-medium mt-1">Since 2008</div>
         </div>
 
         <div class="absolute -top-6 -right-6 bg-primary rounded-3xl p-6 shadow-2xl text-white animate-float" style="animation-delay: 0.4s;">
@@ -74,7 +68,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
           <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">24+</div>
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">16+</div>
             <div class="text-green-300 text-sm mt-2">Years Experience</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
@@ -250,11 +244,11 @@
                   <span class="text-white font-bold text-lg">2021</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-2xl mb-2">Transportation Launch</h4>
-                  <p class="text-gray-600 text-body-sm">Established our national transportation division</p>
+                  <h4 class="font-bold text-2xl mb-2 text-gray-800">Transportation Launch</h4>
+                  <p class="text-gray-700 text-body-sm">Established our national transportation division</p>
                 </div>
               </div>
-              <p class="text-gray-700 text-body-md leading-relaxed">Launched national transportation with two cargo trucks, marking our entry into logistics services</p>
+              <p class="text-gray-800 text-body-md leading-relaxed">Launched national transportation with two cargo trucks, marking our entry into logistics services</p>
             </div>
 
             <div class="premium-card p-8 backdrop-blur-md">
@@ -263,26 +257,26 @@
                   <span class="text-white font-bold text-lg">2023</span>
                 </div>
                 <div>
-                  <h4 class="font-bold text-2xl mb-2">Major Expansion</h4>
-                  <p class="text-gray-600 text-body-sm">Significant fleet growth</p>
+                  <h4 class="font-bold text-2xl mb-2 text-gray-800">Major Expansion</h4>
+                  <p class="text-gray-700 text-body-sm">Significant fleet growth</p>
                 </div>
               </div>
-              <p class="text-gray-700 text-body-md leading-relaxed">Expanded transportation capacity to 20 fuel trucks, dramatically increasing our service capabilities</p>
+              <p class="text-gray-800 text-body-md leading-relaxed">Expanded transportation capacity to 20 fuel trucks, dramatically increasing our service capabilities</p>
             </div>
           </div>
 
           <div class="grid grid-cols-3 gap-6 mt-12">
             <div class="premium-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-white mb-3">20+</div>
-              <div class="text-green-200 text-sm font-medium">Fuel Trucks</div>
+              <div class="text-green-700 text-sm font-medium">Fuel Trucks</div>
             </div>
             <div class="premium-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-white mb-3">2</div>
-              <div class="text-green-200 text-sm font-medium">Cargo Trucks</div>
+              <div class="text-green-700 text-sm font-medium">Cargo Trucks</div>
             </div>
             <div class="premium-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-white mb-3">Nation</div>
-              <div class="text-green-200 text-sm font-medium">Wide Coverage</div>
+              <div class="text-green-700 text-sm font-medium">Wide Coverage</div>
             </div>
           </div>
         </div>
@@ -297,40 +291,40 @@
               </div>
               <h4 class="font-bold text-3xl text-white">Transport Services</h4>
             </div>
-            <ul class="space-y-6 text-green-100">
+            <ul class="space-y-6 text-green-700">
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1">All Types of Cargo</div>
-                  <p class="text-body-sm">Comprehensive cargo transportation solutions for all industries</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">All Types of Cargo</div>
+                  <p class="text-gray-700 text-body-sm">Comprehensive cargo transportation solutions for all industries</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1">Liquid Fuel Transport</div>
-                  <p class="text-body-sm">Specialized fuel transportation with modern fleet</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">Liquid Fuel Transport</div>
+                  <p class="text-gray-700 text-body-sm">Specialized fuel transportation with modern fleet</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1">Nationwide Coverage</div>
-                  <p class="text-body-sm">Complete delivery network across Ethiopia</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">Nationwide Coverage</div>
+                  <p class="text-gray-700 text-body-sm">Complete delivery network across Ethiopia</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1">Expert Team</div>
-                  <p class="text-body-sm">Experienced drivers and logistics professionals</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">Expert Team</div>
+                  <p class="text-gray-700 text-body-sm">Experienced drivers and logistics professionals</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1">Timely Delivery</div>
-                  <p class="text-body-sm">Reliable and punctual service guarantee</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">Timely Delivery</div>
+                  <p class="text-gray-700 text-body-sm">Reliable and punctual service guarantee</p>
                 </div>
               </li>
             </ul>

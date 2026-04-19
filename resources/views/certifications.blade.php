@@ -11,7 +11,7 @@
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">Quality & Trust</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Certifications & Partners</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">Building trust through quality standards and reliable international partnerships since 2000</p>
+        <p class="text-green-100 text-lg max-w-2xl mx-auto">Building trust through quality standards and reliable international partnerships since 2008</p>
     </div>
 </section>
 

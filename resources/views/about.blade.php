@@ -25,7 +25,7 @@
         </div>
         
         <h1 id="about-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Habtom Abadi Import & Export</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2000, we've been a cornerstone of Ethiopia's international trade sector for over two decades, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.</p>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2008, we've been a cornerstone of Ethiopia's international trade sector for over two decades, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.</p>
       </div>
     </div>
   </section>
@@ -34,7 +34,7 @@
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
       <div class="scroll-reveal">
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Story</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A trading cornerstone since 2000</h2>
+        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A trading cornerstone since 2008</h2>
         <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over two decades building a bridge between Ethiopia's agricultural resources and international markets.</p>
         <p class="text-gray-600 text-body-md leading-relaxed mb-6">Our mission encompasses exporting standard quality Ethiopian agricultural products including coffee seeds, pulses, oilseeds, and spices, while importing construction, agricultural, and manufacturing machinery to support national progress.</p>
         <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of cargo and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
@@ -45,7 +45,7 @@
              alt="Ethiopian trade and export operations"
              loading="lazy" />
         <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
-          <div class="font-display text-3xl font-black">24+</div>
+          <div class="font-display text-3xl font-black">16+</div>
           <div class="text-green-200 text-sm">Years of Excellence</div>
         </div>
       </div>

@@ -35,7 +35,7 @@ class SettingSeeder extends Seeder
             ],
             [
                 'key' => 'about_us',
-                'value' => 'Established in 2000, we\'ve been a cornerstone of Ethiopia\'s international trade sector for over two decades, bridging Ethiopia\'s rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.',
+                'value' => 'Established in 2008, we\'ve been a cornerstone of Ethiopia\'s international trade sector for over two decades, bridging Ethiopia\'s rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.',
             ],
             [
                 'key' => 'mission',
