@@ -77,6 +77,7 @@ Route::get('/sitemap', function() {
 
 // API routes for AJAX calls
 Route::prefix('api')->group(function () {
+    Route::get('products', [ProductController::class, 'index']);
     Route::get('products/{product}', [ProductController::class, 'show']);
     Route::get('services/{service}', [ServiceController::class, 'show']);
 });

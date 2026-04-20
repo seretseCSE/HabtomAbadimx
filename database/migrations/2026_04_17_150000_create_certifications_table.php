@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('issuing_body');
             $table->string('certificate_number');
             $table->date('issue_date');
-            $table->date('expiry_date');
+            $table->date('expiry_date')->nullable();
             $table->string('document_file')->nullable();
             $table->string('logo')->nullable();
             $table->boolean('is_featured')->default(false);

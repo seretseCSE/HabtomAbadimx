@@ -18,46 +18,147 @@
 <!-- FILTER + GRID -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        <!-- Filter tabs --> 
+        
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto mb-12">
+            <form method="GET" action="{{ route('products') }}" class="relative">
+                <div class="relative">
+                    <input type="text" 
+                           name="search" 
+                           value="{{ request('search') }}"
+                           placeholder="Search products by name, description, origin, or HS code..." 
+                           class="w-full px-6 py-4 pr-12 text-gray-700 bg-white border border-gray-200 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300">
+                    <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-colors duration-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
 
         <!-- Category Filter Tabs -->
         @if($categories->isNotEmpty())
-        <div class="flex flex-wrap gap-2 justify-center mb-8" id="categoryTabs">
-            <button onclick="filterProducts('all')" class="category-tab px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="all">
+        <div class="flex flex-wrap gap-2 justify-center mb-12" x-data="{ activeCategory: '{{ request('category', 'all') }}' }">
+            <a href="{{ route('products', ['search' => request('search')]) }}" 
+               :class="activeCategory === 'all' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'" 
+               class="category-tab px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
                 All Categories
-            </button>
+            </a>
             @foreach($categories as $category)
-            <button onclick="filterProducts('{{ $category->id }}')" class="category-tab px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300" data-category="{{ $category->id }}">
+            <a href="{{ route('products', ['category' => $category->id, 'search' => request('search')]) }}" 
+               :class="activeCategory === '{{ $category->id }}' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'" 
+               class="category-tab px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
                 {{ $category->name }}
-            </button>
+            </a>
             @endforeach
         </div>
         @endif
 
+        <!-- Featured Product -->
+        @if($products->isNotEmpty() && $products->first() && $products->first()->is_featured)
+        <div class="mb-16">
+            @php
+                $featuredProduct = $products->first();
+            @endphp
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid md:grid-cols-2 group cursor-pointer hover:shadow-xl transition-shadow duration-300" onclick="showProductModal({{ $featuredProduct->id }})">
+                <div class="overflow-hidden h-64 md:h-auto">
+                    @php $productImage = $featuredProduct->getFirstMediaUrl('images'); @endphp
+                    @if($productImage)
+                        <img src="{{ $productImage }}" alt="{{ $featuredProduct->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                    @else
+                        <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                            <span class="text-6xl">{{$featuredProduct->category && in_array(strtolower($featuredProduct->category->name), ['equipment', 'machinery', 'tractor']) ? '??' : '??'}}</span>
+                        </div>
+                    @endif
+                    <div class="absolute top-6 left-6">
+                        <span class="bg-amber-600 text-white text-sm font-bold px-4 py-2 rounded-full uppercase shadow-lg">Featured</span>
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col justify-center">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">{{ $featuredProduct->category->name ?? 'Products' }}</span>
+                        <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">{{ $featuredProduct->origin_country ?? 'Ethiopia' }}</span>
+                        <span class="text-gray-400 text-xs">{{ $featuredProduct->unit ?? 'per unit' }}</span>
+                    </div>
+                    <h2 class="font-display text-3xl font-bold text-gray-900 mb-4 leading-tight">
+                        {{ $featuredProduct->name }}
+                    </h2>
+                    <p class="text-gray-600 leading-relaxed mb-6">{{ Str::limit(strip_tags($featuredProduct->description), 200) }}</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            @if($featuredProduct->hs_code)
+                            <span class="text-gray-500 text-sm">HS: {{ $featuredProduct->hs_code }}</span>
+                            @endif
+                            @if($featuredProduct->sku)
+                            <span class="text-gray-500 text-sm">SKU: {{ $featuredProduct->sku }}</span>
+                            @endif
+                        </div>
+                        <button class="text-primary font-semibold text-sm hover:underline">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
+        <!-- Results Info -->
+        <div class="flex items-center justify-between mb-8">
+            <div class="text-gray-600">
+                @if(request('search'))
+                    Showing {{ $products->count() }} results for "{{ request('search') }}"
+                @elseif(request('category'))
+                    Showing {{ $products->count() }} products in {{ $categories->firstWhere('id', request('category'))->name ?? 'selected category' }}
+                @else
+                    Showing {{ $products->count() }} products
+                @endif
+            </div>
+            @if(request('search') || request('category'))
+                <a href="{{ route('products') }}" class="text-primary hover:underline text-sm">Clear filters</a>
+            @endif
+        </div>
+
         <!-- Grid -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productsGrid">
-            @foreach($products as $product)
+            @php
+                $remainingProducts = ($products->isNotEmpty() && $products->first() && $products->first()->is_featured) ? $products->slice(1) : $products;
+            @endphp
+            @foreach($remainingProducts as $product)
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100 product-card" data-category="{{ $product->category_id }}" data-type="{{ $product->category && in_array(strtolower($product->category->name), ['equipment', 'machinery', 'tractor']) ? 'import' : 'export' }}">
                 <div class="relative overflow-hidden h-48">
                     @if($product->images && count($product->images) > 0)
                         <img src="{{ $product->images[0]['url'] }}" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @else
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                            <span class="text-4xl">{{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? '??' : '??' }}</span>
+                        </div>
                     @endif
                     <div class="absolute top-3 left-3 flex gap-2">
                         <span class="product-type-badge text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">
                             {{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? 'Import' : 'Export' }}
                         </span>
                         @if($product->is_featured)
-                            <span class="bg-white text-gray-800 text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
+                            <span class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
                         @endif
                     </div>
                 </div>
-                <div class="p-5">
-                    <h3 class="font-display font-bold text-gray-900 text-lg">{{ $product->name }}</h3>
-                    <p class="text-gray-500 text-xs mt-1 mb-3">{{ $product->origin_country ?? 'Ethiopia' }}</p>
-                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2">{{ $product->description ?? 'Premium quality product available for export/import.' }}</p>
-                    <button onclick="showProductModal({{ $product->id }})" class="mt-4 w-full bg-primary/10 text-primary font-semibold text-sm py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">View Details</button>
+                <div class="p-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{{ $product->category->name ?? 'General' }}</span>
+                        @if($product->origin_country)
+                        <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded-full">{{ $product->origin_country }}</span>
+                        @endif
+                    </div>
+                    <h3 class="font-display font-bold text-gray-900 text-lg leading-tight mb-2">{{ $product->name }}</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{{ $product->description ?? 'Premium quality product available for export/import.' }}</p>
+                    <div class="flex items-center justify-between mb-4">
+                        @if($product->unit)
+                        <span class="text-gray-500 text-xs">{{ $product->unit }}</span>
+                        @endif
+                        @if($product->hs_code)
+                        <span class="text-gray-400 text-xs">HS: {{ $product->hs_code }}</span>
+                        @endif
+                    </div>
+                    <button onclick="showProductModal({{ $product->id }})" class="w-full bg-primary/10 text-primary font-semibold text-sm py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">View Details</button>
                 </div>
             </div>
             @endforeach

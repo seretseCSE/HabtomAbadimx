@@ -19,13 +19,15 @@ class CertificationsController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
         
-        // Get featured partners
+        // Get featured partners (with media)
         $featuredPartners = Partner::where('is_featured', true)
+            ->with('media')
             ->orderBy('sort_order', 'asc')
             ->get();
         
-        // Get all partners for slider
+        // Get all partners for slider (with media)
         $allPartners = Partner::where('is_active', true)
+            ->with('media')
             ->orderBy('sort_order', 'asc')
             ->get();
         

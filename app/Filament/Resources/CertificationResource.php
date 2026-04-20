@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 use BackedEnum;
 use UnitEnum;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class CertificationResource extends Resource
 {
@@ -108,22 +109,11 @@ class CertificationResource extends Resource
                             ->visibility('public')
                             ->columnSpan(2),
 
-                        Forms\Components\FileUpload::make('logo')
+                        SpatieMediaLibraryFileUpload::make('logo')
                             ->label('Certification Logo')
                             ->helperText('Upload logo of the issuing organization')
-                            ->image()
-                            ->imageEditor()
-                            ->acceptedFileTypes([
-                                'image/jpeg',
-                                'image/jpg',
-                                'image/png',
-                                'image/webp',
-                                'image/gif'
-                            ])
-                            ->directory('certifications/logos')
-                            ->disk('public')
-                            ->visibility('public')
-                            ->maxSize(2048) // 2MB
+                            ->collection('certification_logos')
+                            ->conversion('thumb')
                             ->columnSpan(2),
                     ])
                     ->columns(2)
@@ -135,7 +125,7 @@ class CertificationResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('logo')
+                Tables\Columns\ImageColumn::make('logo_url')
                     ->label('Logo')
                     ->size(60)
                     ->circular()
@@ -210,15 +200,7 @@ class CertificationResource extends Resource
                         '1' => 'Active',
                         '0' => 'Inactive',
                     ])
-                    ->label('Active Status'),
-
-                Tables\Filters\Filter::make('expiring_soon')
-                    ->label('Expiring Within 30 Days')
-                    ->query(fn (Builder $query): Builder => $query->where('expiry_date', '>', now())
-                                                              ->where('expiry_date', '<=', now()->addDays(30)))
-                    ->indicateUsing(function (array $data): ?string {
-                        return !empty($data) ? 'Expiring Soon' : null;
-                    }),
+                    ->label('Active Status'), 
             ])
             ->actions([
                 Actions\ViewAction::make(),

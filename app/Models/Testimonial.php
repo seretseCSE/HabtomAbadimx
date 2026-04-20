@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
-class Testimonial extends Model
+class Testimonial extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory, InteractsWithMedia;
 
     protected $fillable = [
         'client_name',
@@ -125,6 +127,31 @@ class Testimonial extends Model
         ];
 
         return $countries[$this->country] ?? $this->country;
+    }
+
+    /**
+     * Get the client photo URL attribute with fallback.
+     */
+    public function getClientPhotoUrlAttribute(): ?string
+    {
+        $mediaUrl = $this->getFirstMediaUrl('testimonial_photos');
+        
+        if ($mediaUrl) {
+            return $mediaUrl;
+        }
+        
+        return $this->client_photo ? asset('storage/' . $this->client_photo) : null;
+    }
+
+    /**
+     * Register media collections
+     */
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('testimonial_photos')
+            ->useDisk('public')
+            ->acceptsMimeTypes(['image/jpeg', 'image/png', 'image/gif', 'image/webp'])
+            ->singleFile();
     }
 
     public function getRatingStarsAttribute()

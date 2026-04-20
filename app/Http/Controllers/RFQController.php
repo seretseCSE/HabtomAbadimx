@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use App\Models\RFQ;
 use App\Models\Service;
-use App\Models\User;
-use App\Notifications\NewRFQNotification;
 use Illuminate\Http\Request;
 
 class RFQController extends Controller
@@ -54,11 +52,16 @@ class RFQController extends Controller
         // Create RFQ
         $rfq = RFQ::create($validated);
         
-        // Send notification to admin users
-        $adminUsers = User::where('is_admin', true)->get();
-        foreach ($adminUsers as $admin) {
-            $admin->notify(new NewRFQNotification($rfq));
-        }
+        // Optional: Send email notification to admin (you can implement this later)
+        // For now, just log that a new RFQ was created
+        \Log::info('New RFQ request received', [
+            'rfq_id' => $rfq->id,
+            'company' => $rfq->company,
+            'name' => $rfq->name,
+            'email' => $rfq->email,
+            'product' => $rfq->product_interest,
+            'quantity' => $rfq->quantity
+        ]);
         
         return redirect()->route('rfq.create')
             ->with('success', 'Thank you for your RFQ request! We will review your requirements and get back to you');

@@ -21,14 +21,17 @@ class HomeController extends Controller
             ->take(6)
             ->get();
         
-        // Get products
+        // Get products (featured first, with media)
         $products = Product::where('status', 'active')
-            ->with('category')
+            ->with('category', 'media')
+            ->orderBy('is_featured', 'desc')
+            ->orderBy('created_at', 'desc')
             ->take(8)
             ->get();
         
-        // Get partners
-        $partners = Partner::where('is_featured', true)
+        // Get partners (with media) - show all active partners for now
+        $partners = Partner::where('is_active', true)
+            ->with('media')
             ->orderBy('sort_order', 'asc')
             ->get();
         

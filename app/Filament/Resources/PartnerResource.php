@@ -17,6 +17,7 @@ use Illuminate\Support\Str;
 use BackedEnum;
 use UnitEnum;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class PartnerResource extends Resource
 {
@@ -98,23 +99,12 @@ class PartnerResource extends Resource
 
                 Section::make('Partner Logo')
                     ->schema([
-                        Forms\Components\FileUpload::make('logo')
+                        SpatieMediaLibraryFileUpload::make('logo')
                             ->label('Partner Logo')
                             ->helperText('Upload partner logo (recommended size: 200x100px)')
-                            ->image()
-                            ->imageEditor()
-                            ->directory('partners/logos')
-                            ->disk('public')
-                            ->visibility('public')
-                            ->maxSize(2048) // 2MB
-                            ->acceptedFileTypes([
-                                'image/jpeg',
-                                'image/jpg',
-                                'image/png',
-                                'image/webp',
-                                'image/svg+xml'
-                            ])
-                            ->columnSpanFull(),
+                            ->collection('partner_logos')
+                            ->conversion('thumb')
+                            ->columnSpan(2),
                     ])
                     ->collapsible(),
             ]);
@@ -124,7 +114,7 @@ class PartnerResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\ImageColumn::make('logo')
+                Tables\Columns\ImageColumn::make('logo_url')
                     ->label('Logo')
                     ->size(60)
                     ->circular()

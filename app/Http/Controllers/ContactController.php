@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use App\Models\ContactInquiry;
-use App\Models\User;
-use App\Notifications\NewContactInquiryNotification;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -47,11 +45,14 @@ class ContactController extends Controller
         // Create contact inquiry
         $inquiry = ContactInquiry::create($validated);
         
-        // Send notification to admin users
-        $adminUsers = User::where('is_admin', true)->get();
-        foreach ($adminUsers as $admin) {
-            $admin->notify(new NewContactInquiryNotification($inquiry));
-        }
+        // Optional: Send email notification to admin (you can implement this later)
+        // For now, just log that a new inquiry was created
+        \Log::info('New contact inquiry received', [
+            'inquiry_id' => $inquiry->id,
+            'name' => $inquiry->name,
+            'email' => $inquiry->email,
+            'subject' => $inquiry->subject
+        ]);
         
         return redirect()->route('contact')
             ->with('success', 'Thank you for your message! We will get back to you within 24 hours.');

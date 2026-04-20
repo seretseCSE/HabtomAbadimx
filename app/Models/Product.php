@@ -45,6 +45,44 @@ class Product extends Model implements HasMedia
         return $this->hasMany(RFQ::class);
     }
 
+    /**
+     * Scope to get only active products.
+     */
+    public function scopeActive($query)
+    {
+        return $query->where('status', 'active');
+    }
+
+    /**
+     * Scope to get only featured products.
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('is_featured', true);
+    }
+
+    /**
+     * Scope to search products.
+     */
+    public function scopeSearch($query, $searchTerm)
+    {
+        return $query->where(function ($q) use ($searchTerm) {
+            $q->where('name', 'like', "%{$searchTerm}%")
+              ->orWhere('description', 'like', "%{$searchTerm}%")
+              ->orWhere('origin_country', 'like', "%{$searchTerm}%")
+              ->orWhere('unit', 'like', "%{$searchTerm}%")
+              ->orWhere('hs_code', 'like', "%{$searchTerm}%");
+        });
+    }
+
+    /**
+     * Get the route key for the model.
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function getImagesAttribute()
     {
         return $this->getMedia('images')->map(function ($media) {

@@ -87,13 +87,15 @@
                 @foreach($featuredPartners as $partner)
                 <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group">
                     <div class="flex justify-center mb-4">
-                        @if($partner->logo)
-                            <img src="{{ asset('storage/' . $partner->logo) }}" 
-                                 alt="{{ $partner->name }}" 
-                                 class="w-32 h-32 object-contain group-hover:scale-105 transition-transform duration-300">
+                        @if($partner->logo_url)
+                            <div class="w-32 h-32 overflow-hidden rounded-lg">
+                                <img src="{{ $partner->logo_url }}" 
+                                     alt="{{ $partner->name }}" 
+                                     class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"/>
+                            </div>
                         @else
                             <div class="w-32 h-32 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
-                                <span class="text-2xl text-gray-600 font-bold text-center">{{ $partner->name }}</span>
+                                <span class="text-2xl text-gray-600 font-bold text-center">{{ Str::limit($partner->name, 2) }}</span>
                             </div>
                         @endif
                     </div>
@@ -128,8 +130,8 @@
                     @foreach($allPartners as $partner)
                     @foreach(range(1,2) as $duplicate)
                     <div class="flex-shrink-0 w-48 h-24 flex items-center justify-center mx-4">
-                        @if($partner->logo)
-                            <img src="{{ asset('storage/' . $partner->logo) }}" 
+                        @if($partner->logo_url)
+                            <img src="{{ $partner->logo_url }}" 
                                  alt="{{ $partner->name }}" 
                                  class="max-h-16 max-w-full opacity-60 hover:opacity-100 transition-opacity duration-300">
                         @else

@@ -97,6 +97,20 @@ class Service extends Model implements HasMedia
         return $this->icon ?? null;
     }
 
+    /**
+     * Get the featured image URL attribute like blog system.
+     */
+    public function getFeaturedImageUrlAttribute(): ?string
+    {
+        $mediaUrl = $this->getFirstMediaUrl('service_images');
+        
+        if ($mediaUrl) {
+            return $mediaUrl;
+        }
+        
+        return null;
+    }
+
     private function formatBytes($bytes, $precision = 2)
     {
         $units = array('B', 'KB', 'MB', 'GB', 'TB');

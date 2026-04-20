@@ -5,10 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Setting;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Get site settings
         $settings = Setting::pluck('value', 'key')->toArray();
@@ -18,11 +19,31 @@ class ProductsController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
         
-        // Get products with pagination
-        $products = Product::with('category')
+        // Build products query
+        $query = Product::with('category', 'media')
             ->where('status', 'active')
-            ->orderBy('created_at', 'desc')
-            ->paginate(12);
+            ->orderBy('is_featured', 'desc')
+            ->orderBy('created_at', 'desc');
+        
+        // Apply category filter
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+        
+        // Apply search filter
+        if ($request->filled('search')) {
+            $searchTerm = $request->search;
+            $query->where(function ($q) use ($searchTerm) {
+                $q->where('name', 'like', "%{$searchTerm}%")
+                  ->orWhere('description', 'like', "%{$searchTerm}%")
+                  ->orWhere('origin_country', 'like', "%{$searchTerm}%")
+                  ->orWhere('unit', 'like', "%{$searchTerm}%")
+                  ->orWhere('hs_code', 'like', "%{$searchTerm}%");
+            });
+        }
+        
+        // Get products with pagination
+        $products = $query->paginate(12);
         
         return view('products', compact(
             'settings',
@@ -37,7 +58,7 @@ class ProductsController extends Controller
         $settings = Setting::pluck('value', 'key')->toArray();
         
         // Get related products
-        $relatedProducts = Product::with('category')
+        $relatedProducts = Product::with('category', 'media')
             ->where('category_id', $product->category_id)
             ->where('id', '!=', $product->id)
             ->where('status', 'active')

@@ -195,14 +195,32 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         @foreach($products->take(8) as $product)
-        <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal">
+        <div class="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-300 scroll-reveal cursor-pointer" onclick="showProductModal({{ $product->id }})">
           <div class="aspect-square overflow-hidden">
-            <img src="https://unsplash.com/photos/a-tractor-plowing-a-field-with-a-plow-cfD0LrqEMmk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->name }}"/>
+            @php $productImage = $product->getFirstMediaUrl('images'); @endphp
+            @if($productImage)
+              <img src="{{ $productImage }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->name }}"/>
+            @else
+              <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                <span class="text-4xl">{{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? '??' : '??' }}</span>
+              </div>
+            @endif
+          </div>
+          <div class="absolute top-3 left-3">
+            <span class="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-bold px-2.5 py-1 rounded-full">
+              {{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? 'Import' : 'Export' }}
+            </span>
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 product-overlay">
             <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
               <h3 class="font-bold text-lg mb-2">{{ $product->name }}</h3>
-              <p class="text-sm opacity-90">{{ $product->origin_country }}</p>
+              <p class="text-sm opacity-90">{{ $product->origin_country ?? 'Ethiopia' }}</p>
+              <div class="flex items-center gap-2 mt-2">
+                <span class="text-xs opacity-75">{{ $product->category->name ?? 'General' }}</span>
+                @if($product->is_featured)
+                <span class="bg-amber-500 text-white text-xs px-2 py-0.5 rounded-full">Featured</span>
+                @endif
+              </div>
             </div>
           </div>
         </div>
@@ -348,13 +366,15 @@
         @foreach($partners as $partner)
         <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group scroll-reveal">
           <div class="flex justify-center mb-4">
-            @if($partner->logo)
-              <img src="{{ asset('storage/' . $partner->logo) }}"
-                   alt="{{ $partner->name }}"
-                   class="w-24 h-24 object-contain group-hover:scale-105 transition-transform duration-300">
+            @if($partner->logo_url)
+              <div class="w-24 h-24 overflow-hidden rounded-lg">
+                <img src="{{ $partner->logo_url }}"
+                     alt="{{ $partner->name }}"
+                     class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"/>
+              </div>
             @else
               <div class="w-24 h-24 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
-                <span class="text-lg text-gray-600 font-bold text-center">{{ $partner->name }}</span>
+                <span class="text-lg text-gray-600 font-bold text-center">{{ Str::limit($partner->name, 2) }}</span>
               </div>
             @endif
           </div>
