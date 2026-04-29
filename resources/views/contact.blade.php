@@ -25,7 +25,7 @@
         </div>
         
         <h1 id="contact-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Contact Us</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Ready to trade with Ethiopia's premier international trading company? Submit a quote request or send us a message — we respond within 24 hours with our commitment to customer-based service delivery.</p>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Ready to trade with one of the best international traders? Submit a quote request or send us a message — we respond within 24 hours with our commitment to customer-based service delivery.</p>
       </div>
     </div>
   </section>
@@ -46,7 +46,7 @@
               <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl shadow-lg" aria-hidden="true">📍</div>
               <div>
                 <div class="font-bold text-gray-900 mb-1">Office Address</div>
-                <div class="text-gray-600 text-body-sm leading-relaxed">Noah Real Estate Building, 7th Floor, Office No. 704<br/>22 Area, Wereda 04, Bole Sub-City<br/>Addis Ababa, Ethiopia</div>
+                <div class="text-gray-600 text-body-sm leading-relaxed">{!! nl2br(e($settings['address_full'] ?? "Noah Real Estate Building, 7th Floor, Office No. 704\n22 Area, Wereda 04, Bole Sub-City\nAddis Ababa, Ethiopia")) !!}</div>
               </div>
             </div>
             <div class="flex gap-4 items-start">
@@ -54,8 +54,8 @@
               <div>
                 <div class="font-bold text-gray-900 mb-1">Phone Numbers</div>
                 <div class="text-gray-600 text-body-sm space-y-1">
-                  <div>+251 911 123 456</div>
-                  <div>+251 922 654 321</div>
+                  <div>{{ $settings['phone_1'] ?? '+251 911 123 456' }}</div>
+                  <div>{{ $settings['phone_2'] ?? '+251 922 654 321' }}</div>
                 </div>
               </div>
             </div>
@@ -64,8 +64,8 @@
               <div>
                 <div class="font-bold text-gray-900 mb-1">Email Addresses</div>
                 <div class="text-gray-600 text-body-sm space-y-1">
-                  <div>info@habtomabadimx.com</div>
-                  <div>trade@habtomabadimx.com</div>
+                  <div>{{ $settings['email_1'] ?? 'info@habtomabadimx.com' }}</div>
+                  <div>{{ $settings['email_2'] ?? 'trade@habtomabadimx.com' }}</div>
                 </div>
               </div>
             </div>
@@ -73,19 +73,19 @@
               <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 text-white text-xl shadow-lg" aria-hidden="true">🕐</div>
               <div>
                 <div class="font-bold text-gray-900 mb-1">Working Hours</div>
-                <div class="text-gray-600 text-body-sm">Monday - Friday: 8:00 AM - 6:00 PM<br/>Saturday: 9:00 AM - 2:00 PM (EAT)</div>
+                <div class="text-gray-600 text-body-sm">{!! nl2br(e($settings['working_hours'] ?? "Monday - Friday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 2:00 PM (EAT)")) !!}</div>
               </div>
             </div>
           </div>
 
           <div class="mt-8 rounded-2xl overflow-hidden h-48 bg-gray-200 relative shadow-lg">
-            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80"
-                 class="w-full h-full object-cover lazy-load"
-                 alt="Addis Ababa business district location"
-                 loading="lazy" />
-            <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div class="bg-white/90 backdrop-blur-sm text-primary px-4 py-2 rounded-full text-sm font-bold shadow-lg">📍 Addis Ababa, Ethiopia</div>
-            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d711.510647859671!2d38.78587384767726!3d9.014941381340709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2set!4v1777452182945!5m2!1sen!2set"
+                    class="w-full h-full"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Habtom Abadi Office Location"></iframe>
           </div>
         </div>
 
@@ -283,11 +283,11 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="scroll-reveal">
         <h2 class="font-display text-display-lg font-black text-white mb-6">Why Choose Habtom Abadi?</h2>
-        <p class="text-green-100 text-body-lg mb-8 max-w-2xl mx-auto">With over two decades of experience in international trade, we combine reliability, respect for commitments, and customer-based service delivery to ensure your success.</p>
+        <p class="text-green-100 text-body-lg mb-8 max-w-2xl mx-auto">With over 18 years of experience in international trade, we combine reliability, respect for commitments, and customer-based service delivery to ensure your success.</p>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-6 border border-white/20">
             <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-primary font-bold text-xl">24</span>
+              <span class="text-primary font-bold text-xl">18+</span>
             </div>
             <h3 class="font-display text-lg font-bold text-white mb-2">Years of Excellence</h3>
             <p class="text-green-100 text-sm">Established foundation in Ethiopian trade sector</p>

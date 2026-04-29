@@ -25,7 +25,7 @@
         </div>
         
         <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Comprehensive Trade Solutions</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">From Ethiopia's finest agricultural exports to cutting-edge machinery imports, we deliver end-to-end trade solutions with unmatched reliability and expertise.</p>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">From Ethiopia's finest agricultural exports to machinery imports, we deliver end-to-end trade solutions with unmatched reliability and expertise.</p>
       </div>
     </div>
   </section>
@@ -45,23 +45,23 @@
               </svg>
             </div>
             <h3 class="font-display text-2xl font-black mb-4">Export Division</h3>
-            <p class="text-green-100 text-body-md leading-relaxed mb-6">We export premium Ethiopian agricultural products to international markets, earning foreign currency while showcasing Ethiopia's agricultural excellence.</p>
+            <p class="text-green-100 text-body-md leading-relaxed mb-6">We export Ethiopian agricultural products to international markets, earning foreign currency while showcasing Ethiopia's agricultural excellence to the world.</p>
             <div class="space-y-4">
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Premium Arabica coffee beans - world-renowned flavors</span>
+                <span class="text-sm">Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, Limu</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Sesame, Niger seeds, soybeans, peanuts, linseed</span>
+                <span class="text-sm">Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Chickpeas, red kidney beans, white pea beans, faba beans</span>
+                <span class="text-sm">Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Spices and other high-value agricultural commodities</span>
+                <span class="text-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil</span>
               </div>
             </div>
           </div>
@@ -75,23 +75,23 @@
               </svg>
             </div>
             <h3 class="font-display text-2xl font-black text-gray-900 mb-4">Import Division</h3>
-            <p class="text-gray-600 text-body-md leading-relaxed mb-6">We import the technology and machinery required for Ethiopia's growth and development, supporting national progress through strategic sourcing.</p>
+            <p class="text-gray-600 text-body-md leading-relaxed mb-6">We import machinery, vehicles, and technology to fuel national development and support Ethiopia's growing infrastructure.</p>
             <div class="space-y-4">
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Electric, hybrid, and gas-powered vehicles including buses</span>
+                <span class="text-sm">Automotive — Electric (EV), hybrid, gas-powered cars, heavy-duty buses, and trucks</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Industrial-grade construction machinery and inputs</span>
+                <span class="text-sm">Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, mixers</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Modern tractors, harvesters, and agricultural inputs</span>
+                <span class="text-sm">Agricultural machinery — modern tractors, harvesters, and farming inputs</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Versatile sourcing for industrial and commercial needs</span>
+                <span class="text-sm">General import — metals, soft temper, spare parts, and versatile industrial and commercial sourcing</span>
               </div>
             </div>
           </div>

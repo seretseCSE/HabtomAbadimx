@@ -25,7 +25,7 @@
         </div>
         
         <h1 id="about-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Habtom Abadi Import & Export</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2008, we've been a cornerstone of Ethiopia's international trade sector for over two decades, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.</p>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2008, we've been a cornerstone of Ethiopia's international trade sector for over 18 years, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.</p>
       </div>
     </div>
   </section>
@@ -35,7 +35,7 @@
       <div class="scroll-reveal">
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Story</span>
         <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A trading cornerstone since 2008</h2>
-        <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over two decades building a bridge between Ethiopia's agricultural resources and international markets.</p>
+        <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over 18 years building a bridge between Ethiopia's agricultural resources and international markets.</p>
         <p class="text-gray-600 text-body-md leading-relaxed mb-6">Our mission encompasses exporting standard quality Ethiopian agricultural products including coffee seeds, pulses, oilseeds, and spices, while importing construction, agricultural, and manufacturing machinery to support national progress.</p>
         <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of cargo and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
       </div>
@@ -45,7 +45,7 @@
              alt="Ethiopian trade and export operations"
              loading="lazy" />
         <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
-          <div class="font-display text-3xl font-black">16+</div>
+          <div class="font-display text-3xl font-black">18+</div>
           <div class="text-green-200 text-sm">Years of Excellence</div>
         </div>
       </div>
@@ -110,45 +110,45 @@
           <div class="space-y-6">
             <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
               <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Export Division</h3>
-              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We export premium agricultural products prepared to international standards.</p>
+              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We export agricultural products prepared to international standards, earning foreign currency while showcasing Ethiopia's agricultural excellence.</p>
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Premium Arabica coffee beans - world-renowned flavors
+                   Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Sesame, Niger seeds, soybeans, peanuts, linseed
+                   Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Chickpeas, red kidney beans, white pea beans, faba beans
+                   Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Spices and other high-value agricultural commodities
+                   Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil
                 </li>
               </ul>
             </div>
             <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
               <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Import Division</h3>
-              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We import the technology required for Ethiopia's growth.</p>
+              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We import the technology and machinery required for Ethiopia's growth and development.</p>
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Electric, hybrid, and gas-powered vehicles including buses
+                  Automotive — Electric (EV), hybrid, gas-powered cars, buses, and trucks
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Industrial-grade construction machinery and inputs
+                  Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Modern tractors, harvesters, and agricultural inputs
+                  Agricultural machinery — modern tractors, harvesters, and farming inputs
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Versatile sourcing for industrial and commercial needs
+                  General import — metals, soft temper, spare parts, and versatile industrial sourcing
                 </li>
               </ul>
             </div>

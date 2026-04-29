@@ -55,7 +55,7 @@ $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
             <div class="flex items-center justify-between h-16">
             <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="{{ route('home') }}" class="flex items-center space-x-3">
+                    <a href="{{ route('home') }}" class="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-lg px-3 py-2">
                         <img src="{{ asset('Asset 1.png') }}"
                              alt="Habtom Abadi Logo"
                              class="h-10 transition-all duration-300 rounded-lg">

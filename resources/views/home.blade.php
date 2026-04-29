@@ -21,17 +21,17 @@
 
     <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-24 grid md:grid-cols-2 gap-16 items-center">
       <div class="animate-float">
-        <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm premium-card">
+        <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm elevated-card">
           <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
           <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2008</span>
         </div>
 
         <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-8">
-          Ethiopia's Premier<br/>International Trade<br/><span class="text-green-300">Excellence</span>
+          One of the Best<br/>International Trader
         </h1>
 
         <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
-          For over two decades, Habtom Abadi Import and Export has been a cornerstone of Ethiopia's international trade sector, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through cutting-edge machinery imports.
+          For over 18 years, Habtom Abadi Import and Export has been a cornerstone of Ethiopia's international trade sector, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
@@ -50,8 +50,8 @@
         </div>
 
         <!-- Enhanced Floating stats cards -->
-        <div class="absolute -bottom-8 -left-8 premium-card p-6 animate-float" style="animation-delay: 0.2s;">
-          <div class="text-xs text-gray-500 mb-2 font-semibold">16+ Years</div>
+        <div class="absolute -bottom-8 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
+          <div class="text-xs text-gray-500 mb-2 font-semibold">18+ Years</div>
           <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
           <div class="text-primary text-sm font-medium mt-1">Since 2008</div>
         </div>
@@ -68,7 +68,7 @@
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
           <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">16+</div>
+            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">18+</div>
             <div class="text-green-300 text-sm mt-2">Years Experience</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
@@ -104,34 +104,34 @@
           <span class="text-primary text-sm font-semibold tracking-wider uppercase">Our Services</span>
         </div>
         <h2 class="font-display text-display-lg font-black text-gray-900 mb-8">Export & Import Excellence</h2>
-        <p class="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">We specialize in exporting Ethiopia's finest agricultural products while importing cutting-edge machinery and technology to drive national development</p>
+        <p class="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">We specialize in exporting Ethiopia's finest agricultural products while importing machinery and technology to drive national development</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
-        <div class="group premium-card p-10 scroll-reveal">
+        <div class="group elevated-card p-10 scroll-reveal">
           <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
             </svg>
           </div>
           <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Export Division</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Bringing Ethiopia's finest organic products to global markets with uncompromising quality standards</p>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Bridging Ethiopia's rich agricultural resources with the global market, exporting quality products that meet international standards</p>
           <ul class="text-gray-600 space-y-4 mb-8">
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Premium Arabica coffee beans with world-renowned flavors and aromatic profiles</span>
+               <span class="text-body-sm">Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">High-quality sesame seeds, Niger seeds, soybeans, peanuts, linseed</span>
+               <span class="text-body-sm">Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Chickpeas, red kidney beans, white pea beans, faba beans</span>
+               <span class="text-body-sm">Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Premium spices and high-value agricultural commodities</span>
+               <span class="text-body-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil</span>
             </li>
           </ul>
           <a href="{{ route('products') }}"
@@ -143,30 +143,30 @@
           </a>
         </div>
 
-        <div class="group premium-card p-10 scroll-reveal">
+        <div class="group elevated-card p-10 scroll-reveal">
           <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
           <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Import Division</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Engineering national growth through essential technology and cutting-edge machinery</p>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Fueling national development through the importation of machinery, vehicles, and technology</p>
           <ul class="text-gray-600 space-y-4 mb-8">
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Electric, hybrid, and gas-powered vehicles including buses</span>
+              <span class="text-body-sm">Automotive — Electric (EV), hybrid, and gas-powered cars, heavy-duty buses, and trucks</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Industrial-grade construction machinery and specialized inputs</span>
+              <span class="text-body-sm">Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, and mixers</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Modern tractors, harvesters, and agricultural equipment</span>
+              <span class="text-body-sm">Agricultural machinery — modern tractors, harvesters, and farming inputs to modernize Ethiopian agriculture</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Versatile sourcing for industrial and commercial applications</span>
+              <span class="text-body-sm">General import — metals, soft temper, spare parts, and versatile sourcing for industrial and commercial needs</span>
             </li>
           </ul>
           <a href="{{ route('contact') }}"
@@ -189,7 +189,7 @@
           <span class="w-2 h-2 bg-primary rounded-full"></span>
           <span class="text-primary text-xs font-medium tracking-wider uppercase">Our Products</span>
         </div>
-        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Premium Quality Products</h2>
+        <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Quality Products</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">Sourced directly from Ethiopia's finest producers</p>
       </div>
 
@@ -256,7 +256,7 @@
           <h3 class="font-display text-3xl font-black mb-8">Our Fleet Growth</h3>
           
           <div class="space-y-8">
-            <div class="premium-card p-8 backdrop-blur-md">
+            <div class="elevated-card p-8 backdrop-blur-md">
               <div class="flex items-center gap-6 mb-4">
                 <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
                   <span class="text-white font-bold text-lg">2021</span>
@@ -269,7 +269,7 @@
               <p class="text-gray-800 text-body-md leading-relaxed">Launched national transportation with two cargo trucks, marking our entry into logistics services</p>
             </div>
 
-            <div class="premium-card p-8 backdrop-blur-md">
+            <div class="elevated-card p-8 backdrop-blur-md">
               <div class="flex items-center gap-6 mb-4">
                 <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg animate-pulse-glow">
                   <span class="text-white font-bold text-lg">2023</span>
@@ -284,15 +284,15 @@
           </div>
 
           <div class="grid grid-cols-3 gap-6 mt-12">
-            <div class="premium-card p-6 text-center backdrop-blur-md">
+            <div class="elevated-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-black mb-3">20+</div>
               <div class="text-green-700 text-sm font-medium">Fuel Trucks</div>
             </div>
-            <div class="premium-card p-6 text-center backdrop-blur-md">
+            <div class="elevated-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-black mb-3">2</div>
               <div class="text-green-700 text-sm font-medium">Cargo Trucks</div>
             </div>
-            <div class="premium-card p-6 text-center backdrop-blur-md">
+            <div class="elevated-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-black mb-3">Nation</div>
               <div class="text-green-700 text-sm font-medium">Wide Coverage</div>
             </div>
@@ -300,7 +300,7 @@
         </div>
 
         <div class="relative scroll-reveal animate-slide-in-right">
-          <div class="premium-card p-10 backdrop-blur-lg">
+          <div class="elevated-card p-10 backdrop-blur-lg">
             <div class="flex items-center gap-4 mb-8">
               <div class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-500 rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -420,8 +420,8 @@
           <span class="text-white text-sm font-semibold tracking-wider uppercase">Partner With Us</span>
         </div>
         
-        <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with Ethiopia's Premier International Trader</h2>
-        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable and competent international traders. Join us in our mission to export standard quality Ethiopian agricultural products and import cutting-edge machinery for national development.</p>
+        <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with One of the Best International Trader</h2>
+        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable and competent international traders. Join us in our mission to export standard quality Ethiopian agricultural products and import machinery for national development.</p>
         
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a href="{{ route('contact') }}"

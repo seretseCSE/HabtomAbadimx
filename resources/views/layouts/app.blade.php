@@ -18,7 +18,7 @@
     <!-- Custom Styles -->
     <style>
         :root {
-            /* Premium Spacing Scale */
+            /* Spacing Scale */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
@@ -39,15 +39,15 @@
             --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
             --text-5xl: clamp(3rem, 2.25rem + 3.75vw, 4rem);
             
-            /* Premium Shadow System */
+            /* Shadow System */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
             --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
             --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
             --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
             --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-            --shadow-premium: 0 32px 64px -12px rgb(0 0 0 / 0.25), 0 0 0 1px rgb(0 0 0 / 0.05);
+            --shadow-3xl: 0 32px 64px -12px rgb(0 0 0 / 0.25), 0 0 0 1px rgb(0 0 0 / 0.05);
             
-            /* Premium Border Radius */
+            /* Border Radius */
             --radius-sm: 0.375rem;
             --radius-md: 0.5rem;
             --radius-lg: 0.75rem;
@@ -67,7 +67,7 @@
             line-height: 1.2;
         }
         .hero-bg { 
-            background: linear-gradient(135deg, #0f3d2b 0%, #125057 40%, #16a34a 100%);
+            background: linear-gradient(135deg, #0a2e1f 0%, #0d4a33 40%, #16a34a 100%);
             position: relative;
         }
         .hero-bg::before {
@@ -177,7 +177,7 @@
             to { transform:translateX(-50%); } 
         }
         
-        /* Premium Button Styles */
+        /* Button Styles */
         .btn-primary {
             background: linear-gradient(135deg, #125057 0%, #16a34a 100%);
             border-radius: var(--radius-full);
@@ -204,8 +204,8 @@
             box-shadow: var(--shadow-xl);
         }
         
-        /* Premium Card Styles */
-        .premium-card {
+        /* Card Styles */
+        .elevated-card {
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255,255,255,0.2);
@@ -213,9 +213,9 @@
             box-shadow: var(--shadow-xl);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        .premium-card:hover {
+        .elevated-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-premium);
+            box-shadow: var(--shadow-3xl);
         }
         
         /* Responsive Typography */

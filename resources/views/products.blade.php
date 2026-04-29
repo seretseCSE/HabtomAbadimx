@@ -11,7 +11,7 @@
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Product Catalogue</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">Premium Ethiopian agricultural exports (coffee, oilseeds, pulses) and cutting-edge imported machinery for national development</p>
+        <p class="text-green-100 text-lg max-w-2xl mx-auto">Ethiopian agricultural exports (coffee, oilseeds, pulses) and imported machinery for national development</p>
     </div>
 </section>
 
@@ -149,7 +149,7 @@
                         @endif
                     </div>
                     <h3 class="font-display font-bold text-gray-900 text-lg leading-tight mb-2">{{ $product->name }}</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{{ $product->description ?? 'Premium quality product available for export/import.' }}</p>
+                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{{ $product->description ?? 'Quality product available for export/import.' }}</p>
                     <div class="flex items-center justify-between mb-4">
                         @if($product->unit)
                         <span class="text-gray-500 text-xs">{{ $product->unit }}</span>
@@ -284,7 +284,7 @@ function showProductModal(productId) {
                         </div>
                         
                         <div class="prose prose-lg text-gray-600 mb-8">
-                            <p>${data.description || 'Premium quality product available for international trade. Sourced from the finest producers and processed to meet international standards.'}</p>
+                            <p>${data.description || 'Quality product available for international trade. Sourced from the finest producers and processed to meet international standards.'}</p>
                         </div>
                         
                         ${data.specifications && Object.keys(data.specifications).length > 0 ? `
