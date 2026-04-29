@@ -202,13 +202,13 @@
               <img src="{{ $productImage }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="{{ $product->name }}"/>
             @else
               <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                <span class="text-4xl">{{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? '??' : '??' }}</span>
+                <span class="text-4xl font-bold text-green-600">{{ strtolower($product->category->name ?? '') === 'import' ? 'Import' : 'Export' }}</span>
               </div>
             @endif
           </div>
           <div class="absolute top-3 left-3">
             <span class="bg-white/90 backdrop-blur-sm text-gray-800 text-xs font-bold px-2.5 py-1 rounded-full">
-              {{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? 'Import' : 'Export' }}
+              {{ $product->category ? $product->category->name : 'Export' }}
             </span>
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 product-overlay">

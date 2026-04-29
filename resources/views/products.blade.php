@@ -68,7 +68,7 @@
                         <img src="{{ $productImage }}" alt="{{ $featuredProduct->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @else
                         <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                            <span class="text-6xl">{{$featuredProduct->category && in_array(strtolower($featuredProduct->category->name), ['equipment', 'machinery', 'tractor']) ? '??' : '??'}}</span>
+                            <span class="text-6xl font-bold text-green-600">{{$featuredProduct->category && strtolower($featuredProduct->category->name) === 'import' ? 'Import' : 'Export'}}</span>
                         </div>
                     @endif
                     <div class="absolute top-6 left-6">
@@ -123,18 +123,18 @@
                 $remainingProducts = ($products->isNotEmpty() && $products->first() && $products->first()->is_featured) ? $products->slice(1) : $products;
             @endphp
             @foreach($remainingProducts as $product)
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100 product-card" data-category="{{ $product->category_id }}" data-type="{{ $product->category && in_array(strtolower($product->category->name), ['equipment', 'machinery', 'tractor']) ? 'import' : 'export' }}">
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100 product-card" data-category="{{ $product->category_id }}" data-type="{{ $product->category && strtolower($product->category->name) === 'import' ? 'import' : 'export' }}">
                 <div class="relative overflow-hidden h-48">
                     @if($product->images && count($product->images) > 0)
                         <img src="{{ $product->images[0]['url'] }}" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @else
                         <div class="w-full h-full bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
-                            <span class="text-4xl">{{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? '??' : '??' }}</span>
+                            <span class="text-4xl font-bold text-green-600">{{ strtolower($product->category->name ?? '') === 'import' ? 'Import' : 'Export' }}</span>
                         </div>
                     @endif
                     <div class="absolute top-3 left-3 flex gap-2">
                         <span class="product-type-badge text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">
-                            {{ in_array(strtolower($product->category->name ?? ''), ['equipment', 'machinery', 'tractor']) ? 'Import' : 'Export' }}
+                            {{ $product->category ? $product->category->name : 'Export' }}
                         </span>
                         @if($product->is_featured)
                             <span class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
@@ -242,7 +242,7 @@ function showProductModal(productId) {
         .then(response => response.json())
         .then(data => {
             const modalContent = document.getElementById('modalContent');
-            const isImport = data.category && (data.category.name.toLowerCase().includes('equipment') || data.category.name.toLowerCase().includes('machinery') || data.category.name.toLowerCase().includes('tractor'));
+            const isImport = data.category && data.category.name.toLowerCase() === 'import';
             
             modalContent.innerHTML = `
                 <div class="grid lg:grid-cols-2 gap-0">
