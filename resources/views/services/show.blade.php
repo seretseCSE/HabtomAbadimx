@@ -89,9 +89,6 @@
           <a href="{{ route('contact') }}" class="bg-white text-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors">
             Contact Us
           </a>
-          <a href="{{ route('rfq.create', ['service' => $service->id]) }}" class="bg-primary-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-primary-darker transition-colors border-2 border-white/20">
-            Get Quote
-          </a>
         </div>
       </div>
     </div>

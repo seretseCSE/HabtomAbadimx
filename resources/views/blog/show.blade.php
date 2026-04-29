@@ -152,9 +152,6 @@
             <a href="{{ route('contact') }}" class="bg-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
                 Contact Us
             </a>
-            <a href="{{ route('rfq.create') }}" class="border-2 border-white hover:bg-white hover:text-primary text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
-                Request Quote
-            </a>
         </div>
     </div>
 </section>

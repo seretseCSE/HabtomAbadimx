@@ -316,9 +316,6 @@ function showProductModal(productId) {
                         </div>
                         
                         <div class="flex gap-4">
-                            <a href="{{ route('rfq.create') }}?product=${productId}" class="flex-1 bg-primary text-white font-bold py-4 px-8 rounded-2xl text-center hover:bg-primary-dark transition-all duration-300 transform hover:scale-105 shadow-xl">
-                                Request Quote ? Get Pricing
-                            </a>
                             <button onclick="closeProductModal()" class="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300">
                                 Close
                             </button>

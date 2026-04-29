@@ -90,22 +90,9 @@
         </div>
 
         <div class="lg:col-span-2 scroll-reveal">
-          <div x-data="{ activeTab: 'rfq' }" class="bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div class="flex gap-1 bg-gray-100 p-2 rounded-t-3xl">
-              <button @click="activeTab = 'rfq'"
-                      :class="activeTab === 'rfq' ? 'bg-white shadow-lg text-primary font-semibold' : 'text-gray-600 hover:text-gray-900'"
-                      class="flex-1 px-6 py-3 rounded-2xl text-sm transition-all duration-300 focus-visible">
-                📋 Request a Quote (RFQ)
-              </button>
-              <button @click="activeTab = 'contact'"
-                      :class="activeTab === 'contact' ? 'bg-white shadow-lg text-primary font-semibold' : 'text-gray-600 hover:text-gray-900'"
-                      class="flex-1 px-6 py-3 rounded-2xl text-sm transition-all duration-300 focus-visible">
-                ✉️ General Inquiry
-              </button>
-            </div>
-
+          <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
             <div class="p-8">
-              <div x-show="activeTab === 'rfq'" x-transition class="space-y-6">
+              <div class="space-y-6">
                 @if ($errors->any())
                   <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg" role="alert">
                     <ul class="list-disc list-inside text-sm">

@@ -12,25 +12,113 @@
            alt="Global trade and logistics operations"
            loading="eager" />
     </div>
-    
-    <!-- Enhanced decorative elements -->
+
     <div class="absolute top-24 left-10 w-96 h-96 bg-gold opacity-10 rounded-full -translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
     <div class="absolute bottom-0 right-10 w-72 h-72 bg-primary-light opacity-10 rounded-full translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1s;"></div>
-    
+
     <div class="relative max-w-7xl mx-auto px-8 text-center">
       <div class="animate-float">
         <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
           <span class="w-3 h-3 bg-gold rounded-full animate-pulse-glow" aria-hidden="true"></span>
           <span class="text-green-200 text-sm font-semibold tracking-wider uppercase">Our Services</span>
         </div>
-        
+
         <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Comprehensive Trade Solutions</h1>
         <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">From Ethiopia's finest agricultural exports to machinery imports, we deliver end-to-end trade solutions with unmatched reliability and expertise.</p>
       </div>
     </div>
   </section>
 
+  <!-- Vision, Mission & Values -->
   <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Who We Are</span>
+        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Vision, Mission & Core Values</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Vision -->
+        <div class="scroll-reveal bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-white shadow-xl">
+          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-black mb-4">Our Vision</h3>
+          <p class="text-green-100 text-body-md leading-relaxed">To be a competitive and preferred global player in transportation service provision and manufacturing.</p>
+        </div>
+
+        <!-- Mission -->
+        <div class="scroll-reveal bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+          <div class="w-16 h-16 bg-gold rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-black text-gray-900 mb-4">Our Mission</h3>
+          <ul class="text-gray-600 text-body-sm space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span>Exporting standard quality Ethiopian agricultural products and contributing to foreign currency earnings.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span>Importing construction, agricultural, and manufacturing-enabling technology machinery & inputs.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span>Delivering all types of cargo and liquid national transport services.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+              <span>Manufacturing and distributing metals, edible oils, and other demand-based products.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Core Values -->
+        <div class="scroll-reveal bg-gray-50 rounded-3xl p-8 shadow-xl border border-gray-100">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl font-black text-gray-900 mb-4">Core Values</h3>
+          <div class="space-y-3 text-gray-600 text-body-sm">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Reliability</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Respect for Commitments</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Respecting International Business Rules and Regulations</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Customer Based Service Delivery</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Progressive Dynamism</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
+              <span>Innovation Based Development</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services -->
+  <section class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">What We Do</span>
@@ -49,19 +137,19 @@
             <div class="space-y-4">
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, Limu</span>
+                <span class="text-sm">Coffee — Premium Arabica coffee beans, world-renowned for their unique flavors</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond</span>
+                <span class="text-sm">Oilseeds — High-quality sesame seeds, Niger seeds, and soybeans</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean</span>
+                <span class="text-sm">Pulses — A variety of beans, chickpeas, and lentils processed for international standards</span>
               </div>
               <div class="flex items-center gap-3">
                 <span class="w-2 h-2 bg-green-400 rounded-full flex-shrink-0" aria-hidden="true"></span>
-                <span class="text-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil</span>
+                <span class="text-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chili</span>
               </div>
             </div>
           </div>
@@ -100,7 +188,7 @@
     </div>
   </section>
 
-  <section class="py-24 bg-gray-50">
+  <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="scroll-reveal">
@@ -171,7 +259,7 @@
         <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Services We Offer</h2>
         <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Comprehensive trade solutions tailored to meet your international business needs</p>
       </div>
-      
+
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         @foreach($services as $service)
         <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 scroll-reveal">
@@ -188,10 +276,10 @@
               </div>
             @endif
           </div>
-          
+
           <h3 class="font-display text-xl font-bold text-gray-900 text-center mb-4">{{ $service->name }}</h3>
           <p class="text-gray-600 text-body-sm leading-relaxed text-center">{{ $service->description }}</p>
-          
+
           @if($service->is_featured)
           <div class="mt-4 text-center">
             <span class="inline-block px-3 py-1 bg-gold text-white rounded-full text-xs font-medium">
@@ -247,10 +335,6 @@
           <a href="{{ route('contact') }}"
              class="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-green-50 transition-all duration-300 shadow-xl hover:shadow-2xl focus-visible transform hover:scale-105">
             Contact Our Team
-          </a>
-          <a href="{{ route('rfq.create') }}"
-             class="border-2 border-white/40 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/10 transition-all duration-300 focus-visible backdrop-blur-sm">
-            Request a Quote
           </a>
         </div>
       </div>
