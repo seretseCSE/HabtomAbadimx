@@ -356,7 +356,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="text-center scroll-reveal">
           <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-display font-black text-2xl shadow-lg">1</div>
-          <h4 class="font-display text-xl font-bold text-gray-900 mb-3">Submit RFQ</h4>
+          <h4 class="font-display text-xl font-bold text-gray-900 mb-3">Submit Inquiry</h4>
           <p class="text-gray-600 text-body-sm leading-relaxed">Tell us what you need - product specifications, quantities, destinations, and timelines.</p>
         </div>
         <div class="text-center scroll-reveal">

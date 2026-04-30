@@ -50,7 +50,6 @@ class AdminPanelProvider extends PanelProvider
                 \App\Filament\Resources\Settings\SettingResource::class,
                 \App\Filament\Resources\ProductResource::class,
                 \App\Filament\Resources\ServiceResource::class,
-                \App\Filament\Resources\RFQResource::class,
                 \App\Filament\Resources\BlogResource::class,
                 \App\Filament\Resources\CertificationResource::class,
                 \App\Filament\Resources\PartnerResource::class,

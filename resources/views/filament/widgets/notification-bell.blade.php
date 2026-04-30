@@ -33,13 +33,7 @@ use Illuminate\Support\Facades\Route;
                          onclick="window.location.href='{{ $notification->data['url'] ?? '#' }}'">
                         <div class="flex items-start space-x-3">
                             <div class="flex-shrink-0">
-                                @if ($notification->data['type'] === 'rfq')
-                                    <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-600">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-5L9 2 4H4zm2 6a1 1 0 012 0v4a1 1 0 11-2 0v-4zm3 0a1 1 0 012 0v4a1 1 0 11-2 0v-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                    </span>
-                                @elseif ($notification->data['type'] === 'contact')
+                                @if ($notification->data['type'] === 'contact')
                                     <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-green-100 text-green-600">
                                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>

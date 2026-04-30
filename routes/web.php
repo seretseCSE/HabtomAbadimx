@@ -6,7 +6,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ServicesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\RFQController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CertificationsController;
 use App\Http\Controllers\Api\ProductController;
@@ -61,8 +60,6 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 Route::get('/certifications', [CertificationsController::class, 'index'])->name('certifications');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store')->middleware('form.protection');
-Route::get('/rfq', [RFQController::class, 'create'])->name('rfq.create');
-Route::post('/rfq', [RFQController::class, 'store'])->name('rfq.store')->middleware('form.protection');
 
 // Static pages
 Route::get('/privacy', function() {

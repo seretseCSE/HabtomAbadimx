@@ -40,11 +40,6 @@ class Product extends Model implements HasMedia
         return $this->belongsTo(Category::class);
     }
 
-    public function rfqs()
-    {
-        return $this->hasMany(RFQ::class);
-    }
-
     /**
      * Scope to get only active products.
      */
