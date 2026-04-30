@@ -35,12 +35,12 @@ class HomeController extends Controller
             ->orderBy('sort_order', 'asc')
             ->get();
         
-        // Stats counter data
+        // Stats counter data — aligned with company profile
         $stats = [
-            ['value' => '50+', 'label' => 'Countries Served'],
-            ['value' => '1000+', 'label' => 'Happy Clients'],
-            ['value' => '500+', 'label' => 'Products'],
-            ['value' => '10+', 'label' => 'Years Experience'],
+            ['value' => '18+', 'label' => 'Years Experience'],
+            ['value' => '20+', 'label' => 'Fuel Trucks'],
+            ['value' => '15+', 'label' => 'Countries Served'],
+            ['value' => '2008', 'label' => 'Founded'],
         ];
         
         // Navigation menu items

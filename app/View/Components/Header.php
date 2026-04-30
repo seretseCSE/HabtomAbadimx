@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Models\Setting;
 
 class Header extends Component
 {
@@ -30,11 +31,13 @@ class Header extends Component
 
     private function getContactInfo()
     {
+        $settings = Setting::pluck('value', 'key')->toArray();
+
         return [
-            'email' => 'info@habtomabadimx.com',
-            'phone' => '+251 XXX XXX XXX',
-            'whatsapp' => null,
-            'working_hours' => 'Mon-Fri: 9:00 AM - 6:00 PM',
+            'email' => $settings['email_1'] ?? 'info@habtomabadimx.com',
+            'phone' => $settings['phone_1'] ?? '+251 000 000 000',
+            'whatsapp' => $settings['phone_1'] ?? null,
+            'working_hours' => $settings['working_hours'] ?? 'Mon-Fri: 9:00 AM - 6:00 PM',
         ];
     }
 
