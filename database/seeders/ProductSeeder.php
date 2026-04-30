@@ -8,6 +8,22 @@ use App\Models\Category;
 
 class ProductSeeder extends Seeder
 {
+    /**
+     * Reliable placeholder images from placehold.co.
+     * These are generated on-demand and will never return 404.
+     * Spatie Media Library downloads them and stores locally.
+     */
+    private array $imageUrls = [
+        'coffee'    => 'https://placehold.co/800x600/6F4E37/ffffff?text=Ethiopian+Coffee',
+        'oilseed'   => 'https://placehold.co/800x600/DAA520/ffffff?text=Oilseed',
+        'pulse'     => 'https://placehold.co/800x600/8B4513/ffffff?text=Pulse',
+        'spice'     => 'https://placehold.co/800x600/DC143C/ffffff?text=Spice',
+        'vehicle'   => 'https://placehold.co/800x600/2C3E50/ffffff?text=Vehicle',
+        'construction'=> 'https://placehold.co/800x600/34495E/ffffff?text=Construction',
+        'agriculture'=> 'https://placehold.co/800x600/27AE60/ffffff?text=Agriculture',
+        'general'   => 'https://placehold.co/800x600/7F8C8D/ffffff?text=General+Import',
+    ];
+
     public function run(): void
     {
         $exportCategory = Category::where('slug', 'export')->first();
@@ -27,6 +43,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 1,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 1 (Specialty)',
                     'altitude' => '1,800 – 2,200 m',
@@ -48,6 +65,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 2,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 2',
                     'altitude' => '1,500 – 2,200 m',
@@ -68,6 +86,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 3,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 5',
                     'altitude' => '1,400 – 1,800 m',
@@ -88,6 +107,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 4,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 3',
                     'altitude' => '1,400 – 1,800 m',
@@ -108,6 +128,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 5,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 2',
                     'altitude' => '1,500 – 1,900 m',
@@ -128,6 +149,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 6,
+                'image_type' => 'coffee',
                 'specifications' => [
                     'grade' => 'Grade 2',
                     'altitude' => '1,500 – 2,100 m',
@@ -150,6 +172,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 7,
+                'image_type' => 'oilseed',
                 'specifications' => [
                     'purity' => '99.95% min',
                     'oil_content' => '48 – 52%',
@@ -170,6 +193,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 8,
+                'image_type' => 'oilseed',
                 'specifications' => [
                     'purity' => '99.0% min',
                     'oil_content' => '35 – 40%',
@@ -189,6 +213,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 9,
+                'image_type' => 'oilseed',
                 'specifications' => [
                     'protein' => '38 – 42%',
                     'oil_content' => '18 – 20%',
@@ -208,6 +233,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 10,
+                'image_type' => 'oilseed',
                 'specifications' => [
                     'purity' => '99.0% min',
                     'oil_content' => '35 – 40%',
@@ -229,6 +255,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 11,
+                'image_type' => 'pulse',
                 'specifications' => [
                     'protein' => '22 – 24%',
                     'moisture' => '14.0% max',
@@ -249,6 +276,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 12,
+                'image_type' => 'pulse',
                 'specifications' => [
                     'protein' => '22 – 24%',
                     'moisture' => '14.0% max',
@@ -268,6 +296,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 13,
+                'image_type' => 'pulse',
                 'specifications' => [
                     'protein' => '20 – 22%',
                     'moisture' => '14.0% max',
@@ -287,6 +316,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 14,
+                'image_type' => 'pulse',
                 'specifications' => [
                     'purity' => '99.0% min',
                     'moisture' => '13.0% max',
@@ -306,6 +336,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 15,
+                'image_type' => 'pulse',
                 'specifications' => [
                     'protein' => '22 – 24%',
                     'moisture' => '13.0% max',
@@ -327,6 +358,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 16,
+                'image_type' => 'spice',
                 'specifications' => [
                     'piperine' => '4.5 – 6.5%',
                     'moisture' => '12.0% max',
@@ -346,6 +378,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 17,
+                'image_type' => 'spice',
                 'specifications' => [
                     'essential_oil' => '2.5 – 4.0%',
                     'moisture' => '10.0% max',
@@ -365,6 +398,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 18,
+                'image_type' => 'spice',
                 'specifications' => [
                     'curcumin' => '3.0 – 5.0%',
                     'moisture' => '10.0% max',
@@ -384,6 +418,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 19,
+                'image_type' => 'spice',
                 'specifications' => [
                     'heat_level' => '50,000 – 80,000 SHU',
                     'moisture' => '10.0% max',
@@ -403,6 +438,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 20,
+                'image_type' => 'spice',
                 'specifications' => [
                     'purity' => '99.0% min',
                     'moisture' => '10.0% max',
@@ -424,6 +460,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 21,
+                'image_type' => 'vehicle',
                 'specifications' => [
                     'range' => '400 – 600 km',
                     'battery_capacity' => '60 – 85 kWh',
@@ -443,6 +480,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 22,
+                'image_type' => 'vehicle',
                 'specifications' => [
                     'engine' => '1.5L + Electric Motor',
                     'fuel_efficiency' => '20 – 25 km/L',
@@ -462,6 +500,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 23,
+                'image_type' => 'vehicle',
                 'specifications' => [
                     'engine' => '1.6L – 2.0L',
                     'fuel_type' => 'Gasoline',
@@ -481,6 +520,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 24,
+                'image_type' => 'vehicle',
                 'specifications' => [
                     'capacity' => '30 – 60 passengers',
                     'engine' => '6.7L Diesel',
@@ -502,6 +542,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 25,
+                'image_type' => 'construction',
                 'specifications' => [
                     'operating_weight' => '20 – 40 t',
                     'bucket_capacity' => '0.9 – 1.5 m³',
@@ -521,6 +562,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 26,
+                'image_type' => 'construction',
                 'specifications' => [
                     'bucket_capacity' => '3.0 – 5.0 m³',
                     'rated_load' => '5,000 – 8,000 kg',
@@ -540,6 +582,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 27,
+                'image_type' => 'construction',
                 'specifications' => [
                     'payload' => '30 – 50 t',
                     'engine_power' => '280 – 380 kW',
@@ -559,6 +602,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 28,
+                'image_type' => 'construction',
                 'specifications' => [
                     'blade_width' => '3,660 – 4,270 mm',
                     'engine_power' => '150 – 220 kW',
@@ -578,6 +622,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 29,
+                'image_type' => 'construction',
                 'specifications' => [
                     'operating_weight' => '10 – 20 t',
                     'engine_power' => '90 – 140 kW',
@@ -597,6 +642,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 30,
+                'image_type' => 'construction',
                 'specifications' => [
                     'operating_weight' => '17 – 35 t',
                     'engine_power' => '130 – 260 kW',
@@ -616,6 +662,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 31,
+                'image_type' => 'construction',
                 'specifications' => [
                     'drum_capacity' => '6 – 12 m³',
                     'engine_power' => '250 – 350 kW',
@@ -637,6 +684,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => true,
                 'sort_order' => 32,
+                'image_type' => 'agriculture',
                 'specifications' => [
                     'engine_power' => '75 – 120 HP',
                     'drive_type' => '4WD',
@@ -656,6 +704,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 33,
+                'image_type' => 'agriculture',
                 'specifications' => [
                     'cutting_width' => '2.5 – 4.0 m',
                     'engine_power' => '100 – 160 HP',
@@ -677,6 +726,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 34,
+                'image_type' => 'general',
                 'specifications' => [
                     'grade' => 'ASTM A615 / BS 4449',
                     'diameter' => '8 – 40 mm',
@@ -696,6 +746,7 @@ class ProductSeeder extends Seeder
                 'status' => 'active',
                 'is_featured' => false,
                 'sort_order' => 35,
+                'image_type' => 'general',
                 'specifications' => [
                     'categories' => 'Engine, Transmission, Hydraulics',
                     'warranty' => '6 – 12 months',
@@ -705,7 +756,22 @@ class ProductSeeder extends Seeder
         ];
 
         foreach ($products as $data) {
-            Product::create($data);
+            $imageType = $data['image_type'] ?? 'general';
+            unset($data['image_type']);
+
+            $product = Product::create($data);
+
+            // Attach image via Spatie Media Library.
+            // placehold.co URLs are 100% reliable and return real images.
+            if (isset($this->imageUrls[$imageType])) {
+                try {
+                    $product->addMediaFromUrl($this->imageUrls[$imageType])
+                        ->usingFileName("{$product->slug}.png")
+                        ->toMediaCollection('images');
+                } catch (\Exception $e) {
+                    // If image download fails, product still works with fallback.
+                }
+            }
         }
     }
 }

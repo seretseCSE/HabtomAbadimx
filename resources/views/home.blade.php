@@ -248,7 +248,7 @@
           <span class="text-white text-sm font-semibold tracking-wider uppercase">National Transport</span>
         </div>
         <h2 class="font-display text-display-lg font-black text-white mb-8">Reliable Transportation Services</h2>
-        <p class="text-body-lg text-green-100 max-w-4xl mx-auto leading-relaxed">Delivering all types of cargo and liquid transport services nationwide with our expanding fleet and experienced logistics team</p>
+        <p class="text-body-lg text-green-100 max-w-4xl mx-auto leading-relaxed">Delivering all types of goods and liquid transport services nationwide with our expanding fleet and experienced logistics team</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -290,7 +290,7 @@
             </div>
             <div class="elevated-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-black mb-3">2</div>
-              <div class="text-green-700 text-sm font-medium">Cargo Trucks</div>
+              <div class="text-green-700 text-sm font-medium">cargo trucks</div>
             </div>
             <div class="elevated-card p-6 text-center backdrop-blur-md">
               <div class="text-4xl font-black text-black mb-3">Nation</div>
@@ -313,8 +313,8 @@
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1 text-gray-800">All Types of Cargo</div>
-                  <p class="text-gray-700 text-body-sm">Comprehensive cargo transportation solutions for all industries</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">All Types of Goods</div>
+                  <p class="text-gray-700 text-body-sm">Comprehensive goods transportation solutions for all industries</p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">

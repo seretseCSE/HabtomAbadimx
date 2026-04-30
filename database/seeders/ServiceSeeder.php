@@ -7,9 +7,6 @@ use App\Models\Service;
 
 class ServiceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $services = [
@@ -39,11 +36,11 @@ class ServiceSeeder extends Seeder
                 'name' => 'International Shipping & Logistics',
                 'slug' => 'international-shipping-logistics',
                 'description' => 'End-to-end shipping solutions from Ethiopia to global markets, including freight forwarding, customs brokerage, and logistics coordination.',
-                'full_description' => 'We provide comprehensive international shipping services that connect Ethiopian producers with global markets. Our logistics network spans major shipping routes, ensuring timely delivery of your cargo to any destination worldwide.',
+                'full_description' => 'We provide comprehensive international shipping services that connect Ethiopian producers with global markets. Our logistics network spans major shipping routes, ensuring timely delivery of your goods to any destination worldwide.',
                 'features' => json_encode([
                     'Freight Forwarding',
                     'Customs Brokerage',
-                    'Cargo Insurance',
+                    'Goods Insurance',
                     'Port Operations',
                     'Supply Chain Management',
                 ]),
@@ -78,25 +75,46 @@ class ServiceSeeder extends Seeder
                 'sort_order' => 3,
             ],
             [
-                'name' => 'Market Research & Analysis',
-                'slug' => 'market-research-analysis',
-                'description' => 'In-depth market analysis and research services for Ethiopian agricultural products and international trade opportunities.',
-                'full_description' => 'Our market research team provides comprehensive analysis of global market trends, price forecasts, competitor analysis, and market entry strategies for Ethiopian agricultural products.',
+                'name' => 'Import Sourcing & Procurement',
+                'slug' => 'import-sourcing-procurement',
+                'description' => 'Strategic sourcing and procurement of construction machinery, agricultural equipment, vehicles, and industrial inputs from international manufacturers.',
+                'full_description' => 'We leverage our global supplier network to source high-quality machinery, vehicles, and industrial equipment at competitive prices. From initial supplier identification to final delivery, we manage the entire procurement process to ensure you receive the right products on time and within budget.',
                 'features' => json_encode([
-                    'Market Intelligence',
-                    'Price Analysis',
-                    'Competitor Research',
-                    'Market Entry Strategy',
-                    'Trade Data Analytics',
+                    'Supplier Identification',
+                    'Price Negotiation',
+                    'Quality Verification',
+                    'Import Documentation',
+                    'Delivery Coordination',
                 ]),
                 'benefits' => json_encode([
-                    'Informed Decisions',
-                    'Market Opportunities',
-                    'Competitive Advantage',
-                    'Risk Assessment',
+                    'Competitive Pricing',
+                    'Verified Suppliers',
+                    'End-to-End Management',
+                    'Reduced Risk',
                 ]),
                 'is_active' => true,
                 'sort_order' => 4,
+            ],
+            [
+                'name' => 'National Transport & Logistics',
+                'slug' => 'national-transport-logistics',
+                'description' => 'Reliable nationwide transportation of goods and liquid fuel across Ethiopia with a modern fleet and experienced logistics team.',
+                'full_description' => 'Our national transport division delivers all types of goods and liquid fuel throughout Ethiopia. With a growing fleet of cargo trucks and fuel tankers, we ensure safe, timely, and efficient transportation services for businesses and industries nationwide.',
+                'features' => json_encode([
+                    'Goods Transport',
+                    'Liquid Fuel Delivery',
+                    'Fleet Management',
+                    'Nationwide Coverage',
+                    'Real-time Tracking',
+                ]),
+                'benefits' => json_encode([
+                    'Timely Delivery',
+                    'Safe Handling',
+                    'Modern Fleet',
+                    'Experienced Drivers',
+                ]),
+                'is_active' => true,
+                'sort_order' => 5,
             ],
         ];
 

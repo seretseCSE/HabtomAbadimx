@@ -1,4 +1,4 @@
-ï»¿@extends('layouts.app')
+@extends('layouts.app')
 
 @section('title', 'About Us - ' . ($settings['site_name'] ?? 'Habtom Abadi Import Export'))
 
@@ -37,7 +37,7 @@
         <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A trading cornerstone since 2008</h2>
         <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over 18 years building a bridge between Ethiopia's agricultural resources and international markets.</p>
         <p class="text-gray-600 text-body-md leading-relaxed mb-6">Our mission encompasses exporting standard quality Ethiopian agricultural products including coffee seeds, pulses, oilseeds, and spices, while importing construction, agricultural, and manufacturing machinery to support national progress.</p>
-        <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of cargo and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
+        <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of goods and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
       </div>
       <div class="relative scroll-reveal">
         <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=700&q=80"
@@ -114,19 +114,19 @@
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Arabica coffee â€” Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
+                   Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Oil seeds â€” sesame seed, gulo, Nugget, Wool, Linen, and almond
+                   Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Pulses â€” green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
+                   Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Spices â€” Paper, ginger, black cumin, Turmeric, and Dried Red Chil
+                   Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil
                 </li>
               </ul>
             </div>
@@ -136,19 +136,19 @@
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Automotive â€” Electric (EV), hybrid, gas-powered cars, buses, and trucks
+                  Automotive — Electric (EV), hybrid, gas-powered cars, buses, and trucks
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Construction machinery â€” dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
+                  Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Agricultural machinery â€” modern tractors, harvesters, and farming inputs
+                  Agricultural machinery — modern tractors, harvesters, and farming inputs
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  General import â€” metals, soft temper, spare parts, and versatile industrial sourcing
+                  General import — metals, soft temper, spare parts, and versatile industrial sourcing
                 </li>
               </ul>
             </div>
@@ -157,7 +157,7 @@
 
         <div class="scroll-reveal bg-primary rounded-3xl p-12 text-white shadow-xl">
           <h3 class="font-display text-2xl font-black mb-6">National Transport Services</h3>
-          <p class="text-body-md leading-relaxed mb-6">We deliver all types of cargo and liquid transport services nationwide, supporting the movement of goods across Ethiopia with reliable vehicles and experienced drivers.</p>
+          <p class="text-body-md leading-relaxed mb-6">We deliver all types of goods and liquid transport services nationwide, supporting the movement of goods across Ethiopia with reliable vehicles and experienced drivers.</p>
           <div class="grid gap-5">
             <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-sm border border-white/20">
               <p class="font-bold text-lg">2021</p>
@@ -203,7 +203,7 @@
         <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
           <div class="font-display text-xl font-bold text-gray-900 mb-3">Yemane Teklu</div>
           <div class="text-primary font-semibold mb-4">Transport Operations Officer</div>
-          <p class="text-gray-600 text-body-sm">Coordinates national cargo operations and fleet management.</p>
+          <p class="text-gray-600 text-body-sm">Coordinates national transport operations and fleet management.</p>
         </div>
         <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
           <div class="font-display text-xl font-bold text-gray-900 mb-3">Daniel Fentahun</div>

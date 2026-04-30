@@ -74,7 +74,7 @@
             </li>
             <li class="flex items-start gap-3">
               <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span>Delivering all types of cargo and liquid national transport services.</span>
+              <span>Delivering all types of goods and liquid national transport services.</span>
             </li>
           </ul>
         </div>
@@ -239,15 +239,15 @@
         <div class="scroll-reveal">
           <span class="text-primary text-xs font-semibold tracking-widest uppercase">Transportation</span>
           <h2 class="font-display text-display-lg font-black text-gray-900 mt-4 mb-6">National Transport Services</h2>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-6">Delivering all types of cargo and liquid national transport services. We support the movement of goods across Ethiopia with reliable vehicles and experienced logistics professionals.</p>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-6">Delivering all types of goods and liquid national transport services. We support the movement of goods across Ethiopia with reliable vehicles and experienced logistics professionals.</p>
           <div class="space-y-4">
             <div class="flex items-start gap-4">
               <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                 <span class="text-white font-bold text-sm">✓</span>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">All Types of Cargo</h4>
-                <p class="text-gray-600 text-sm">Comprehensive cargo transportation solutions for all industries across Ethiopia.</p>
+                <h4 class="font-semibold text-gray-900 mb-1">All Types of Goods</h4>
+                <p class="text-gray-600 text-sm">Comprehensive goods transportation solutions for all industries across Ethiopia.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -305,7 +305,7 @@
               </div>
               <div class="bg-white/10 rounded-2xl p-4 text-center border border-white/20">
                 <div class="text-3xl font-black">2</div>
-                <div class="text-green-200 text-sm">Cargo Trucks</div>
+                <div class="text-green-200 text-sm">cargo trucks</div>
               </div>
             </div>
           </div>
