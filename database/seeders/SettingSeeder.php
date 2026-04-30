@@ -31,7 +31,7 @@ class SettingSeeder extends Seeder
             ['key' => 'youtube_url', 'value' => ''],
 
             // Content
-            ['key' => 'about_us', 'value' => 'Established in 2008, Habtom Abadi Import and Export has been a cornerstone of Ethiopia\'s international trade sector for over two decades. Based in the heart of Addis Ababa, we specialize in bridging the gap between Ethiopia\'s rich agricultural resources and the global market, while simultaneously fueling national development through the importation of cutting-edge machinery and technology.'],
+            ['key' => 'about_us', 'value' => 'Established in 2008, Habtom Abadi Import and Export has been a basis of Ethiopia\'s international trade sector for over two decades. Based in the heart of Addis Ababa, we specialize in closing the gap between Ethiopia\'s rich agricultural resources and the global market, while simultaneously fueling national development through the importation of a standard machinery and technology.'],
             ['key' => 'mission', 'value' => 'To export standard quality Ethiopian agricultural products (coffee seeds, pulses, oilseeds, spices) to earn foreign currency, import construction and agricultural machinery, deliver national transport services, and in the long run manufacture and distribute metals, edible oils, and other demand-based products.'],
             ['key' => 'vision', 'value' => 'To be a competitive and preferred global player on transportation service provider, and manufacturer.'],
         ];

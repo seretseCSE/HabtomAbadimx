@@ -60,7 +60,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Ethiopian Yirgacheffe Coffee Grade 1',
                 'slug' => 'ethiopian-yirgacheffe-coffee-grade-1',
-                'description' => 'Premium Ethiopian Yirgacheffe Grade 1 coffee beans, renowned for their wine-like acidity, bright citrus notes, and floral aroma. Grown at altitudes above 1,800 meters in the Yirgacheffe region using traditional organic farming methods.',
+                'description' => 'Ethiopian Yirgacheffe Grade 1 coffee beans, renowned for their wine-like acidity, bright citrus notes, and floral aroma. Grown at altitudes above 1,800 meters in the Yirgacheffe region using traditional organic farming methods.',
                 'category_id' => $exportCategory?->id,
                 'origin_country' => 'Ethiopia',
                 'unit' => 'kg',
@@ -189,7 +189,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Ethiopian White Sesame Seed',
                 'slug' => 'ethiopian-white-sesame-seed',
-                'description' => 'High-quality Ethiopian white sesame seeds, ideal for oil production, confectionery, and export. Known for high oil content (48 – 52%), excellent purity, and premium germination rates.',
+                'description' => 'High-quality Ethiopian white sesame seeds, ideal for oil production, confectionery, and export. Known for high oil content (48 – 52%), excellent purity, and higher germination rates.',
                 'category_id' => $exportCategory?->id,
                 'origin_country' => 'Ethiopia',
                 'unit' => 'kg',
@@ -230,7 +230,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Ethiopian Soybean',
                 'slug' => 'ethiopian-soybean',
-                'description' => 'Premium Ethiopian soybeans suitable for oil extraction, animal feed, and food processing. Non-GMO and sourced from smallholder farmers.',
+                'description' => 'Ethiopian soybeans suitable for oil extraction, animal feed, and food processing. Non-GMO and sourced from smallholder farmers.',
                 'category_id' => $exportCategory?->id,
                 'origin_country' => 'Ethiopia',
                 'unit' => 'kg',
@@ -272,7 +272,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Ethiopian White Kidney Beans',
                 'slug' => 'ethiopian-white-kidney-beans',
-                'description' => 'Premium quality white kidney beans from Ethiopia, known for their excellent cooking quality, creamy texture, and high protein content. Ideal for canning and retail markets.',
+                'description' => 'higher quality white kidney beans from Ethiopia, known for their excellent cooking quality, creamy texture, and high protein content. Ideal for canning and retail markets.',
                 'category_id' => $exportCategory?->id,
                 'origin_country' => 'Ethiopia',
                 'unit' => 'kg',
@@ -375,7 +375,7 @@ class ProductSeeder extends Seeder
             [
                 'name' => 'Ethiopian Black Pepper',
                 'slug' => 'ethiopian-black-pepper',
-                'description' => 'Whole black peppercorns with bold pungency and rich aroma. Ethiopia\'s tropical highlands provide ideal growing conditions for premium pepper.',
+                'description' => 'Whole black peppercorns with bold pungency and rich aroma. Ethiopia\'s tropical highlands provide ideal growing conditions for high quality pepper.',
                 'category_id' => $exportCategory?->id,
                 'origin_country' => 'Ethiopia',
                 'unit' => 'kg',

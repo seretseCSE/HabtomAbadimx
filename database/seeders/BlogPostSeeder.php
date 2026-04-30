@@ -18,13 +18,13 @@ class BlogPostSeeder extends Seeder
         
         $posts = [
             [
-                'title' => 'Why Ethiopian Coffee Commands a Premium on Global Markets',
-                'slug' => 'why-ethiopian-coffee-commands-premium-global-markets',
-                'excerpt' => 'Ethiopian Arabica coffee is the world\'s most complex and sought-after — but what exactly makes buyers pay a premium? We explore the origin story, flavor profiles, and why Yirgacheffe continues to lead.',
-                'body' => '<h2>The Rich Heritage of Ethiopian Coffee</h2><p>Ethiopia, the birthplace of coffee, offers some of the world\'s most distinctive and prized Arabica beans. The country\'s unique growing conditions, altitude variations, and processing methods create flavor profiles that coffee connoisseurs worldwide actively seek.</p><h2>Understanding the Premium Factor</h2><p>Several key factors contribute to Ethiopian coffee\'s premium status in global markets...</p>',
+                'title' => 'Why Ethiopian Coffee Commands a high value on Global Markets',
+                'slug' => 'why-ethiopian-coffee-commands-high value-global-markets',
+                'excerpt' => 'Ethiopian Arabica coffee is the world\'s most complex and sought-after — but what exactly makes buyers pay a high value? We explore the origin story, flavor profiles, and why Yirgacheffe continues to lead.',
+                'body' => '<h2>The Rich Heritage of Ethiopian Coffee</h2><p>Ethiopia, the birthplace of coffee, offers some of the world\'s most distinctive and prized Arabica beans. The country\'s unique growing conditions, altitude variations, and processing methods create flavor profiles that coffee connoisseurs worldwide actively seek.</p><h2>Understanding the high value Factor</h2><p>Several key factors contribute to Ethiopian coffee\'s high value status in global markets...</p>',
                 'author' => 'Admin',
                 'category_id' => $categories['Market Insights'] ?? 2,
-                'tags' => 'coffee,ethiopia,premium markets,arabica',
+                'tags' => 'coffee,ethiopia,high value markets,arabica',
                 'is_published' => true,
                 'is_featured' => true,
                 'published_at' => Carbon::now()->subDays(7),

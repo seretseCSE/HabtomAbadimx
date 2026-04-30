@@ -25,103 +25,7 @@
         </div>
 
         <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Comprehensive Trade Solutions</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2000, Habtom Abadi Import and Export has been a cornerstone of Ethiopia's international trade sector for over two decades. Based in the heart of Addis Ababa, we specialize in bridging the gap between Ethiopia's rich agricultural resources and the global market, while simultaneously fueling national development through the importation of cutting-edge machinery and technology.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision, Mission & Values -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Who We Are</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Vision, Mission & Core Values</h2>
-      </div>
-
-      <div class="grid lg:grid-cols-3 gap-12">
-        <!-- Vision -->
-        <div class="scroll-reveal bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 text-white shadow-xl">
-          <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-            </svg>
-          </div>
-          <h3 class="font-display text-2xl font-black mb-4">Our Vision</h3>
-          <p class="text-green-100 text-body-md leading-relaxed">To be a competitive and preferred global player on transportation service provider, and manufacturer.</p>
-        </div>
-
-        <!-- Mission -->
-        <div class="scroll-reveal bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
-          <div class="w-16 h-16 bg-gold rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-          </div>
-          <h3 class="font-display text-2xl font-black text-gray-900 mb-4">Our Mission</h3>
-          <ul class="text-gray-600 text-body-sm space-y-3">
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span>Exporting standard quality Ethiopian agricultural products — coffee seeds, pulses, oilseeds, and spices — and contributing to our country's foreign currency earnings.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span>Importing construction, agricultural, and other manufacturing-enabling technology machineries &amp; inputs.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span>In the long run, manufacturing and distributing metals, edible oils, and other demand-based products.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span>Delivering all types of goods and liquid national transport services.</span>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Core Values -->
-        <div class="scroll-reveal bg-gray-50 rounded-3xl p-8 shadow-xl border border-gray-100">
-          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <h3 class="font-display text-2xl font-black text-gray-900 mb-4">Core Values</h3>
-          <div class="space-y-3 text-gray-600 text-body-sm">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Reliability</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Respect Commitments</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Respecting International Business Rules and Regulations</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Customer Based Service Delivery</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Progressive Dynamism</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Dynamic Progressive</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Avoid Hopelessness</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              <span>Innovation Based Development</span>
-            </div>
-          </div>
-        </div>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2000, Habtom Abadi Import and Export has been a basis of Ethiopia's international trade sector for over two decades. Based in the heart of Addis Ababa, we specialize in closing the gap between Ethiopia's rich agricultural resources and the global market, while simultaneously fueling national development through the importation of standard machinery and technology.</p>
       </div>
     </div>
   </section>
@@ -143,7 +47,7 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Coffee</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">Premium Arabica coffee beans, world-renowned for their unique flavors. We export Yirgacheffe, Sidamo, Harrar, Jimma, Limu, and Ghimbi varieties to international markets.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">Coffee beans, world-renowned for their unique flavors. We export Yirgacheffe, Sidamo, Harrar, Jimma, Limu, and Ghimbi varieties to international markets.</p>
         </div>
 
         <div class="scroll-reveal bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
@@ -173,7 +77,7 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Spices</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">Premium pepper, ginger, black cumin, turmeric, and dried red chili. Ethiopia's tropical highlands provide ideal growing conditions for these aromatic spices.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">High quality pepper, ginger, black cumin, turmeric, and dried red chili. Ethiopia's tropical highlands provide ideal growing conditions for these aromatic spices.</p>
         </div>
       </div>
     </div>

@@ -27,15 +27,15 @@
         </div>
 
         <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-8">
-          One of the Best<br/>International Trader
+          Reliable partner<br/>For all
         </h1>
 
         <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
-          For over 18 years, Habtom Abadi Import and Export has been a cornerstone of Ethiopia's international trade sector, bridging Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.
+          For over 18 years, Habtom Abadi Import and Export has been a basis of Ethiopia's international trade sector, connecting Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
-           tact Us Today
+           cotact Us Today
           </a>
         </div>
       </div>
@@ -115,11 +115,11 @@
             </svg>
           </div>
           <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Export Division</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Bridging Ethiopia's rich agricultural resources with the global market, exporting quality products that meet international standards</p>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Connecting Ethiopia's rich agricultural resources with the global market, exporting quality products that meet international standards</p>
           <ul class="text-gray-600 space-y-4 mb-8">
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-               <span class="text-body-sm">Arabica coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu</span>
+               <span class="text-body-sm">Coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu</span>
             </li>
             <li class="flex items-start gap-4">
               <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
@@ -421,7 +421,7 @@
         </div>
         
         <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with One of the Best International Trader</h2>
-        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable and competent international traders. Join us in our mission to export standard quality Ethiopian agricultural products and import machinery for national development.</p>
+        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable, and competent international traders. Join us in our mission to export Ethiopian agricultural products including coffee, pulses, oilseeds, and spices; import construction, agricultural, and manufacturing machinery; expand into manufacturing and product distribution; and provide national cargo and liquid transport services.</p>
         
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a href="{{ route('contact') }}"
