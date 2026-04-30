@@ -16,6 +16,10 @@ class Setting extends Model
         'description',
     ];
 
+    protected $attributes = [
+        'type' => 'text',
+    ];
+
     protected $casts = [
         'value' => 'json',
     ];

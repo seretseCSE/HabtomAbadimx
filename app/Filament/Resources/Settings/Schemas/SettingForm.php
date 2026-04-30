@@ -20,13 +20,7 @@ class SettingForm
                             ->required()
                             ->unique(ignoreRecord: true)
                             ->helperText('Unique identifier for this setting'),
-                        TextInput::make('type')
-                            ->label('Setting Type')
-                            ->required()
-                            ->default('text')
-                            ->helperText('Type of value this setting holds (text, number, boolean, json, email, url)'),
-                    ])
-                    ->columns(2),
+                    ]),
                 Section::make('Setting Value')
                     ->components([
                         Textarea::make('value')

@@ -27,20 +27,6 @@ class SettingsTable
                     ->searchable()
                     ->limit(50)
                     ->wrap(),
-                TextColumn::make('type')
-                    ->label('Type')
-                    ->searchable()
-                    ->sortable()
-                    ->badge()
-                    ->color(fn (string $state): string => match ($state) {
-                        'text' => 'gray',
-                        'number' => 'blue',
-                        'boolean' => 'green',
-                        'json' => 'purple',
-                        'email' => 'orange',
-                        'url' => 'cyan',
-                        default => 'gray',
-                    }),
                 TextColumn::make('description')
                     ->label('Description')
                     ->searchable()
@@ -53,16 +39,7 @@ class SettingsTable
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                SelectFilter::make('type')
-                    ->label('Setting Type')
-                    ->options([
-                        'text' => 'Text',
-                        'number' => 'Number',
-                        'boolean' => 'Boolean',
-                        'json' => 'JSON',
-                        'email' => 'Email',
-                        'url' => 'URL',
-                    ]),
+                //
             ])
             ->recordActions([
                 EditAction::make(),

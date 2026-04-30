@@ -9,19 +9,45 @@ use App\Models\Category;
 class ProductSeeder extends Seeder
 {
     /**
-     * Reliable placeholder images from placehold.co.
-     * These are generated on-demand and will never return 404.
-     * Spatie Media Library downloads them and stores locally.
+     * Real product images from Unsplash that will work in production.
+     * These are downloaded via addMediaFromUrl() and stored locally by Spatie Media Library.
      */
     private array $imageUrls = [
-        'coffee'    => 'https://placehold.co/800x600/6F4E37/ffffff?text=Ethiopian+Coffee',
-        'oilseed'   => 'https://placehold.co/800x600/DAA520/ffffff?text=Oilseed',
-        'pulse'     => 'https://placehold.co/800x600/8B4513/ffffff?text=Pulse',
-        'spice'     => 'https://placehold.co/800x600/DC143C/ffffff?text=Spice',
-        'vehicle'   => 'https://placehold.co/800x600/2C3E50/ffffff?text=Vehicle',
-        'construction'=> 'https://placehold.co/800x600/34495E/ffffff?text=Construction',
-        'agriculture'=> 'https://placehold.co/800x600/27AE60/ffffff?text=Agriculture',
-        'general'   => 'https://placehold.co/800x600/7F8C8D/ffffff?text=General+Import',
+        'coffee' => [
+            'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&q=80',
+            'https://images.unsplash.com/photo-1514432324607-a09d9b4aefda?w=800&q=80',
+            'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80',
+        ],
+        'oilseed' => [
+            'https://images.unsplash.com/photo-1622467827417-bbe2237067a9?w=800&q=80',
+            'https://images.unsplash.com/photo-1599495464239-e4389ddc675a?w=800&q=80',
+        ],
+        'pulse' => [
+            'https://images.unsplash.com/photo-1515543904379-3d757afe72e3?w=800&q=80',
+            'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80',
+        ],
+        'spice' => [
+            'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80',
+            'https://images.unsplash.com/photo-1532336414038-cf19250c5757?w=800&q=80',
+        ],
+        'vehicle' => [
+            'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80',
+            'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&q=80',
+            'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80',
+        ],
+        'construction' => [
+            'https://images.unsplash.com/photo-1503708928676-1cb796a0891e?w=800&q=80',
+            'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
+            'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800&q=80',
+        ],
+        'agriculture' => [
+            'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&q=80',
+            'https://images.unsplash.com/photo-1592982537447-6f2a6a0c8108?w=800&q=80',
+        ],
+        'general' => [
+            'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80',
+            'https://images.unsplash.com/photo-1565514020192-54a4765bc2f8?w=800&q=80',
+        ],
     ];
 
     public function run(): void
@@ -761,15 +787,22 @@ class ProductSeeder extends Seeder
 
             $product = Product::create($data);
 
-            // Attach image via Spatie Media Library.
-            // placehold.co URLs are 100% reliable and return real images.
+            // Attach images via Spatie Media Library using publicly accessible URLs.
+            // addMediaFromUrl() downloads the image and stores it locally so it
+            // remains available in production as long as storage:link is active.
             if (isset($this->imageUrls[$imageType])) {
-                try {
-                    $product->addMediaFromUrl($this->imageUrls[$imageType])
-                        ->usingFileName("{$product->slug}.png")
-                        ->toMediaCollection('images');
-                } catch (\Exception $e) {
-                    // If image download fails, product still works with fallback.
+                $urls = $this->imageUrls[$imageType];
+                // Use 1 or 2 images per product for variety
+                $count = min(count($urls), ($data['is_featured'] ?? false) ? 2 : 1);
+                for ($i = 0; $i < $count; $i++) {
+                    try {
+                        $product->addMediaFromUrl($urls[$i])
+                            ->usingFileName("{$product->slug}-" . ($i + 1) . '.jpg')
+                            ->toMediaCollection('images');
+                    } catch (\Exception $e) {
+                        // If image download fails (e.g. network issue), continue without it.
+                        // The product will still display with a fallback placeholder.
+                    }
                 }
             }
         }
