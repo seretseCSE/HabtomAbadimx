@@ -11,7 +11,9 @@
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Product Catalogue</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">Ethiopian agricultural exports (coffee, oilseeds, pulses) and imported machinery for national development</p>
+        <p class="text-green-200 text-lg max-w-2xl mx-auto">With over 18 years of experience, we export Ethiopia’s best coffee, seeds, and beans.
+We also import machines for farming and building, along with the supplies they need.
+Our company provides high-quality vehicles, focusing mainly on clean and modern electric cars.</p>
     </div>
 </section>
 
@@ -61,7 +63,7 @@
             @php
                 $featuredProduct = $products->first();
             @endphp
-            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid md:grid-cols-2 group cursor-pointer hover:shadow-xl transition-shadow duration-300" onclick="showProductModal({{ $featuredProduct->id }})">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid md:grid-cols-2 group cursor-pointer hover:shadow-xl transition-shadow duration-300" onclick="window.location.href='{{ route('products.show', $featuredProduct) }}'">
                 <div class="overflow-hidden h-64 md:h-auto">
                     @php $productImage = $featuredProduct->getFirstMediaUrl('images'); @endphp
                     @if($productImage)
@@ -124,7 +126,7 @@
             @endphp
             @foreach($remainingProducts as $product)
             <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100 product-card" data-category="{{ $product->category_id }}" data-type="{{ $product->category && strtolower($product->category->name) === 'import' ? 'import' : 'export' }}">
-                <div class="relative overflow-hidden h-48">
+                <a href="{{ route('products.show', $product) }}" class="block relative overflow-hidden h-48">
                     @if($product->images && count($product->images) > 0)
                         <img src="{{ $product->images[0]['url'] }}" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @else
@@ -140,7 +142,7 @@
                             <span class="bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">Featured</span>
                         @endif
                     </div>
-                </div>
+                </a>
                 <div class="p-6">
                     <div class="flex items-center gap-2 mb-3">
                         <span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded-full">{{ $product->category->name ?? 'General' }}</span>
@@ -149,7 +151,7 @@
                         @endif
                     </div>
                     <h3 class="font-display font-bold text-gray-900 text-lg leading-tight mb-2">{{ $product->name }}</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{{ $product->description ?? 'Quality product available for export/import.' }}</p>
+                    <p class="text-gray-600 text-sm leading-relaxed line-clamp-2 mb-4">{{ strip_tags($product->description ?? 'Quality product available for export/import.') }}</p>
                     <div class="flex items-center justify-between mb-4">
                         @if($product->unit)
                         <span class="text-gray-500 text-xs">{{ $product->unit }}</span>
@@ -158,7 +160,7 @@
                         <span class="text-gray-400 text-xs">HS: {{ $product->hs_code }}</span>
                         @endif
                     </div>
-                    <button onclick="showProductModal({{ $product->id }})" class="w-full bg-primary/10 text-primary font-semibold text-sm py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors">View Details</button>
+                    <a href="{{ route('products.show', $product) }}" class="w-full bg-primary/10 text-primary font-semibold text-sm py-2.5 rounded-xl hover:bg-primary hover:text-white transition-colors text-center block">View Details</a>
                 </div>
             </div>
             @endforeach
@@ -284,7 +286,7 @@ function showProductModal(productId) {
                         </div>
                         
                         <div class="prose prose-lg text-gray-600 mb-8">
-                            <p>${data.description || 'Quality product available for international trade. Sourced from the finest producers and processed to meet international standards.'}</p>
+                            ${data.description || '<p>Quality product available for international trade. Sourced from the finest producers and processed to meet international standards.</p>'}
                         </div>
                         
                         ${data.specifications && Object.keys(data.specifications).length > 0 ? `

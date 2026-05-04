@@ -20,12 +20,13 @@
     <div class="relative max-w-7xl mx-auto px-8 text-center">
       <div class="animate-float">
         <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
-          <span class="w-3 h-3 bg-gold rounded-full animate-pulse-glow" aria-hidden="true"></span>
-          <span class="text-green-200 text-sm font-semibold tracking-wider uppercase">Our Services</span>
+          {{-- <span class="w-3 h-3 bg-gold rounded-full animate-pulse-glow" aria-hidden="true"></span> --}}
+          <span class="text-green-200 text-sm font-semibold tracking-wider uppercase"></span>
         </div>
 
         <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Comprehensive Trade Solutions</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2000, Habtom Abadi Import and Export has been a basis of Ethiopia's international trade sector for over two decades. Based in the heart of Addis Ababa, we specialize in closing the gap between Ethiopia's rich agricultural resources and the global market, while simultaneously fueling national development through the importation of standard machinery and technology.</p>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">
+            we provide fast transport for fuel and cargo across the country. We manage the full process of exporting Ethiopia’s best crops to the global market. We also handle the import of farming tools, building machines, and modern electric vehicles. Our team ensures all trade is simple, safe, and always on time.</p>
       </div>
     </div>
   </section>

@@ -40,7 +40,7 @@
         <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of goods and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
       </div>
       <div class="relative scroll-reveal">
-        <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=700&q=80"
+        <img src="aboutus.jpg"
              class="rounded-3xl shadow-xl w-full h-96 object-cover lazy-load"
              alt="Ethiopian trade and export operations"
              loading="lazy" />
@@ -127,19 +127,19 @@
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                    Coffee � Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
+                    <b>Coffee</b> - Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Oil seeds � sesame seed, Custard seed, Nugget, Wool, Linen, and almond
+                   <b>Oil seeds</b> - sesame seed, Custard seed, Nugget, Wool, Linen, and almond
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Pulses � green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
+                   <b>Pulses</b> - green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Spices � Paper, ginger, black cumin, Turmeric, and Dried Red Chil
+                   <b>Spices</b> - Paper, ginger, black cumin, Turmeric, and Dried Red Chil
                 </li>
               </ul>
             </div>
@@ -149,19 +149,19 @@
               <ul class="space-y-3 text-gray-600 text-sm">
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Automotive � Electric (EV), hybrid, gas-powered cars, buses, and trucks
+                 <b> Automotive</b> - Electric (EV), hybrid, gas-powered cars, buses, and trucks
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Construction machinery � dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
+                  <b>Construction machinery</b> - dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  Agricultural machinery � modern tractors, harvesters, and farming inputs
+                  <b>Agricultural machinery</b> - modern tractors, harvesters, and farming inputs
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  General import � metals, soft temper, spare parts, and versatile industrial sourcing
+                  <b>General import</b> - metals, soft temper, spare parts, and versatile industrial sourcing
                 </li>
               </ul>
             </div>
@@ -227,7 +227,7 @@
     </div>
   </section>
 
-  <section class="py-24 bg-white">
+  {{-- <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
         <span class="text-primary text-xs font-semibold tracking-widest uppercase">Milestones</span>
@@ -260,7 +260,88 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
+<!-- Company Milestones -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Our Journey</span>
+        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Company Milestones</h2>
+        <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Key milestones in our growth from a small trading company to a comprehensive import-export and logistics provider.</p>
+      </div>
 
+      <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 hidden lg:block"></div>
+
+        <div class="space-y-12">
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right">
+              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2008</h4>
+                <p class="text-gray-600 text-sm">Company was created with 2 employees and started exporting camels and cattle to Egypt.</p>
+              </div>
+            </div>
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">08</div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">14</div>
+            <div class="lg:w-1/2 lg:text-left">
+              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2014</h4>
+                <p class="text-gray-600 text-sm">Started exporting coffee, expanding our agricultural product portfolio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right">
+              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2017</h4>
+                <p class="text-gray-600 text-sm">Expanded our export division to oil seeds and pulses. Our importing journey began with heavy machines.</p>
+              </div>
+            </div>
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">17</div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">18</div>
+            <div class="lg:w-1/2 lg:text-left">
+              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2018</h4>
+                <p class="text-gray-600 text-sm">Began importing vehicles (buses and fuel cars), metals, and soft temper.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2 lg:text-right">
+              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2021</h4>
+                <p class="text-gray-600 text-sm">Launched national transportation services with 2 cargo trucks.</p>
+              </div>
+            </div>
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">21</div>
+            <div class="lg:w-1/2"></div>
+          </div>
+
+          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+            <div class="lg:w-1/2"></div>
+            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">23</div>
+            <div class="lg:w-1/2 lg:text-left">
+              <div class="bg-gold/10 rounded-2xl p-6 border border-gold/20 inline-block">
+                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2023</h4>
+                <p class="text-gray-600 text-sm">Expanded our transportation fleet with 20 fuel trucks, dramatically increasing logistics capabilities.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 @endsection

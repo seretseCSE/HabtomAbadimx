@@ -86,9 +86,9 @@
                         {{ $product->name }}
                     </h1>
 
-                    <p class="text-gray-600 text-lg leading-relaxed">
-                        {{ $product->description }}
-                    </p>
+                    <div class="text-gray-600 text-lg leading-relaxed prose prose-lg max-w-none">
+                        {!! $product->description !!}
+                    </div>
                 </div>
 
                 <!-- Quick Facts -->

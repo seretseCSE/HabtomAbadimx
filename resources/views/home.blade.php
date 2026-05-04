@@ -31,7 +31,7 @@
         </h1>
 
         <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
-          For over 18 years, Habtom Abadi Import and Export has been a basis of Ethiopia's international trade sector, connecting Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.
+           Welcome to Habtom Abadi. We have more than 18 years of experience in the import and export business. We send the best coffee and crops from Ethiopia to the rest of the world. We also bring in the cars and heavy machines that our country needs to grow and succeed.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
@@ -109,7 +109,7 @@
 
       <div class="grid lg:grid-cols-2 gap-12">
         <div class="group elevated-card p-10 scroll-reveal relative overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('coffee1.jpg') }}'); filter: blur(2px); transform: scale(1.1);"></div>
+          {{-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('coffee1.jpg') }}'); filter: blur(2px); transform: scale(1.1);"></div> --}}
           <div class="absolute inset-0 bg-white/60"></div>
           <div class="relative z-10">
             <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
@@ -148,7 +148,7 @@
         </div>
 
         <div class="group elevated-card p-10 scroll-reveal relative overflow-hidden">
-          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('import.png') }}'); filter: blur(2px); transform: scale(1.1);"></div>
+          {{-- <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('import.png') }}'); filter: blur(2px); transform: scale(1.1);"></div> --}}
           <div class="absolute inset-0 bg-white/60"></div>
           <div class="relative z-10">
             <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
@@ -361,7 +361,7 @@
   </section>
 
   <!-- PARTNERS -->
-  @if($partners->isNotEmpty())
+  {{-- @if($partners->isNotEmpty())
   <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
@@ -413,7 +413,7 @@
       </div>
     </div>
   </section>
-  @endif
+  @endif --}}
 
   <!-- CTA -->
   <section class="py-32 bg-primary relative overflow-hidden">
