@@ -35,7 +35,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
-           contact Us Today
+           Contact Us Today
           </a>
         </div>
       </div>
