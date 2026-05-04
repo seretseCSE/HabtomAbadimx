@@ -210,7 +210,7 @@
         </div>
         <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
           <div class="font-display text-xl font-bold text-gray-900 mb-3">Kehase Haftom</div>
-          <div class="text-primary font-semibold mb-4">Documentation</div>
+          <div class="text-primary font-semibold mb-4">Import/Export Officer</div>
           <p class="text-gray-600 text-body-sm">Ensures smooth import/export paperwork and compliance.</p>
         </div>
         <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
