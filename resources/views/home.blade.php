@@ -9,7 +9,7 @@
   <section class="hero-bg min-h-screen flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('tractor.avif') }}"
+      <img src="{{ asset('img1.png') }}"
            class="w-full h-full object-cover lazy-load"
            alt="Ethiopian agricultural landscape showcasing our export products"
            loading="eager" />
@@ -35,7 +35,7 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
-           cotact Us Today
+           contact Us Today
           </a>
         </div>
       </div>
@@ -43,7 +43,7 @@
       <!-- Enhanced Hero image card -->
       <div class="hidden md:block relative mt-16 animate-slide-in-right">
         <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card">
-          <img src="{{ asset('tractor.avif') }}"
+          <img src="{{ asset('img1.png') }}"
                class="w-full h-96 object-cover"
                alt="Modern agricultural tractor in Ethiopian farmland"
                loading="eager" />
@@ -240,7 +240,7 @@
     <!-- Enhanced background elements -->
     <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 w-48 h-48 bg-gold/10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1.5s;"></div>
-    
+
     <div class="max-w-7xl mx-auto px-8 relative">
       <div class="text-center mb-20 scroll-reveal">
         <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
@@ -254,7 +254,7 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="text-white scroll-reveal animate-slide-in-left space-y-8">
           <h3 class="font-display text-3xl font-black mb-8">Our Fleet Growth</h3>
-          
+
           <div class="space-y-8">
             <div class="elevated-card p-8 backdrop-blur-md">
               <div class="flex items-center gap-6 mb-4">
@@ -412,17 +412,17 @@
     <!-- Enhanced background elements -->
     <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold/10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 2s;"></div>
-    
+
     <div class="max-w-5xl mx-auto px-8 relative">
       <div class="text-center scroll-reveal">
         <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
           <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
           <span class="text-white text-sm font-semibold tracking-wider uppercase">Partner With Us</span>
         </div>
-        
+
         <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with One of the Best International Trader</h2>
         <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable, and competent international traders. Join us in our mission to export Ethiopian agricultural products including coffee, pulses, oilseeds, and spices; import construction, agricultural, and manufacturing machinery; expand into manufacturing and product distribution; and provide national cargo and liquid transport services.</p>
-        
+
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a href="{{ route('contact') }}"
              class="btn-primary text-white font-bold px-12 py-5 rounded-full focus-visible text-lg inline-flex items-center group">
