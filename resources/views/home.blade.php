@@ -50,7 +50,7 @@
         </div>
 
         <!-- Enhanced Floating stats cards -->
-        <div class="absolute -bottom-8 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
+        <div class="absolute -bottom-4 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
           <div class="text-xs text-gray-500 mb-2 font-semibold">18+ Years</div>
           <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
           <div class="text-primary text-sm font-medium mt-1">Since 2008</div>
@@ -66,26 +66,26 @@
     <!-- Enhanced Stats Bar -->
     <div class="absolute bottom-0 left-0 right-0">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
-          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
+          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
             <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">18+</div>
             <div class="text-green-300 text-sm mt-2">Years Experience</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
 
-          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
             <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">20+</div>
             <div class="text-green-300 text-sm mt-2">Fuel Trucks</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
 
-          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
             <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">15+</div>
             <div class="text-green-300 text-sm mt-2">Countries Served</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
           </div>
 
-          <div class="stat-card p-8 text-center text-white group cursor-pointer" tabindex="0" role="button">
+          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
             <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">2008</div>
             <div class="text-green-300 text-sm mt-2">Founded</div>
             <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
@@ -108,74 +108,82 @@
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
-        <div class="group elevated-card p-10 scroll-reveal">
-          <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-            </svg>
+        <div class="group elevated-card p-10 scroll-reveal relative overflow-hidden">
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('coffee1.jpg') }}'); filter: blur(2px); transform: scale(1.1);"></div>
+          <div class="absolute inset-0 bg-white/60"></div>
+          <div class="relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-primary to-primary-light rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Export Division</h3>
+            <p class="text-gray-600 text-body-md leading-relaxed mb-8">Connecting Ethiopia's rich agricultural resources with the global market, exporting quality products that meet international standards</p>
+            <ul class="text-gray-600 space-y-4 mb-8">
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                 <span class="text-body-sm">Coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                 <span class="text-body-sm">Oil seeds — sesame seed, Custard seed, Nugget, Wool, Linen, and almond</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                 <span class="text-body-sm">Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                 <span class="text-body-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil</span>
+              </li>
+            </ul>
+            <a href="{{ route('products') }}"
+               class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
+              <span class="relative z-10">Explore Products</span>
+              <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
           </div>
-          <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Export Division</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Connecting Ethiopia's rich agricultural resources with the global market, exporting quality products that meet international standards</p>
-          <ul class="text-gray-600 space-y-4 mb-8">
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-               <span class="text-body-sm">Coffee — Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-               <span class="text-body-sm">Oil seeds — sesame seed, gulo, Nugget, Wool, Linen, and almond</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-               <span class="text-body-sm">Pulses — green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-               <span class="text-body-sm">Spices — Paper, ginger, black cumin, Turmeric, and Dried Red Chil</span>
-            </li>
-          </ul>
-          <a href="{{ route('products') }}"
-             class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
-            <span class="relative z-10">Explore Products</span>
-            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
         </div>
 
-        <div class="group elevated-card p-10 scroll-reveal">
-          <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
+        <div class="group elevated-card p-10 scroll-reveal relative overflow-hidden">
+          <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ asset('import.png') }}'); filter: blur(2px); transform: scale(1.1);"></div>
+          <div class="absolute inset-0 bg-white/60"></div>
+          <div class="relative z-10">
+            <div class="w-20 h-20 bg-gradient-to-br from-gold to-gold-dark rounded-3xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Import Division</h3>
+            <p class="text-gray-600 text-body-md leading-relaxed mb-8">Fueling national development through the importation of machinery, vehicles, and technology</p>
+            <ul class="text-gray-600 space-y-4 mb-8">
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-body-sm">Automotive — Electric (EV), hybrid, and gas-powered cars, heavy-duty buses, and trucks</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-body-sm">Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, and mixers</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-body-sm">Agricultural machinery — modern tractors, harvesters, and farming inputs to modernize Ethiopian agriculture</span>
+              </li>
+              <li class="flex items-start gap-4">
+                <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
+                <span class="text-body-sm">General import — metals, soft temper, spare parts, and versatile sourcing for industrial and commercial needs</span>
+              </li>
+            </ul>
+            <a href="{{ route('contact') }}"
+               class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
+              <span class="relative z-10">Request Import Services</span>
+              <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </a>
           </div>
-          <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Import Division</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-8">Fueling national development through the importation of machinery, vehicles, and technology</p>
-          <ul class="text-gray-600 space-y-4 mb-8">
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Automotive — Electric (EV), hybrid, and gas-powered cars, heavy-duty buses, and trucks</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Construction machinery — dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, and mixers</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">Agricultural machinery — modern tractors, harvesters, and farming inputs to modernize Ethiopian agriculture</span>
-            </li>
-            <li class="flex items-start gap-4">
-              <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
-              <span class="text-body-sm">General import — metals, soft temper, spare parts, and versatile sourcing for industrial and commercial needs</span>
-            </li>
-          </ul>
-          <a href="{{ route('contact') }}"
-             class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
-            <span class="relative z-10">Request Import Services</span>
-            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a>
         </div>
       </div>
     </div>

@@ -131,7 +131,7 @@
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   Oil seeds � sesame seed, gulo, Nugget, Wool, Linen, and almond
+                   Oil seeds � sesame seed, Custard seed, Nugget, Wool, Linen, and almond
                 </li>
                 <li class="flex items-center gap-3">
                   <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
