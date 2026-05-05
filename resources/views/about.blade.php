@@ -12,21 +12,24 @@
            alt="Habtom Abadi leadership team and corporate headquarters"
            loading="eager" />
     </div>
-    
+
     <!-- Enhanced decorative elements -->
     <div class="absolute top-24 left-10 w-96 h-96 bg-gold opacity-10 rounded-full -translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
     <div class="absolute bottom-0 right-10 w-72 h-72 bg-primary-light opacity-10 rounded-full translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1s;"></div>
-    
+
     <div class="relative max-w-7xl mx-auto px-8 text-center">
       <div class="animate-float">
         <div class="inline-flex items-center gap-3 bg-white/10 rounded-full px-6 py-3 mb-8 backdrop-blur-sm">
           <span class="w-3 h-3 bg-gold rounded-full animate-pulse-glow" aria-hidden="true"></span>
           <span class="text-green-200 text-sm font-semibold tracking-wider uppercase">About Us</span>
         </div>
-        
+
         <h1 id="about-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Habtom Abadi Import & Export</h1>
-        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">Established in 2008, we've been a basis of Ethiopia's international trade sector for over 18 years, connecting Ethiopia's rich agricultural resources with global markets while fueling national development through machinery imports.</p>
-      </div>
+        <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">
+            We manage the end-to-end export of Ethiopia’s top-grade coffee and crops, ensuring they meet global quality standards and our clients needs.
+            Our import division specializes in bringing advanced industrial machinery and modern electric vehicles to the market to increase business efficiency. These services are backed by our nationwide transport fleet, providing fast and secure delivery for fuel and cargo. Our team guarantees professional, safe, and on-time results for every partner
+        </p>
+    </div>
     </div>
   </section>
 
@@ -226,41 +229,7 @@
       </div>
     </div>
   </section>
-
-  {{-- <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Milestones</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Our journey so far</h2>
-      </div>
-      <div class="space-y-6">
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2008</p>
-          <p class="text-gray-600 mt-2 text-body-md">Founded with two employees and began exporting camels and cattle to Egypt.</p>
-        </div>
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2014</p>
-          <p class="text-gray-600 mt-2 text-body-md">Expanded export operations to include coffee.</p>
-        </div>
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2017</p>
-          <p class="text-gray-600 mt-2 text-body-md">Added oilseeds and pulses to our export portfolio and began importing heavy machinery.</p>
-        </div>
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2018</p>
-          <p class="text-gray-600 mt-2 text-body-md">Started importing vehicles, metals, and soft temper products.</p>
-        </div>
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2021</p>
-          <p class="text-gray-600 mt-2 text-body-md">Launched national transportation with two cargo trucks.</p>
-        </div>
-        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
-          <p class="text-primary font-semibold text-lg">2023</p>
-          <p class="text-gray-600 mt-2 text-body-md">Expanded transportation capacity to 20 fuel trucks.</p>
-        </div>
-      </div>
-    </div>
-  </section> --}}
+ 
 <!-- Company Milestones -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">

@@ -31,7 +31,7 @@
         </h1>
 
         <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
-           Welcome to Habtom Abadi. We have more than 18 years of experience in the import and export business. We send the best coffee and crops from Ethiopia to the rest of the world. We also bring in the cars and heavy machines that our country needs to grow and succeed.
+            Welcome to Habtom Abadi Import & Export. With over 18 years in the industry, we serve as a trusted bridge between Ethiopia and the global market. We export Ethiopia’s best coffee and crops to international buyers, while importing high-quality vehicles and heavy machinery that help businesses grow and stay profitable
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
@@ -104,7 +104,7 @@
           <span class="text-primary text-sm font-semibold tracking-wider uppercase">Our Services</span>
         </div>
         <h2 class="font-display text-display-lg font-black text-gray-900 mb-8">Export & Import Excellence</h2>
-        <p class="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">We specialize in exporting Ethiopia's finest agricultural products while importing machinery and technology to drive national development</p>
+        <p class="text-body-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">We specialize in exporting Ethiopia's internationally demanded agricultural products while importing advanced machinery and technology needed to improve operational efficiency and increase profitability</p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-12">
@@ -157,7 +157,7 @@
               </svg>
             </div>
             <h3 class="font-display text-2xl font-black text-gray-900 mb-6">Import Division</h3>
-            <p class="text-gray-600 text-body-md leading-relaxed mb-8">Fueling national development through the importation of machinery, vehicles, and technology</p>
+            <p class="text-gray-600 text-body-md leading-relaxed mb-8">helping our clients modernize their operations through the importation of machinery, vehicles, and technology</p>
             <ul class="text-gray-600 space-y-4 mb-8">
               <li class="flex items-start gap-4">
                 <span class="w-2 h-2 bg-gold rounded-full flex-shrink-0 mt-2" aria-hidden="true"></span>
@@ -178,7 +178,7 @@
             </ul>
             <a href="{{ route('contact') }}"
                class="btn-primary text-white font-semibold px-8 py-4 rounded-full focus-visible inline-flex items-center">
-              <span class="relative z-10">Request Import Services</span>
+              <span class="relative z-10">Request Services</span>
               <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
               </svg>
@@ -256,7 +256,9 @@
           <span class="text-white text-sm font-semibold tracking-wider uppercase">National Transport</span>
         </div>
         <h2 class="font-display text-display-lg font-black text-white mb-8">Reliable Transportation Services</h2>
-        <p class="text-body-lg text-green-100 max-w-4xl mx-auto leading-relaxed">Delivering all types of goods and liquid transport services nationwide with our expanding fleet and experienced logistics team</p>
+        <p class="text-body-lg text-green-100 max-w-4xl mx-auto leading-relaxed">
+            Delivering quality transport services throughout Ethiopia and beyond with a modern fleet and a team you can trust
+        </p>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -301,7 +303,7 @@
               <div class="text-green-700 text-sm font-medium">cargo trucks</div>
             </div>
             <div class="elevated-card p-6 text-center backdrop-blur-md">
-              <div class="text-4xl font-black text-black mb-3">Nation</div>
+              <div class="text-4xl font-black text-black mb-3">Region</div>
               <div class="text-green-700 text-sm font-medium">Wide Coverage</div>
             </div>
           </div>
@@ -322,7 +324,9 @@
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
                   <div class="font-semibold text-lg mb-1 text-gray-800">All Types of Goods</div>
-                  <p class="text-gray-700 text-body-sm">Comprehensive goods transportation solutions for all industries</p>
+                  <p class="text-gray-700 text-body-sm">
+                    Reliable transportation providing the heavy-duty solutions your business needs to grow and thrive
+                </p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
@@ -335,8 +339,10 @@
               <li class="flex items-start gap-4 group">
                 <span class="w-3 h-3 bg-green-400 rounded-full flex-shrink-0 mt-1 group-hover:scale-125 transition-transform" aria-hidden="true"></span>
                 <div>
-                  <div class="font-semibold text-lg mb-1 text-gray-800">Nationwide Coverage</div>
-                  <p class="text-gray-700 text-body-sm">Complete delivery network across Ethiopia</p>
+                  <div class="font-semibold text-lg mb-1 text-gray-800">Regional Coverage</div>
+                  <p class="text-gray-700 text-body-sm">
+                    Complete delivery network across Ethiopia and neighboring markets
+                </p>
                 </div>
               </li>
               <li class="flex items-start gap-4 group">
@@ -360,61 +366,6 @@
     </div>
   </section>
 
-  <!-- PARTNERS -->
-  {{-- @if($partners->isNotEmpty())
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-medium tracking-wider uppercase">Global Reach</span>
-        <h2 class="font-display text-display-lg font-bold text-gray-900 mb-6">Serving 15+ Countries Worldwide</h2>
-        <p class="text-body-lg text-gray-600 max-w-3xl mx-auto">Our export division brings Ethiopia's finest agricultural products to international markets across the globe</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        @foreach($partners as $partner)
-        <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 group scroll-reveal">
-          <div class="flex justify-center mb-4">
-            @if($partner->logo_url)
-              <div class="w-24 h-24 overflow-hidden rounded-lg">
-                <img src="{{ $partner->logo_url }}"
-                     alt="{{ $partner->name }}"
-                     class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"/>
-              </div>
-            @else
-              <div class="w-24 h-24 bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex items-center justify-center">
-                <span class="text-lg text-gray-600 font-bold text-center">{{ Str::limit($partner->name, 2) }}</span>
-              </div>
-            @endif
-          </div>
-          <div class="text-center">
-            <h4 class="font-bold text-lg mb-2">{{ $partner->name }}</h4>
-            <p class="text-sm text-gray-600 mb-3">{{ $partner->country }}</p>
-            <span class="inline-block px-3 py-1 bg-primary text-white rounded-full text-sm font-medium">
-              {{ ucfirst($partner->partnership_type) }}
-            </span>
-          </div>
-          @if($partner->website_url)
-          <div class="mt-4 text-center">
-            <a href="{{ $partner->website_url }}"
-               target="_blank"
-               class="text-primary hover:text-gold transition-colors text-sm font-medium">
-              Visit Website &rarr;
-            </a>
-          </div>
-          @endif
-        </div>
-        @endforeach
-      </div>
-
-      <div class="text-center mt-12">
-        <a href="{{ route('certifications') }}" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors shadow-xl">
-          View All Partners
-        </a>
-      </div>
-    </div>
-  </section>
-  @endif --}}
-
   <!-- CTA -->
   <section class="py-32 bg-primary relative overflow-hidden">
     <!-- Enhanced background elements -->
@@ -429,8 +380,9 @@
         </div>
 
         <h2 class="font-display text-display-lg font-black text-white mb-8">Partner with One of the Best International Trader</h2>
-        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">To be one of the vibrant, reliable, and competent international traders. Join us in our mission to export Ethiopian agricultural products including coffee, pulses, oilseeds, and spices; import construction, agricultural, and manufacturing machinery; expand into manufacturing and product distribution; and provide national cargo and liquid transport services.</p>
-
+        <p class="text-body-lg text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Our goal is to be your most trusted global trade partner, recognized for reliability and professional excellence. We specialize in exporting Ethiopia’s high-quality coffee, pulses, and oilseeds, while providing the essential industrial machinery and technology our partners need to succeed. With an expanding presence in manufacturing and a professional national logistics network for cargo and liquid transport, we deliver the stability and results your business depends on        </p>
+        </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
           <a href="{{ route('contact') }}"
              class="btn-primary text-white font-bold px-12 py-5 rounded-full focus-visible text-lg inline-flex items-center group">
