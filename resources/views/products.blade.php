@@ -11,24 +11,22 @@
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Product Catalogue</h1>
-        <p class="text-green-200 text-lg max-w-2xl mx-auto">With over 18 years of experience, we export Ethiopia’s best coffee, seeds, and beans.
-We also import machines for farming and building, along with the supplies they need.
-Our company provides high-quality vehicles, focusing mainly on clean and modern electric cars.</p>
+        <p class="text-green-200 text-lg max-w-2xl mx-auto"></p>
     </div>
 </section>
 
 <!-- FILTER + GRID -->
 <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
-        
+
         <!-- Search Bar -->
         <div class="max-w-2xl mx-auto mb-12">
             <form method="GET" action="{{ route('products') }}" class="relative">
                 <div class="relative">
-                    <input type="text" 
-                           name="search" 
+                    <input type="text"
+                           name="search"
                            value="{{ request('search') }}"
-                           placeholder="Search products by name, description, origin, or HS code..." 
+                           placeholder="Search products by name, description, origin, or HS code..."
                            class="w-full px-6 py-4 pr-12 text-gray-700 bg-white border border-gray-200 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300">
                     <button type="submit" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-colors duration-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,14 +40,14 @@ Our company provides high-quality vehicles, focusing mainly on clean and modern 
         <!-- Category Filter Tabs -->
         @if($categories->isNotEmpty())
         <div class="flex flex-wrap gap-2 justify-center mb-12" x-data="{ activeCategory: '{{ request('category', 'all') }}' }">
-            <a href="{{ route('products', ['search' => request('search')]) }}" 
-               :class="activeCategory === 'all' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'" 
+            <a href="{{ route('products', ['search' => request('search')]) }}"
+               :class="activeCategory === 'all' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'"
                class="category-tab px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
                 All Categories
             </a>
             @foreach($categories as $category)
-            <a href="{{ route('products', ['category' => $category->id, 'search' => request('search')]) }}" 
-               :class="activeCategory === '{{ $category->id }}' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'" 
+            <a href="{{ route('products', ['category' => $category->id, 'search' => request('search')]) }}"
+               :class="activeCategory === '{{ $category->id }}' ? 'bg-primary text-white' : 'bg-white text-gray-600 border border-gray-200'"
                class="category-tab px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:bg-primary hover:text-white">
                 {{ $category->name }}
             </a>
@@ -165,7 +163,7 @@ Our company provides high-quality vehicles, focusing mainly on clean and modern 
             </div>
             @endforeach
         </div>
-        
+
         <!-- Pagination -->
         @if($products->hasPages())
         <div class="mt-12 flex justify-center">
@@ -202,7 +200,7 @@ Our company provides high-quality vehicles, focusing mainly on clean and modern 
 function filterByType(type) {
     const allCards = document.querySelectorAll('.product-card');
     const allTabs = document.querySelectorAll('[x-data] button');
-    
+
     allCards.forEach(card => {
         const cardType = card.dataset.type;
         if (type === 'all' || cardType === type) {
@@ -217,7 +215,7 @@ function filterByType(type) {
 function filterProducts(categoryId) {
     const allCards = document.querySelectorAll('.product-card');
     const allTabs = document.querySelectorAll('.category-tab');
-    
+
     // Update tab styles
     allTabs.forEach(tab => {
         if (tab.dataset.category === categoryId.toString()) {
@@ -226,7 +224,7 @@ function filterProducts(categoryId) {
             tab.className = 'category-tab px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 bg-gray-200 text-gray-700 hover:bg-gray-300';
         }
     });
-    
+
     // Filter products
     allCards.forEach(card => {
         if (categoryId === 'all' || card.dataset.category === categoryId.toString()) {
@@ -245,12 +243,12 @@ function showProductModal(productId) {
         .then(data => {
             const modalContent = document.getElementById('modalContent');
             const isImport = data.category && data.category.name.toLowerCase() === 'import';
-            
+
             modalContent.innerHTML = `
                 <div class="grid lg:grid-cols-2 gap-0">
                     <!-- Image Section -->
                     <div class="relative h-96 lg:h-full bg-gray-100">
-                        ${data.images && data.images.length > 0 ? 
+                        ${data.images && data.images.length > 0 ?
                             `<img src="${data.images[0].url}" class="w-full h-full object-cover" alt="${data.name}"/>` :
                             `<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=80" class="w-full h-full object-cover" alt="${data.name}"/>`
                         }
@@ -263,7 +261,7 @@ function showProductModal(productId) {
                             <span class="${isImport ? 'bg-amber-600' : 'bg-primary'} text-white text-sm font-bold px-4 py-2 rounded-full uppercase shadow-lg">${isImport ? 'Import' : 'Export'}</span>
                         </div>
                     </div>
-                    
+
                     <!-- Content Section -->
                     <div class="p-8 lg:p-12">
                         <div class="mb-6">
@@ -284,11 +282,11 @@ function showProductModal(productId) {
                                 </span>
                             </div>
                         </div>
-                        
+
                         <div class="prose prose-lg text-gray-600 mb-8">
                             ${data.description || '<p>Quality product available for international trade. Sourced from the finest producers and processed to meet international standards.</p>'}
                         </div>
-                        
+
                         ${data.specifications && Object.keys(data.specifications).length > 0 ? `
                             <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 mb-8">
                                 <h3 class="font-display text-2xl font-bold text-gray-900 mb-6">Product Specifications</h3>
@@ -305,7 +303,7 @@ function showProductModal(productId) {
                                 </div>
                             </div>
                         ` : ''}
-                        
+
                         <div class="grid grid-cols-2 gap-6 mb-8">
                             <div class="bg-white rounded-2xl p-6 border border-gray-200">
                                 <div class="text-sm text-gray-500 mb-2">Category</div>
@@ -316,7 +314,7 @@ function showProductModal(productId) {
                                 <div class="font-semibold text-gray-900">${data.hs_code || 'N/A'}</div>
                             </div>
                         </div>
-                        
+
                         <div class="flex gap-4">
                             <button onclick="closeProductModal()" class="px-8 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-2xl hover:bg-gray-50 transition-all duration-300">
                                 Close

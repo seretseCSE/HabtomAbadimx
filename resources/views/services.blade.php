@@ -6,7 +6,7 @@
 <main id="main-content" class="bg-white text-gray-900">
 
   <!-- HERO -->
-  <section class="hero-bg min-h-[70vh] flex items-center relative overflow-hidden" aria-labelledby="services-hero-heading">
+  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden" aria-labelledby="services-hero-heading">
     <div class="absolute inset-0 opacity-20">
       <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600&q=80"
            class="w-full h-full object-cover lazy-load"
@@ -24,10 +24,11 @@
           <span class="text-green-200 text-sm font-semibold tracking-wider uppercase"></span>
         </div>
 
-        <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Comprehensive Trade Solutions</h1>
+        <h1 id="services-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Global Trade and Logistics Solutions</h1>
         <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">
-            we provide fast transport for fuel and cargo across the country. We manage the full process of exporting Ethiopia’s best crops to the global market. We also handle the import of farming tools, building machines, and modern electric vehicles. Our team ensures all trade is simple, safe, and always on time.</p>
-      </div>
+            We specialize in exporting high-quality organic products from Ethiopia’s diverse agricultural landscape to the global market. Our division also manages the strategic import of industrial machinery and modern electric vehicles to drive local business efficiency. These operations are backed by our professional transport fleet, providing fast and secure cargo and fuel delivery nationwide and to neighboring countries.        </p>
+        </p>
+</div>
     </div>
   </section>
 
@@ -37,7 +38,9 @@
       <div class="text-center mb-16 scroll-reveal">
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">Bringing Ethiopia to the World</span>
         <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Export Division</h2>
-        <p class="text-gray-600 text-body-md max-w-3xl mx-auto mt-4">We take pride in exporting the finest organic products Ethiopia has to offer. Our export division bridges Ethiopia's rich agricultural resources with the global market, earning foreign currency while showcasing Ethiopia's agricultural excellence.</p>
+        <p class="text-gray-600 text-body-md max-w-3xl mx-auto mt-4">
+            Our export operations focus on leveraging a specialized supply chain, we facilitate the movement of coffee, oilseeds, pulses, and spices from local cultivation to global entry points. This division serves as a critical commercial link that converts Ethiopia's diverse natural resources into international trade value while ensuring all products align with the world's highest quality standards and client expectations.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -90,7 +93,9 @@
       <div class="text-center mb-16 scroll-reveal">
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">Engineering National Growth</span>
         <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Import Division</h2>
-        <p class="text-gray-600 text-body-md max-w-3xl mx-auto mt-4">We supply the essential tools needed for a developing economy. Our import division fuels national development through the importation of machinery, vehicles, and technology.</p>
+        <p class="text-gray-600 text-body-md max-w-3xl mx-auto mt-4">
+            Our import division functions as a strategic procurement hub, specializing in the direct sourcing and delivery of heavy machinery, electrical vehicles, and high grade construction materials.
+        </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -101,7 +106,9 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Automotive</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">A wide range of vehicles including electric (EV), hybrid, gas-powered cars, and heavy-duty buses. We source reliable vehicles suited for African road conditions.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">
+            A wide range of vehicles including electric (EV), hybrid, gas-powered cars, pick-up trucks, and heavy-duty buses. We source reliable vehicles and construction-related transport units suited for African road conditions.
+          </p>
         </div>
 
         <div class="scroll-reveal bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg border border-gray-100">
@@ -111,7 +118,9 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Construction Machinery</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">Industrial-grade equipment and essential inputs for infrastructure and mining projects. Including dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, and mixers.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">
+            Industrial-grade equipment and essential inputs for infrastructure and mining projects. Including dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers, and mixers.
+          </p>
         </div>
 
         <div class="scroll-reveal bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg border border-gray-100">
@@ -121,7 +130,9 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">Agricultural Machinery</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">Modern tractors, harvesters, and farming inputs to modernize Ethiopian agriculture. High-performance 4WD tractors and self-propelled combine harvesters for wheat, maize, and teff.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">
+            Modern tractors, harvesters, and farming inputs to modernize Ethiopian agriculture. High-performance 4WD tractors and self-propelled combine harvesters for wheat, maize, and teff.
+        </p>
         </div>
 
         <div class="scroll-reveal bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 shadow-lg border border-gray-100">
@@ -131,7 +142,9 @@
             </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-gray-900 mb-3">General Import</h3>
-          <p class="text-gray-600 text-body-sm leading-relaxed">Versatile sourcing capabilities to meet any specific industrial or commercial need. Metals, soft temper, spare parts, and comprehensive OEM and aftermarket parts for vehicles and machinery.</p>
+          <p class="text-gray-600 text-body-sm leading-relaxed">
+            Reliable sourcing capabilities to meet a specific industrial or commercial need. Metals, soft temper, spare parts, and a full range of vehicle and machinery spare parts.
+          </p>
         </div>
       </div>
     </div>
@@ -143,8 +156,10 @@
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="scroll-reveal">
           <span class="text-primary text-xs font-semibold tracking-widest uppercase">Transportation</span>
-          <h2 class="font-display text-display-lg font-black text-gray-900 mt-4 mb-6">National Transport Services</h2>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-6">Delivering all types of goods and liquid national transport services. We support the movement of goods across Ethiopia with reliable vehicles and experienced logistics professionals.</p>
+          <h2 class="font-display text-display-lg font-black text-gray-900 mt-4 mb-6">Regional Logistics & Cargo Solutions</h2>
+          <p class="text-gray-600 text-body-md leading-relaxed mb-6">
+            We provide comprehensive distribution for diverse dry goods and specialized liquid transport throughout Ethiopia and neighboring regions.
+          </p>
           <div class="space-y-4">
             <div class="flex items-start gap-4">
               <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -152,7 +167,7 @@
               </div>
               <div>
                 <h4 class="font-semibold text-gray-900 mb-1">All Types of Goods</h4>
-                <p class="text-gray-600 text-sm">Comprehensive goods transportation solutions for all industries across Ethiopia.</p>
+                <p class="text-gray-600 text-sm">Reliable goods transportation solutions for all industries across Ethiopia and the Region.</p>
               </div>
             </div>
             <div class="flex items-start gap-4">
@@ -169,7 +184,7 @@
                 <span class="text-white font-bold text-sm">✓</span>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Nationwide Coverage</h4>
+                <h4 class="font-semibold text-gray-900 mb-1">Regionwide Coverage</h4>
                 <p class="text-gray-600 text-sm">Complete delivery network with experienced drivers and logistics professionals.</p>
               </div>
             </div>
@@ -219,97 +234,14 @@
     </div>
   </section>
 
-  <!-- Company Milestones -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Our Journey</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Company Milestones</h2>
-        <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Key milestones in our growth from a small trading company to a comprehensive import-export and logistics provider.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 hidden lg:block"></div>
-
-        <div class="space-y-12">
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2008</h4>
-                <p class="text-gray-600 text-sm">Company was created with 2 employees and started exporting camels and cattle to Egypt.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">08</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">14</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2014</h4>
-                <p class="text-gray-600 text-sm">Started exporting coffee, expanding our agricultural product portfolio.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2017</h4>
-                <p class="text-gray-600 text-sm">Expanded our export division to oil seeds and pulses. Our importing journey began with heavy machines.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">17</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">18</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2018</h4>
-                <p class="text-gray-600 text-sm">Began importing vehicles (buses and fuel cars), metals, and soft temper.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2021</h4>
-                <p class="text-gray-600 text-sm">Launched national transportation services with 2 cargo trucks.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">21</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">23</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gold/10 rounded-2xl p-6 border border-gold/20 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2023</h4>
-                <p class="text-gray-600 text-sm">Expanded our transportation fleet with 20 fuel trucks, dramatically increasing logistics capabilities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Services from Database -->
   @if($services->isNotEmpty())
   <section class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
         <span class="text-primary text-xs font-semibold tracking-widest uppercase">Our Services</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Services We Offer</h2>
-        <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Comprehensive trade solutions tailored to meet your international business needs</p>
+        {{-- <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Services We Offer</h2> --}}
+        <h3 class="text-gray-600 text-display-lg">The best trade solutions tailored to meet your international business needs</h3>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -384,7 +316,10 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="scroll-reveal">
         <h2 class="font-display text-display-lg font-black text-white mb-6">Ready to Partner With Us?</h2>
-        <p class="text-green-100 text-body-lg mb-8 max-w-2xl mx-auto">Whether you're looking to import Ethiopian agricultural products or export machinery and technology, we're here to make your international trade seamless and successful.</p>
+        <p class="text-green-100 text-body-lg mb-8 max-w-2xl mx-auto">
+            Whether you are looking to source high-quality Ethiopian agricultural outputs or export advanced machinery and technology into the region,
+            we provide the expertise to ensure your international trade is seamless and successful.
+        </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="{{ route('contact') }}"
              class="bg-white text-primary font-bold px-8 py-4 rounded-full hover:bg-green-50 transition-all duration-300 shadow-xl hover:shadow-2xl focus-visible transform hover:scale-105">

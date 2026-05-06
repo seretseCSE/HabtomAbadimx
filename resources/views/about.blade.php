@@ -26,291 +26,184 @@
 
         <h1 id="about-hero-heading" class="font-display text-hero font-black text-white mt-4 mb-8">Habtom Abadi Import & Export</h1>
         <p class="text-green-100 text-body-lg max-w-4xl mx-auto leading-relaxed">
-            We manage the end-to-end export of Ethiopia’s top-grade coffee and crops, ensuring they meet global quality standards and our clients needs.
-            Our import division specializes in bringing advanced industrial machinery and modern electric vehicles to the market to increase business efficiency. These services are backed by our nationwide transport fleet, providing fast and secure delivery for fuel and cargo. Our team guarantees professional, safe, and on-time results for every partner
+            We manage the export of Ethiopia’s top-grade coffee and crops, ensuring they meet global quality standards and our clients needs.
+            Our import division specializes in bringing advanced industrial machinery and modern electric vehicles to the market to increase business efficiency. These services are backed by our regionwide transport fleet, providing fast and secure delivery for fuel and cargo. Our team guarantees professional, safe, and on-time results for every partner
         </p>
     </div>
     </div>
   </section>
 
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+  <!-- Section 1: Our Story -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div class="scroll-reveal">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Foundation</span>
+      <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A Legacy of Excellence Since 2008</h2>
+      <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over 18 years establishing itself as a bridge between Ethiopia’s resources and the global market.</p>
+      <p class="text-gray-600 text-body-md leading-relaxed mb-6">We specialize in the professional export of high-quality agricultural goods while importing the advanced machinery and automotive technology required for modern business success.</p>
+      <p class="text-gray-600 text-body-md leading-relaxed">With an expanding presence in manufacturing and a professional logistics network, we deliver the stability and results your business depends on.</p>
+    </div>
+    <div class="relative scroll-reveal">
+      <img src="aboutus.jpg" class="rounded-3xl shadow-xl w-full h-96 object-cover lazy-load" alt="Ethiopian trade and export operations" loading="lazy" />
+      <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
+        <div class="font-display text-3xl font-black">18+</div>
+        <div class="text-green-200 text-sm">Years of Excellence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Corporate Identity (Mission, Vision, Values) -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">Corporate Identity</span>
+      <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Vision, Mission & Values</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Vision</h3>
+        <p class="text-gray-600 text-body-md leading-relaxed">To be one of the vibrant, reliable, and competent international traders.</p>
+      </div>
+      <div class="bg-primary rounded-3xl p-8 shadow-sm scroll-reveal text-white">
+        <h3 class="font-display text-xl font-bold mb-4">Mission</h3>
+        <ul class="space-y-2 text-body-sm leading-relaxed">
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+            <span>Export Ethiopian agricultural products: coffee, pulses, oilseeds, and spices.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+            <span>Import construction, agricultural, and manufacturing machinery.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+            <span>Expand into manufacturing and product distribution.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
+            <span>Provide regional cargo and liquid transport services.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Core Values</h3>
+        <ul class="space-y-3 text-gray-600 text-body-sm leading-relaxed">
+          <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span> Reliability</li>
+          <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span> Respect Commitments</li>
+          <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span> Customer-Based Service</li>
+          <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span> Progressive Dynamism</li>
+          <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span> Innovation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Trade Divisions & Logistics -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
       <div class="scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Story</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3 mb-6">A trading basis since 2008</h2>
-        <p class="text-gray-600 text-body-md leading-relaxed mb-6">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over 18 years building a bridge between Ethiopia's agricultural resources and international markets.</p>
-        <p class="text-gray-600 text-body-md leading-relaxed mb-6">Our mission encompasses exporting standard quality Ethiopian agricultural products including coffee seeds, pulses, oilseeds, and spices, while importing construction, agricultural, and manufacturing machinery to support national progress.</p>
-        <p class="text-gray-600 text-body-md leading-relaxed">We also deliver all types of goods and liquid national transport services, and are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
+        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Trade Divisions</span>
+        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4 mb-6">Global Exports & Strategic Imports</h2>
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
+            <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Export Division</h3>
+            <ul class="space-y-3 text-gray-600 text-sm">
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Coffee</b> - Yirgacheffe, Sidamo, Harrar, Jimma, and Limu</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Oil seeds</b> - Sesame, Custard seed, Nugget, and Almond</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Pulses</b> - Green mung, Chickpea, and Soya bean</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Spices</b> - Ginger, Black cumin, and Turmeric</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
+            <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Import Division</h3>
+            <ul class="space-y-3 text-gray-600 text-sm">
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Automotive</b> - EV, Hybrid, Buses, and Trucks</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Construction</b> - Excavators, Dump trucks, and Loaders</li>
+              <li class="flex items-center gap-3"><span class="w-2 h-2 bg-primary rounded-full flex-shrink-0"></span><b>Agriculture</b> - Modern Tractors and Harvesters</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <div class="relative scroll-reveal">
-        <img src="aboutus.jpg"
-             class="rounded-3xl shadow-xl w-full h-96 object-cover lazy-load"
-             alt="Ethiopian trade and export operations"
-             loading="lazy" />
-        <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
-          <div class="font-display text-3xl font-black">18+</div>
-          <div class="text-green-200 text-sm">Years of Excellence</div>
+      <div class="scroll-reveal bg-primary rounded-3xl p-12 text-white shadow-xl">
+        <h3 class="font-display text-2xl font-black mb-6">Logistics & Transport Service</h3>
+        <p class="text-body-md leading-relaxed mb-6">
+            We provide fast, secure, and reliable delivery for fuel and cargo across a vast network that extends throughout Ethiopia and into neighboring countries.
+            Supported by an expanding fleet and expert drivers, our operations ensure seamless cross-border logistics and regional connectivity.        </p>
+        <div class="grid gap-5">
+          <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-sm border border-white/20">
+            <p class="font-bold text-lg">2021</p>
+            <p class="text-green-100 mt-2 text-sm">Launched national logistics with cargo truck operations.</p>
+          </div>
+          <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-sm border border-white/20">
+            <p class="font-bold text-lg">2023</p>
+            <p class="text-green-100 mt-2 text-sm">Expanded capacity to 20 fuel trucks for specialized liquid transport.</p>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Corporate Identity</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Vision, Mission & Values</h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Vision</h3>
-          <p class="text-gray-600 text-body-md leading-relaxed">To be one of the vibrant, reliable, and competent international traders.</p>
-        </div>
-        <div class="bg-primary rounded-3xl p-8 shadow-sm scroll-reveal text-white">
-          <h3 class="font-display text-xl font-bold mb-4">Mission</h3>
-          <ul class="space-y-2 text-body-sm leading-relaxed">
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
-              <span>Export Ethiopian agricultural products: coffee, pulses, oilseeds, and spices.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
-              <span>Import construction, agricultural, and manufacturing machinery.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
-              <span>Expand into manufacturing and product distribution.</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="w-2 h-2 bg-white rounded-full flex-shrink-0 mt-1.5" aria-hidden="true"></span>
-              <span>Provide national cargo and liquid transport services.</span>
-            </li>
-          </ul>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
-          <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Core Values</h3>
-          <ul class="space-y-3 text-gray-600 text-body-sm leading-relaxed">
-            <li class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              Reliability
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              Respect Commitments
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              Customer-Based Service
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              Progressive Dynamism
-            </li>
-            <li class="flex items-center gap-3">
-              <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-              Innovation
-            </li>
-          </ul>
-        </div>
-      </div>
+<!-- Section 4: Milestones (Enhanced Font Size) -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-primary text-xs font-semibold tracking-widest uppercase">Our Journey</span>
+      <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Company Milestones</h2>
     </div>
-  </section>
-
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
-        <div class="scroll-reveal">
-          <span class="text-primary text-xs font-semibold tracking-widest uppercase">Export & Import</span>
-          <h2 class="font-display text-display-lg font-black text-gray-900 mt-4 mb-6">Exporting Ethiopia's finest, importing modern progress.</h2>
-          <p class="text-gray-600 text-body-md leading-relaxed mb-6">We offer a balanced trade portfolio with two specialist divisions:</p>
-          <div class="space-y-6">
-            <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Export Division</h3>
-              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We export agricultural products prepared to international standards, earning foreign currency while showcasing Ethiopia's agricultural excellence.</p>
-              <ul class="space-y-3 text-gray-600 text-sm">
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                    <b>Coffee</b> - Yirgacheffe, Sidamo, Ghimbi, Harrar, Jimma, and Limu
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   <b>Oil seeds</b> - sesame seed, Custard seed, Nugget, Wool, Linen, and almond
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   <b>Pulses</b> - green mung, chicken pea, horse pea, red kidney pea, white kidney, and soya bean
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                   <b>Spices</b> - Paper, ginger, black cumin, Turmeric, and Dried Red Chil
-                </li>
-              </ul>
+    <div class="relative">
+      <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 hidden lg:block"></div>
+      <div class="space-y-12">
+        <!-- 2008 -->
+        <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/2 lg:text-right">
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 inline-block">
+              <h4 class="font-display text-2xl font-bold text-gray-900 mb-2">2008</h4>
+              <p class="text-gray-700 text-lg font-semibold">Established with a focus on livestock exports to international markets.</p>
             </div>
-            <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
-              <h3 class="font-display text-xl font-bold text-gray-900 mb-4">Import Division</h3>
-              <p class="text-gray-600 text-body-md leading-relaxed mb-4">We import the technology and machinery required for Ethiopia's growth and development.</p>
-              <ul class="space-y-3 text-gray-600 text-sm">
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                 <b> Automotive</b> - Electric (EV), hybrid, gas-powered cars, buses, and trucks
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  <b>Construction machinery</b> - dump trucks, excavators, wheel loaders, motor graders, road rollers, bulldozers
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  <b>Agricultural machinery</b> - modern tractors, harvesters, and farming inputs
-                </li>
-                <li class="flex items-center gap-3">
-                  <span class="w-2 h-2 bg-primary rounded-full flex-shrink-0" aria-hidden="true"></span>
-                  <b>General import</b> - metals, soft temper, spare parts, and versatile industrial sourcing
-                </li>
-              </ul>
+          </div>
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">08</div>
+          <div class="lg:w-1/2"></div>
+        </div>
+        <!-- 2014 -->
+        <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/2"></div>
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">14</div>
+          <div class="lg:w-1/2 lg:text-left">
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 inline-block">
+              <h4 class="font-display text-2xl font-bold text-gray-900 mb-2">2014</h4>
+              <p class="text-gray-700 text-lg font-semibold">Diversified operations into the global coffee export sector.</p>
             </div>
           </div>
         </div>
-
-        <div class="scroll-reveal bg-primary rounded-3xl p-12 text-white shadow-xl">
-          <h3 class="font-display text-2xl font-black mb-6">National Transport Services</h3>
-          <p class="text-body-md leading-relaxed mb-6">We deliver all types of goods and liquid transport services nationwide, supporting the movement of goods across Ethiopia with reliable vehicles and experienced drivers.</p>
-          <div class="grid gap-5">
-            <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-sm border border-white/20">
-              <p class="font-bold text-lg">2021</p>
-              <p class="text-green-100 mt-2 text-sm">Launched national transportation with two cargo trucks.</p>
+        <!-- 2017 -->
+        <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/2 lg:text-right">
+            <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 inline-block">
+              <h4 class="font-display text-2xl font-bold text-gray-900 mb-2">2017</h4>
+              <p class="text-gray-700 text-lg font-semibold">Expanded into oilseeds and pulses; launched the industrial machinery import division.</p>
             </div>
-            <div class="rounded-3xl bg-white/10 p-6 backdrop-blur-sm border border-white/20">
-              <p class="font-bold text-lg">2023</p>
-              <p class="text-green-100 mt-2 text-sm">Expanded transportation capacity to 20 fuel trucks.</p>
+          </div>
+          <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">17</div>
+          <div class="lg:w-1/2"></div>
+        </div>
+        <!-- 2023 (Highlight) -->
+        <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
+          <div class="lg:w-1/2"></div>
+          <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">23</div>
+          <div class="lg:w-1/2 lg:text-left">
+            <div class="bg-gold/10 rounded-2xl p-8 border border-gold/20 inline-block">
+              <h4 class="font-display text-2xl font-bold text-gray-900 mb-2">2023</h4>
+              <p class="text-gray-700 text-lg font-bold">Expanded the fleet to 20 fuel trucks, dramatically increasing regional logistics capacity.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <section class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Leadership & Team</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Experienced leadership powering our growth</h2>
-      </div>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Berhane Abadi</div>
-          <div class="text-primary font-semibold mb-4">Chief Executive Officer</div>
-          <p class="text-gray-600 text-body-sm">Leading the company's strategy and international trade operations.</p>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Alemseged Alemayehu</div>
-          <div class="text-primary font-semibold mb-4">General Manager</div>
-          <p class="text-gray-600 text-body-sm">Overseeing operations, logistics, and customer service delivery.</p>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Habtom Abadi</div>
-          <div class="text-primary font-semibold mb-4">Finance & Administration Director</div>
-          <p class="text-gray-600 text-body-sm">Managing financial health and administrative excellence.</p>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Kehase Haftom</div>
-          <div class="text-primary font-semibold mb-4">Import/Export Officer</div>
-          <p class="text-gray-600 text-body-sm">Ensures smooth import/export paperwork and compliance.</p>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Yemane Teklu</div>
-          <div class="text-primary font-semibold mb-4">Transport Operations Officer</div>
-          <p class="text-gray-600 text-body-sm">Coordinates national transport operations and fleet management.</p>
-        </div>
-        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="font-display text-xl font-bold text-gray-900 mb-3">Daniel Fentahun</div>
-          <div class="text-primary font-semibold mb-4">IT Operator</div>
-          <p class="text-gray-600 text-body-sm">Maintains digital systems and technology operations.</p>
-        </div>
-      </div>
-    </div>
-  </section>
- 
-<!-- Company Milestones -->
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Our Journey</span>
-        <h2 class="font-display text-display-lg font-black text-gray-900 mt-4">Company Milestones</h2>
-        <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Key milestones in our growth from a small trading company to a comprehensive import-export and logistics provider.</p>
-      </div>
-
-      <div class="relative">
-        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200 hidden lg:block"></div>
-
-        <div class="space-y-12">
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2008</h4>
-                <p class="text-gray-600 text-sm">Company was created with 2 employees and started exporting camels and cattle to Egypt.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">08</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">14</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2014</h4>
-                <p class="text-gray-600 text-sm">Started exporting coffee, expanding our agricultural product portfolio.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2017</h4>
-                <p class="text-gray-600 text-sm">Expanded our export division to oil seeds and pulses. Our importing journey began with heavy machines.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">17</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">18</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2018</h4>
-                <p class="text-gray-600 text-sm">Began importing vehicles (buses and fuel cars), metals, and soft temper.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2 lg:text-right">
-              <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2021</h4>
-                <p class="text-gray-600 text-sm">Launched national transportation services with 2 cargo trucks.</p>
-              </div>
-            </div>
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">21</div>
-            <div class="lg:w-1/2"></div>
-          </div>
-
-          <div class="scroll-reveal flex flex-col lg:flex-row items-center gap-8">
-            <div class="lg:w-1/2"></div>
-            <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">23</div>
-            <div class="lg:w-1/2 lg:text-left">
-              <div class="bg-gold/10 rounded-2xl p-6 border border-gold/20 inline-block">
-                <h4 class="font-display text-xl font-bold text-gray-900 mb-2">2023</h4>
-                <p class="text-gray-600 text-sm">Expanded our transportation fleet with 20 fuel trucks, dramatically increasing logistics capabilities.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 </main>
 @endsection

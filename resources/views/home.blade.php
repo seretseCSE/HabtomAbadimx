@@ -6,7 +6,7 @@
 <main id="main-content" class="bg-white text-gray-900">
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
+  <section class="hero-bg min-h-[70vh] flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
       <img src="{{ asset('img1.png') }}"
