@@ -198,7 +198,7 @@
           <span class="text-primary text-xs font-medium tracking-wider uppercase">Our Products</span>
         </div>
         <h2 class="font-display text-4xl md:text-5xl font-bold text-gray-900 mb-6">Quality Products</h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Sourced directly from Ethiopia's finest producers</p>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Sourced directly from Ethiopia's best producers</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

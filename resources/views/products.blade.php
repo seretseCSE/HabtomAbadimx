@@ -284,7 +284,7 @@ function showProductModal(productId) {
                         </div>
 
                         <div class="prose prose-lg text-gray-600 mb-8">
-                            ${data.description || '<p>Quality product available for international trade. Sourced from the finest producers and processed to meet international standards.</p>'}
+                            ${data.description || '<p>Quality product available for international trade. Sourced from the best producers and processed to meet international standards.</p>'}
                         </div>
 
                         ${data.specifications && Object.keys(data.specifications).length > 0 ? `
