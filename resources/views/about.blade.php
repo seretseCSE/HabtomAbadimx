@@ -100,6 +100,49 @@
   </div>
 </section>
 
+<!-- Section 2.5: Company Administration -->
+<section class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 scroll-reveal">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">Company Administration</span>
+      <h2 class="font-display text-display-lg font-black text-gray-900 mt-3">Our Leadership Team</h2>
+      <p class="text-gray-600 text-body-md max-w-2xl mx-auto mt-4">Experienced professionals driving our growth and operational excellence.</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Berhane Abadi</div>
+        <div class="text-primary font-semibold mb-4">Chief Executive Officer</div>
+        <p class="text-gray-600 text-body-sm">Leading the company's strategy and international trade operations.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Alemseged Alemayehu</div>
+        <div class="text-primary font-semibold mb-4">General Manager</div>
+        <p class="text-gray-600 text-body-sm">Overseeing operations, logistics, and customer service delivery.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Habtom Abadi</div>
+        <div class="text-primary font-semibold mb-4">Finance & Administration Director</div>
+        <p class="text-gray-600 text-body-sm">Managing financial health and administrative excellence.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Kehase Haftom</div>
+        <div class="text-primary font-semibold mb-4">Import/Export Officer</div>
+        <p class="text-gray-600 text-body-sm">Ensures smooth import/export paperwork and compliance.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Yemane Teklu</div>
+        <div class="text-primary font-semibold mb-4">Transport Operations Officer</div>
+        <p class="text-gray-600 text-body-sm">Coordinates national transport operations and fleet management.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
+        <div class="font-display text-xl font-bold text-gray-900 mb-3">Daniel Fentahun</div>
+        <div class="text-primary font-semibold mb-4">IT Operator</div>
+        <p class="text-gray-600 text-body-sm">Maintains digital systems and technology operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Section 3: Trade Divisions & Logistics -->
 <section class="py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
