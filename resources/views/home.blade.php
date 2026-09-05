@@ -40,13 +40,38 @@
         </div>
       </div>
 
-      <!-- Enhanced Hero image card -->
-      <div class="hidden md:block relative mt-16 animate-slide-in-right">
-        <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card">
-          <img src="{{ asset('img1.png') }}"
-               class="w-full h-96 object-cover"
-               alt="Modern agricultural tractor in Ethiopian farmland"
-               loading="eager" />
+      <!-- Hero image slider -->
+      <div class="hidden md:block relative mt-16 animate-slide-in-right" x-data="heroSlider()" x-init="initSlider()">
+        <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card relative">
+          <div class="hero-slider relative w-full h-96">
+            @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
+              <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}"
+                   data-slide="{{ $index }}">
+                <img src="{{ asset($slide) }}"
+                     class="w-full h-full object-cover"
+                     alt="{{ $index === 0 ? 'Modern agricultural tractor in Ethiopian farmland' : ($index === 1 ? 'Premium Ethiopian coffee beans' : ($index === 2 ? 'Our dedicated trading team' : 'Quality imported vehicles and machinery')) }}"
+                     loading="{{ $index === 0 ? 'eager' : 'lazy' }}" />
+              </div>
+            @endforeach
+          </div>
+
+          <!-- Slider controls -->
+          <button type="button" @click="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Previous slide">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button type="button" @click="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Next slide">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+
+          <!-- Slider dots -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
+              <button type="button" @click="goToSlide({{ $index }})"
+                      class="w-2.5 h-2.5 rounded-full transition-colors {{ $index === 0 ? 'bg-white' : 'bg-white/50 hover:bg-white/75' }}"
+                      :class="currentSlide === {{ $index }} ? 'bg-white' : 'bg-white/50 hover:bg-white/75'"
+                      aria-label="Go to slide {{ $index + 1 }}"></button>
+            @endforeach
+          </div>
         </div>
 
         <!-- Enhanced Floating stats cards -->
@@ -397,4 +422,41 @@
   </section>
 
 </main>
+
+<script>
+  function heroSlider() {
+    return {
+      currentSlide: 0,
+      slideCount: 4,
+      interval: null,
+      initSlider() {
+        this.startAutoPlay();
+        this.$el.addEventListener('mouseenter', () => this.stopAutoPlay());
+        this.$el.addEventListener('mouseleave', () => this.startAutoPlay());
+      },
+      startAutoPlay() {
+        this.stopAutoPlay();
+        this.interval = setInterval(() => this.nextSlide(), 5000);
+      },
+      stopAutoPlay() {
+        if (this.interval) clearInterval(this.interval);
+      },
+      nextSlide() {
+        this.goToSlide((this.currentSlide + 1) % this.slideCount);
+      },
+      prevSlide() {
+        this.goToSlide((this.currentSlide - 1 + this.slideCount) % this.slideCount);
+      },
+      goToSlide(index) {
+        const slides = this.$el.querySelectorAll('.hero-slide');
+        slides[this.currentSlide].classList.remove('opacity-100', 'z-10');
+        slides[this.currentSlide].classList.add('opacity-0', 'z-0');
+        this.currentSlide = index;
+        slides[this.currentSlide].classList.remove('opacity-0', 'z-0');
+        slides[this.currentSlide].classList.add('opacity-100', 'z-10');
+        this.startAutoPlay();
+      }
+    }
+  }
+</script>
 @endsection
