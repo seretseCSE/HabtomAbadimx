@@ -17,7 +17,7 @@
         'alt' => 'Ethiopian coffee cherries drying for export',
       ],
       [
-        'src' => asset('images/company/coffee-cherries.jpg'),
+        'src' => asset('images/company/coffee-cherries.png'),
         'alt' => 'Fresh Ethiopian coffee cherries',
       ],
       [
@@ -41,7 +41,7 @@
         'alt' => 'Ethiopian spices for export',
       ],
       [
-        'src' => asset('images/company/kidney-beans.jpg'),
+        'src' => asset('images/company/kidney-beans.png'),
         'alt' => 'Ethiopian pulses and beans',
       ],
     ];
@@ -260,7 +260,7 @@
           $productPhotos = [
             asset('images/company/coffee-export.jpg'),
             asset('images/company/sesame.jpg'),
-            asset('images/company/kidney-beans.jpg'),
+            asset('images/company/kidney-beans.png'),
             asset('images/company/spices.jpg'),
             asset('images/company/chickpeas.jpg'),
             asset('images/company/ginger.jpg'),

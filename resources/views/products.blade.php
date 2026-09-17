@@ -6,7 +6,7 @@
 <!-- HERO -->
 <section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <div class="absolute inset-0 opacity-20">
-        <img src="{{ asset('images/company/coffee-cherries.jpg') }}" class="w-full h-full object-cover" alt=""/>
+        <img src="{{ asset('images/company/coffee-cherries.png') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
