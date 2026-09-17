@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'About Us - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
 
@@ -7,205 +7,192 @@
 
   <!-- HERO -->
   <section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
-    <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('images/company/coffee-workers.jpg') }}" class="w-full h-full object-cover" alt=""/>
+      <img src="{{ asset('images/company/coffee-workers.jpg') }}" class="w-full h-full object-cover" alt="Habtom Abadi coffee operations"/>
     </div>
-
+    <div class="absolute top-24 left-10 w-96 h-96 bg-gold opacity-10 rounded-full -translate-x-1/2"></div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
       <div class="animate-float">
         <span class="text-green-200 text-sm font-medium tracking-widest uppercase">About Us</span>
-        <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">About Habtom Abadi</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">Built on integrity, driven by trade, and committed to Ethiopia's global growth.</p>
+        <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Habtom Abadi Import & Export</h1>
+        <p class="text-green-100 text-lg max-w-2xl mx-auto">A trusted Addis Ababa-based trading company linking Ethiopia’s agriculture with the world and bringing in the machinery that drives national development.</p>
       </div>
     </div>
   </section>
 
-  <!-- STORY -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
       <div class="scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Foundation</span>
-        <h2 class="font-display text-4xl font-black text-gray-900 mt-3 mb-6">Who We Are</h2>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          Habtom Abadi Import and Export was founded in Addis Ababa in 2000 with a clear purpose: to be a trusted bridge between Ethiopia’s agricultural produce and global markets.
-        </p>
-        <p class="text-gray-600 leading-relaxed mb-4">
-          We work with farmers, cooperatives, and producers across the country’s most productive regions — from the coffee forests of Sidama to the sesame plains of Humera and the grain fields of Oromia — exporting coffee, oilseeds, pulses, and spices.
-        </p>
-        <p class="text-gray-600 leading-relaxed">
-          On the import side, we bring in construction, farming, and transport equipment, including machinery and a growing fuel-truck fleet, to support national development.
-        </p>
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Our Story</span>
+        <h2 class="font-display text-4xl font-black text-gray-900 mt-3 mb-6">A trading cornerstone since 2000</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">Founded in the heart of Addis Ababa, Habtom Abadi Import and Export has spent over two decades building a bridge between Ethiopia’s agricultural resources and international markets.</p>
+        <p class="text-gray-600 leading-relaxed mb-4">Our mission is to export standard-quality coffee seeds, pulses, oilseeds, and spices while importing construction, agricultural, and manufacturing machinery to support national progress.</p>
+        <p class="text-gray-600 leading-relaxed">We also operate reliable cargo and liquid transport services, and we are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
       </div>
       <div class="relative scroll-reveal">
         <img src="{{ asset('images/company/coffee-drying.jpg') }}" class="rounded-3xl shadow-xl w-full h-96 object-cover" alt="Ethiopian coffee drying for export"/>
-        <div class="absolute -bottom-6 -left-6 bg-primary-deeper text-white rounded-2xl p-5 shadow-2xl">
-          <div class="font-display text-3xl font-black">2000</div>
-          <div class="text-green-300 text-sm">Founded in Addis Ababa</div>
+        <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
+          <div class="font-display text-3xl font-black">24+</div>
+          <div class="text-green-200 text-sm">Years of Experience</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MISSION / VISION / VALUES -->
   <section class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">What Drives Us</span>
-        <h2 class="font-display text-4xl font-black text-gray-900 mt-3">Mission, Vision & Values</h2>
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Corporate Identity</span>
+        <h2 class="font-display text-4xl font-black text-gray-900 mt-3">Vision, Mission & Values</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
-          <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-          </div>
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-          <p class="text-gray-600 leading-relaxed">To connect Ethiopian coffee, oilseeds, pulses, and spices with global buyers through reliable, transparent trade — while importing construction, farming, and transport equipment that supports national growth.</p>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Vision</h3>
+          <p class="text-gray-600 leading-relaxed">To be a vibrant, reliable and competent international trader known for driving Ethiopia’s growth through trade excellence.</p>
         </div>
-        <div class="bg-primary rounded-3xl p-8 shadow-sm scroll-reveal">
-          <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-          </div>
-          <h3 class="font-display text-2xl font-bold text-white mb-4">Our Vision</h3>
-          <p class="text-green-100 leading-relaxed">To become Africa's most recognized and trusted name in agricultural trade - a company synonymous with quality, integrity, and Ethiopia's economic growth on the global stage.</p>
+        <div class="bg-primary rounded-3xl p-8 shadow-sm scroll-reveal text-white">
+          <h3 class="font-display text-2xl font-bold mb-4">Mission</h3>
+          <p class="leading-relaxed">Export high-quality Ethiopian agricultural products to earn foreign currency and import the machinery needed for construction, farming, and industry.</p>
         </div>
         <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 scroll-reveal">
-          <div class="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          </div>
-          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Our Values</h3>
-          <ul class="text-gray-600 space-y-2 leading-relaxed">
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Integrity in every transaction</li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Quality without compromise</li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Transparent communication</li>
-            <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span> Community & farmer support</li>
+          <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Core Values</h3>
+          <ul class="space-y-3 text-gray-600 leading-relaxed">
+            <li>Reliability</li>
+            <li>Keeping commitments</li>
+            <li>Customer-focused service</li>
+            <li>Progressive dynamism</li>
+            <li>Positive, can-do attitude</li>
+            <li>Innovation</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="py-20 hero-bg">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-      <div><div class="font-display text-5xl font-black text-white">2000</div><div class="text-green-300 mt-2">Founded in Addis Ababa</div></div>
-      <div><div class="font-display text-5xl font-black text-white">15+</div><div class="text-green-300 mt-2">Countries Served</div></div>
-      <div><div class="font-display text-5xl font-black text-white">8+</div><div class="text-green-300 mt-2">Export Product Lines</div></div>
-      <div><div class="font-display text-5xl font-black text-white">20</div><div class="text-green-300 mt-2">Fuel Trucks in Fleet</div></div>
-    </div>
-  </section>
-
-  <!-- TEAM -->
-  @if($teamMembers->isNotEmpty())
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">The People</span>
-        <h2 class="font-display text-4xl font-black text-gray-900 mt-3">Meet Our Team</h2>
-      </div>
-      <style>
-        .team-carousel-wrapper {
-          overflow: hidden;
-        }
-        .team-carousel-track {
-          display: flex;
-          gap: 2rem;
-          animation: team-scroll 20s linear infinite;
-        }
-        .team-carousel-item {
-          min-width: 22%;
-          flex-shrink: 0;
-        }
-        .team-carousel-wrapper::-webkit-scrollbar { display: none; }
-        .team-carousel-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
-        @keyframes team-scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      </style>
-      <div class="relative">
-        <div class="absolute inset-y-0 left-0 w-16 md:w-24 bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-        <div class="absolute inset-y-0 right-0 w-16 md:w-24 bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
-        <div class="team-carousel-wrapper py-6">
-          <div class="team-carousel-track">
-            @foreach($teamMembers->take(6) as $index => $member)
-            @php
-                $ethiopianPhotos = [
-                    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80',
-                    'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&q=80',
-                    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80',
-                    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80',
-                    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80',
-                    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80'
-                ];
-                $photoUrl = $member->photo ? asset('storage/' . $member->photo) : $ethiopianPhotos[$index % count($ethiopianPhotos)];
-            @endphp
-            <div class="team-carousel-item text-center scroll-reveal">
-              <div class="relative mb-6">
-                <img src="{{ $photoUrl }}" class="w-full h-72 object-cover rounded-full shadow-xl" alt="{{ $member->name }}"/>
-                <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">{{ $member->role ?? 'Team' }}</div>
-              </div>
-              <h4 class="font-bold text-gray-900 mt-4">{{ $member->name }}</h4>
-              <p class="text-gray-500 text-sm">{{ $member->position }}</p>
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="scroll-reveal">
+          <span class="text-primary text-xs font-semibold tracking-widest uppercase">Export & Import</span>
+          <h2 class="font-display text-4xl font-black text-gray-900 mt-4 mb-6">Exporting Ethiopia’s finest, importing modern progress.</h2>
+          <p class="text-gray-600 leading-relaxed mb-6">We offer a balanced trade portfolio with two specialist divisions:</p>
+          <div class="space-y-6">
+            <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
+              <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Export Division</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">We export premium agricultural products prepared to international standards.</p>
+              <ul class="space-y-3 text-gray-600">
+                <li>Premium Arabica coffee beans</li>
+                <li>Sesame, Niger seeds, soybeans, peanuts, linseed</li>
+                <li>Chickpeas, red kidney beans, white pea beans, faba beans</li>
+                <li>Spices and other high-value commodities</li>
+              </ul>
             </div>
-            @endforeach
-            @foreach($teamMembers->take(6) as $index => $member)
-            @php
-                $ethiopianPhotos = [
-                    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80',
-                    'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&q=80',
-                    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80',
-                    'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80',
-                    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80',
-                    'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80'
-                ];
-                $photoUrl = $member->photo ? asset('storage/' . $member->photo) : $ethiopianPhotos[$index % count($ethiopianPhotos)];
-            @endphp
-            <div class="team-carousel-item text-center scroll-reveal">
-              <div class="relative mb-6">
-                <img src="{{ $photoUrl }}" class="w-full h-72 object-cover rounded-full shadow-xl" alt="{{ $member->name }}"/>
-                <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">{{ $member->role ?? 'Team' }}</div>
-              </div>
-              <h4 class="font-bold text-gray-900 mt-4">{{ $member->name }}</h4>
-              <p class="text-gray-500 text-sm">{{ $member->position }}</p>
+            <div class="bg-gray-50 rounded-3xl p-8 shadow-sm border border-gray-100">
+              <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">Import Division</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">We import the technology required for Ethiopia’s growth.</p>
+              <ul class="space-y-3 text-gray-600">
+                <li>Electric, hybrid, and gas-powered vehicles</li>
+                <li>Industrial construction machinery</li>
+                <li>Modern tractors, harvesters and farm inputs</li>
+                <li>Custom sourcing for commercial needs</li>
+              </ul>
             </div>
-            @endforeach
+          </div>
+        </div>
+
+        <div class="scroll-reveal bg-primary rounded-3xl p-12 text-white shadow-xl">
+          <h3 class="font-display text-3xl font-black mb-6">National Transport Services</h3>
+          <p class="leading-relaxed mb-6">We deliver cargo and liquid transport services nationwide, supporting the movement of goods across Ethiopia with reliable vehicles and experienced drivers.</p>
+          <div class="grid gap-5">
+            <div class="rounded-3xl bg-white/10 p-6">
+              <p class="font-bold text-lg">2021</p>
+              <p class="text-green-100 mt-2">Launched national transportation with two cargo trucks.</p>
+            </div>
+            <div class="rounded-3xl bg-white/10 p-6">
+              <p class="font-bold text-lg">2023</p>
+              <p class="text-green-100 mt-2">Expanded transportation capacity to 20 fuel trucks.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  @endif
 
-  <!-- CERTIFICATIONS -->
-  <!-- CERTIFICATIONS -->
-  @if($certifications->isNotEmpty())
   <section class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 scroll-reveal">
-        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Quality Assurance</span>
-        <h2 class="font-display text-4xl font-black text-gray-900 mt-3">Our Certifications</h2>
+        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Leadership & Team</span>
+        <h2 class="font-display text-4xl font-black text-gray-900 mt-4">Experienced leadership powering our growth</h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        @foreach($certifications as $cert)
-        <div class="text-center scroll-reveal">
-          <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            @if($cert->logo)
-              <img src="{{ asset('storage/' . $cert->logo) }}" alt="{{ $cert->name }}" class="w-16 h-16 mx-auto mb-4 object-contain"/>
-            @else
-              <div class="w-16 h-16 bg-primary/10 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                <span class="text-2xl">?</span>
-              </div>
-            @endif
-            <h4 class="font-bold text-gray-900 text-sm mb-2">{{ $cert->name }}</h4>
-            <p class="text-gray-500 text-xs">{{ $cert->issuing_body }}</p>
-          </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Berhane Abadi</div>
+          <div class="text-primary font-semibold mb-4">Chief Executive Officer</div>
+          <p class="text-gray-600">Leading the company’s strategy and international trade operations.</p>
         </div>
-        @endforeach
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Alemseged Alemayehu</div>
+          <div class="text-primary font-semibold mb-4">General Manager</div>
+          <p class="text-gray-600">Overseeing operations, logistics, and customer service delivery.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Habtom Abadi</div>
+          <div class="text-primary font-semibold mb-4">Finance & Administration Director</div>
+          <p class="text-gray-600">Managing financial health and administrative excellence.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Kehase Haftom</div>
+          <div class="text-primary font-semibold mb-4">Documentation</div>
+          <p class="text-gray-600">Ensures smooth import/export paperwork and compliance.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Yemane Teklu</div>
+          <div class="text-primary font-semibold mb-4">Transport Operations Officer</div>
+          <p class="text-gray-600">Coordinates national cargo operations and fleet management.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm scroll-reveal">
+          <div class="font-display text-2xl font-bold text-gray-900 mb-3">Daniel Fentahun</div>
+          <div class="text-primary font-semibold mb-4">IT Operator</div>
+          <p class="text-gray-600">Maintains digital systems and technology operations.</p>
+        </div>
       </div>
     </div>
   </section>
-  @endif
+
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <span class="text-primary text-xs font-semibold tracking-widest uppercase">Milestones</span>
+        <h2 class="font-display text-4xl font-black text-gray-900 mt-4">Our journey so far</h2>
+      </div>
+      <div class="space-y-6">
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2008</p>
+          <p class="text-gray-600 mt-2">Founded with two employees and began exporting camels and cattle to Egypt.</p>
+        </div>
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2014</p>
+          <p class="text-gray-600 mt-2">Expanded export operations to include coffee.</p>
+        </div>
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2017</p>
+          <p class="text-gray-600 mt-2">Added oilseeds and pulses to our export portfolio and began importing heavy machinery.</p>
+        </div>
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2018</p>
+          <p class="text-gray-600 mt-2">Started importing vehicles, metals, and soft temper products.</p>
+        </div>
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2021</p>
+          <p class="text-gray-600 mt-2">Launched national transportation with two cargo trucks.</p>
+        </div>
+        <div class="rounded-3xl border border-gray-100 p-8 shadow-sm scroll-reveal">
+          <p class="text-primary font-semibold">2023</p>
+          <p class="text-gray-600 mt-2">Expanded transportation capacity to 20 fuel trucks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </body>
 @endsection
