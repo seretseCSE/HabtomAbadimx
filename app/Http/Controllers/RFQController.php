@@ -14,7 +14,7 @@ class RFQController extends Controller
     public function create()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get services for dropdown
         $services = Service::where('is_active', true)

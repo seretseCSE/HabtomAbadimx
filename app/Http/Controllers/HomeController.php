@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get services
         $services = Service::where('is_active', true)
@@ -23,7 +23,7 @@ class HomeController extends Controller
         
         // Get products
         $products = Product::where('status', 'active')
-            ->with('category')
+            ->with(['category', 'media'])
             ->take(8)
             ->get();
         

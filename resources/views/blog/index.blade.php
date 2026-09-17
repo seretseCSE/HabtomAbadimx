@@ -4,9 +4,9 @@
 
 @section('content')
 <!-- HERO -->
-<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+<section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <div class="absolute inset-0 opacity-20">
-        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+        <img src="{{ asset('images/company/coffee-drying.jpg') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">Knowledge Hub</span>
@@ -111,7 +111,7 @@
 </section>
 
 <!-- NEWSLETTER -->
-<section class="py-20 hero-bg">
+<!-- <section class="py-20 hero-bg">
     <div class="max-w-2xl mx-auto px-6 text-center">
         <h2 class="font-display text-3xl font-black text-white mb-4">Stay Updated on Trade & Markets</h2>
         <p class="text-green-200 mb-8">Get commodity price updates, export guides, and trade news delivered to your inbox.</p>
@@ -121,5 +121,5 @@
             <div x-show="subDone" class="w-full text-center text-white font-semibold py-3">✅ You're subscribed! Thank you.</div>
         </div>
     </div>
-</section>
+</section> -->
 @endsection

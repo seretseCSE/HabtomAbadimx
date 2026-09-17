@@ -4,14 +4,14 @@
 
 @section('content')
 <!-- HERO -->
-<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+<section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <div class="absolute inset-0 opacity-20">
-        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+        <img src="{{ asset('images/company/coffee-cherries.jpg') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
         <span class="text-green-300 font-medium text-sm tracking-widest uppercase">What We Trade</span>
         <h1 class="font-display text-5xl md:text-6xl font-black text-white mt-3 mb-6">Our Product Catalogue</h1>
-        <p class="text-green-100 text-lg max-w-2xl mx-auto">Premium Ethiopian exports and world-class imported agricultural equipment — all in one place.</p>
+        <p class="text-green-100 text-lg max-w-2xl mx-auto">Premium Ethiopian exports and imported construction, farming, and transport equipment — all in one place.</p>
     </div>
 </section>
 
@@ -47,7 +47,7 @@
                     @if($product->images && count($product->images) > 0)
                         <img src="{{ $product->images[0]['url'] }}" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @else
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+                        <img src="{{ asset('images/company/sesame.jpg') }}" alt="{{ $product->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                     @endif
                     <div class="absolute top-3 left-3 flex gap-2">
                         <span class="product-type-badge text-white text-xs font-bold px-2.5 py-1 rounded-full uppercase">
@@ -151,7 +151,7 @@ function showProductModal(productId) {
                     <div class="relative h-64">
                         ${data.images && data.images.length > 0 ? 
                             `<img src="${data.images[0].url}" class="w-full h-full object-cover" alt="${data.name}"/>` :
-                            `<img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" class="w-full h-full object-cover" alt="${data.name}"/>`
+                            `<img src="{{ asset('images/company/sesame.jpg') }}" class="w-full h-full object-cover" alt="${data.name}"/>`
                         }
                         <button onclick="closeProductModal()" class="absolute top-4 right-4 bg-white rounded-full w-9 h-9 flex items-center justify-center shadow-lg text-gray-700 hover:text-red-500 transition-colors">✕</button>
                         <div class="absolute bottom-4 left-4">

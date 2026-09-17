@@ -11,7 +11,7 @@ class CertificationsController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get all active certifications
         $certifications = Certification::where('is_active', true)

@@ -74,6 +74,6 @@ class SettingsPage extends Page
 
     protected function getExistingSettings(): array
     {
-        return Setting::pluck('value', 'key')->toArray();
+        return Setting::getAllSettings();
     }
 }

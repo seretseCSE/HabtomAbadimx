@@ -12,7 +12,7 @@ class BlogController extends Controller
     public function index(Request $request)
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get categories
         $categories = BlogCategory::where('is_active', true)
@@ -52,7 +52,7 @@ class BlogController extends Controller
     public function show($slug)
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get the post
         $post = BlogPost::with('category')

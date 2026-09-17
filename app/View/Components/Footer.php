@@ -4,24 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 use App\Models\Setting;
-use App\Models\Certification;
-use App\Models\Partner;
 
 class Footer extends Component
 {
     public $settings;
     public $socialLinks;
     public $quickLinks;
-    public $certifications;
-    public $partners;
 
     public function __construct()
     {
-        $this->settings = Setting::pluck('value', 'key')->toArray();
+        $this->settings = Setting::getAllSettings();
         $this->socialLinks = $this->getSocialLinks();
         $this->quickLinks = $this->getQuickLinks();
-        $this->certifications = $this->getCertifications();
-        $this->partners = $this->getPartners();
     }
 
     private function getSocialLinks()
@@ -48,23 +42,6 @@ class Footer extends Component
             ['name' => 'Privacy Policy', 'route' => 'privacy'],
             ['name' => 'Terms of Service', 'route' => 'terms'],
         ];
-    }
-
-    private function getCertifications()
-    {
-        return Certification::where('is_active', true)
-            ->where('is_featured', true)
-            ->orderBy('sort_order', 'asc')
-            ->take(6)
-            ->get();
-    }
-
-    private function getPartners()
-    {
-        return Partner::where('is_featured', true)
-            ->orderBy('sort_order', 'asc')
-            ->take(8)
-            ->get();
     }
 
     public function render()

@@ -30,22 +30,28 @@ class Setting extends Model
     }
 
     /**
-     * Set a setting value
-     */
-    public static function setValue(string $key, $value, string $type = 'text')
-    {
-        return static::updateOrCreate(
-            ['key' => $key],
-            ['value' => $value, 'type' => $type]
-        );
-    }
-
-    /**
      * Get all settings as key-value pairs
      */
     public static function getAllSettings()
     {
-        return static::pluck('value', 'key')->toArray();
+        return \Illuminate\Support\Facades\Cache::remember('site_settings', 3600, function () {
+            return static::pluck('value', 'key')->toArray();
+        });
+    }
+
+    /**
+     * Set a setting value
+     */
+    public static function setValue(string $key, $value, string $type = 'text')
+    {
+        $setting = static::updateOrCreate(
+            ['key' => $key],
+            ['value' => $value, 'type' => $type]
+        );
+
+        \Illuminate\Support\Facades\Cache::forget('site_settings');
+
+        return $setting;
     }
 
     /**

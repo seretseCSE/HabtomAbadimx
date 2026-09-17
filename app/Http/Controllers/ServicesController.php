@@ -10,7 +10,7 @@ class ServicesController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
 
         // Get all active services
         $services = Service::where('is_active', true)
@@ -26,7 +26,7 @@ class ServicesController extends Controller
     public function show(Service $service)
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
 
         // Get related services
         $relatedServices = Service::where('is_active', true)

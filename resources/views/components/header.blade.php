@@ -23,51 +23,15 @@
                         {{ $settings['working_hours'] ?? 'Mon-Sat: 9AM-6PM' }}
                     </span>
                 </div>
-
-                <!-- Language Switcher (if needed) -->
-                <div class="flex items-center space-x-4">
-                    @if(1==1)
-                        <!-- $settings['whatsapp'] ?? '+251 000 000 000') -->
-                        <a href="#"
-                           target="_blank"
-                           class="hover:text-gold transition-colors flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.646.134-.166.298-.346.447-.541.149-.199.149-.342.074-.541-.074-.199-.697-1.697-.967-2.321-.27-.623-.547-.539-.747-.539-.197 0-.423-.014-.65-.014-.227 0-.593.074-.904.372-.311.297-1.19 1.164-1.19 2.835 0 1.672 1.216 3.284 1.384 3.517.167.232 2.395 3.66 5.814 5.138 2.033.878 3.068 1.094 3.716 1.164.246.014.447.014.646-.014.99-.149 1.758-.867 2.006-1.647.247-.78.247-1.452.173-1.59-.074-.137-.27-.223-.547-.372z"/>
-                                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
-                            </svg>
-                            WhatsApp
-                        </a>
-                    @endif
-
-                    <!-- Language Switcher Placeholder -->
-                    <!-- <div class="relative group">
-                        <button class="hover:text-gold transition-colors flex items-center">
-                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
-                            </svg>
-                            EN
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">English</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Amharic</a>
-                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">French</a>
-                        </div>
-                    </div> -->
-                </div>
             </div>
         </div>
 
     </div>
     <!-- Main Navigation -->
-    @php
-    $settings = \App\Models\Setting::pluck('value', 'key')->toArray();
-@endphp
-
-    <nav :class="scrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-    <br>
+    <nav
+        class="backdrop-blur-xl border-b border-white/15 py-3 transition-all duration-300"
+        :class="scrolled ? 'bg-primary/50 shadow-lg' : 'bg-black/30'"
+    >
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex items-center justify-between h-16">
             <!-- Logo -->
@@ -76,7 +40,7 @@
                         <img src="{{ asset('Asset 1.png') }}"
                              alt="Habtom Abadi Logo"
                              class="h-10 transition-all duration-300 rounded-lg">
-                        <span class="text-xl font-bold" :class="scrolled ? 'text-primary' : 'text-white'" transition-colors duration-300">
+                        <span class="text-xl font-bold text-white transition-colors duration-300">
                             {{ $settings['company_name'] ?? 'Habtom Abadi Import Export' }}
                         </span>
                     </a>
@@ -86,7 +50,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     @foreach($navigation ?? [] as $item)
                         <a href="{{ route($item['route']) }}"
-                           class="nav-link flex items-center space-x-1" :class="scrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-green-200'" transition-colors duration-300">
+                           class="nav-link flex items-center space-x-1 text-white hover:text-green-200 transition-colors duration-300">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 @switch($item['icon'])
                                     @case('home')
@@ -114,20 +78,11 @@
                             <span>{{ $item['name'] }}</span>
                         </a>
                     @endforeach
-
-                    <a href="{{ url('/admin') }}"
-                       class="bg-gold hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center space-x-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                        <span>Admin</span>
-                    </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <button @click="mobileOpen = !mobileOpen"
-                        class="md:hidden" :class="scrolled ? 'text-gray-700' : 'text-white'" transition-colors duration-300">
+                        class="md:hidden text-white transition-colors duration-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                               d="M4 6h16M4 12h16M4 18h16"></path>
@@ -152,10 +107,6 @@
                             {{ $item['name'] }}
                         </a>
                     @endforeach
-                    <a href="{{ url('/admin') }}"
-                       class="block bg-gold hover:bg-yellow-600 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 mt-4">
-                        Admin
-                    </a>
                 </div>
             </div>
         </div>

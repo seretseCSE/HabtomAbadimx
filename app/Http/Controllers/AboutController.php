@@ -11,7 +11,7 @@ class AboutController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get team members
         $teamMembers = TeamMember::orderBy('sort_order', 'asc')

@@ -6,10 +6,10 @@
 <body class="bg-white" x-data="{ mobileOpen: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 50">
 
   <!-- HERO -->
-  <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+  <section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+      <img src="{{ asset('images/company/sesame.jpg') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     
     <div class="relative max-w-7xl mx-auto px-6 text-center">

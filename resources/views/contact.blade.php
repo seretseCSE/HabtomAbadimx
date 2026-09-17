@@ -5,9 +5,9 @@
 @section('content')
 <div x-data="{ activeTab: 'rfq' }">
 <!-- HERO -->
-<section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+<section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1600&q=80" class="w-full h-full object-cover" alt=""/>
+      <img src="{{ asset('images/company/coffee-export.jpg') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
       <span class="text-green-300 font-medium text-sm tracking-widest uppercase">Get In Touch</span>

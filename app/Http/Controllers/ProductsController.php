@@ -11,7 +11,7 @@ class ProductsController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get all categories
         $categories = Category::where('is_active', true)
@@ -34,7 +34,7 @@ class ProductsController extends Controller
     public function show(Product $product)
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get related products
         $relatedProducts = Product::with('category')

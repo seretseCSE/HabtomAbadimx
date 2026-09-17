@@ -13,7 +13,7 @@ class ContactController extends Controller
     public function index()
     {
         // Get site settings
-        $settings = Setting::pluck('value', 'key')->toArray();
+        $settings = Setting::getAllSettings();
         
         // Get services for RFQ form
         $services = \App\Models\Service::where('is_active', true)
