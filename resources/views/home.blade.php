@@ -3,7 +3,7 @@
 @section('title', 'Home - ' . ($settings['company_name'] ?? 'Habtom Abadi Import Export'))
 
 @push('head')
-<link rel="preload" as="image" href="{{ asset('images/company/coffee-drying.jpg') }}">
+<link rel="preload" as="image" href="{{ asset('images/hero/coffee-drying.jpg') }}">
 @endpush
 
 @section('content')
@@ -13,35 +13,35 @@
   @php
     $heroSlides = [
       [
-        'src' => asset('images/company/coffee-drying.jpg'),
+        'src' => asset('images/hero/coffee-drying.jpg'),
         'alt' => 'Ethiopian coffee cherries drying for export',
       ],
       [
-        'src' => asset('images/company/coffee-cherries.png'),
+        'src' => asset('images/hero/coffee-cherries.jpg'),
         'alt' => 'Fresh Ethiopian coffee cherries',
       ],
       [
-        'src' => asset('images/company/coffee-export.jpg'),
+        'src' => asset('images/hero/coffee-export.jpg'),
         'alt' => 'Ethiopian highland Arabica coffee for export',
       ],
       [
-        'src' => asset('images/company/coffee-workers.jpg'),
+        'src' => asset('images/hero/coffee-workers.jpg'),
         'alt' => 'Coffee processing in Ethiopia',
       ],
       [
-        'src' => asset('images/company/machinery.jpg'),
-        'alt' => 'Imported construction machinery',
+        'src' => asset('tractor.avif'),
+        'alt' => 'Imported construction and farm machinery',
       ],
       [
-        'src' => asset('images/company/sesame.jpg'),
+        'src' => asset('images/hero/sesame.jpg'),
         'alt' => 'Ethiopian sesame for export',
       ],
       [
-        'src' => asset('images/company/spices.jpg'),
+        'src' => asset('images/hero/spices.jpg'),
         'alt' => 'Ethiopian spices for export',
       ],
       [
-        'src' => asset('images/company/kidney-beans.png'),
+        'src' => asset('images/hero/pulses.jpg'),
         'alt' => 'Ethiopian pulses and beans',
       ],
     ];
@@ -101,7 +101,7 @@
         <img
           src="{{ $slide['src'] }}"
           alt="{{ $slide['alt'] }}"
-          class="hero-slide-img absolute inset-0 w-full h-full object-cover"
+          class="hero-slide-img absolute inset-0 w-full h-full object-cover object-center"
           :class="active === {{ $index }} ? 'is-active' : ''"
           @if($index === 0) fetchpriority="high" decoding="async" @else loading="lazy" decoding="async" @endif
         >

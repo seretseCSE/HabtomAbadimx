@@ -8,7 +8,7 @@
   <!-- HERO -->
   <section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('images/company/coffee-workers.jpg') }}" class="w-full h-full object-cover" alt="Habtom Abadi coffee operations"/>
+      <img src="{{ asset('images/hero/coffee-workers.jpg') }}" class="w-full h-full object-cover" alt="Habtom Abadi coffee operations"/>
     </div>
     <div class="absolute top-24 left-10 w-96 h-96 bg-gold opacity-10 rounded-full -translate-x-1/2"></div>
     <div class="relative max-w-7xl mx-auto px-6 text-center">
@@ -30,7 +30,7 @@
         <p class="text-gray-600 leading-relaxed">We also operate reliable cargo and liquid transport services, and we are steadily expanding toward manufacturing and local distribution of metals, edible oils, and other demand-based products.</p>
       </div>
       <div class="relative scroll-reveal">
-        <img src="{{ asset('images/company/coffee-drying.jpg') }}" class="rounded-3xl shadow-xl w-full h-96 object-cover" alt="Ethiopian coffee drying for export"/>
+        <img src="{{ asset('images/hero/coffee-drying.jpg') }}" class="rounded-3xl shadow-xl w-full h-96 object-cover" alt="Ethiopian coffee drying for export"/>
         <div class="absolute -bottom-6 -left-6 bg-primary text-white rounded-2xl p-5 shadow-2xl">
           <div class="font-display text-3xl font-black">24+</div>
           <div class="text-green-200 text-sm">Years of Experience</div>

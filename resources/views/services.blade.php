@@ -9,7 +9,7 @@
   <section class="hero-bg relative overflow-hidden pt-40 pb-20 md:pt-44 md:pb-24">
     <!-- Background image overlay -->
     <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('images/company/sesame.jpg') }}" class="w-full h-full object-cover" alt=""/>
+      <img src="{{ asset('images/hero/sesame.jpg') }}" class="w-full h-full object-cover" alt=""/>
     </div>
     
     <div class="relative max-w-7xl mx-auto px-6 text-center">
