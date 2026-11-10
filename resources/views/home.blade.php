@@ -35,7 +35,8 @@
         </p>
 
         <div class="flex flex-col sm:flex-row gap-6">
-           Contact Us Today
+          <a href="{{ route('contact') }}" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-full">
+            Contact Us Today
           </a>
         </div>
       </div>
