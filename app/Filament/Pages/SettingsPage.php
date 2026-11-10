@@ -14,9 +14,9 @@ class SettingsPage extends Page
 {
     protected static ?int $navigationSort = 10;
 
-    protected static ?string $navigationLabel = 'Settings';
+    protected static ?string $navigationLabel = 'Site Settings';
 
-    protected static ?string $slug = 'settings';
+    protected static ?string $slug = 'site-settings';
 
     protected string $view = 'filament.pages.site-settings-page';
 
