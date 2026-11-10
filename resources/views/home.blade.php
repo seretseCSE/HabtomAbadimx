@@ -41,9 +41,9 @@
       </div>
 
       <!-- Hero image slider -->
-      <div class="hidden md:block relative mt-16 animate-slide-in-right" x-data="heroSlider()" x-init="initSlider()">
+      <div class="block relative mt-10 md:mt-16 animate-slide-in-right" x-data="heroSlider()" x-init="initSlider()">
         <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card relative">
-          <div class="hero-slider relative w-full h-96">
+          <div class="hero-slider relative w-full h-64 sm:h-80 md:h-96">
             @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
               <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}"
                    data-slide="{{ $index }}">
@@ -75,13 +75,13 @@
         </div>
 
         <!-- Enhanced Floating stats cards -->
-        <div class="absolute -bottom-4 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
+        <div class="hidden sm:block absolute -bottom-4 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
           <div class="text-xs text-gray-500 mb-2 font-semibold">18+ Years</div>
           <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
           <div class="text-primary text-sm font-medium mt-1">Since 2008</div>
         </div>
 
-        <div class="absolute -top-6 -right-6 bg-primary rounded-3xl p-6 shadow-2xl text-white animate-float" style="animation-delay: 0.4s;">
+        <div class="hidden sm:block absolute -top-6 -right-6 bg-primary rounded-3xl p-6 shadow-2xl text-white animate-float" style="animation-delay: 0.4s;">
           <div class="text-3xl font-black">15+</div>
           <div class="text-green-200 text-sm font-medium">Countries Served</div>
         </div>
