@@ -26,7 +26,7 @@
           <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2008</span>
         </div>
 
-        <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-8">
+        <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-6">
           Reliable partner<br/>For all
         </h1>
 
@@ -42,12 +42,12 @@
       </div>
 
       <!-- Hero image slider -->
-      <div class="block relative mt-10 md:mt-16 animate-slide-in-right" x-data="heroSlider()" x-init="initSlider()">
+      <div class="block relative mt-10 md:mt-16 animate-slide-in-right" data-hero-slider role="region" aria-roledescription="carousel" aria-label="Featured business images">
         <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card relative">
           <div class="hero-slider relative w-full h-64 sm:h-80 md:h-96">
             @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
               <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}"
-                   data-slide="{{ $index }}">
+                   role="group" aria-roledescription="slide" aria-label="Slide {{ $index + 1 }} of 4" aria-hidden="{{ $index === 0 ? 'false' : 'true' }}">
                 <img src="{{ asset($slide) }}"
                      class="w-full h-full object-cover"
                      alt="{{ $index === 0 ? 'Modern agricultural tractor in Ethiopian farmland' : ($index === 1 ? 'Premium Ethiopian coffee beans' : ($index === 2 ? 'Our dedicated trading team' : 'Quality imported vehicles and machinery')) }}"
@@ -57,20 +57,19 @@
           </div>
 
           <!-- Slider controls -->
-          <button type="button" @click="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Previous slide">
+          <button type="button" data-slide-prev class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Previous slide">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
           </button>
-          <button type="button" @click="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Next slide">
+          <button type="button" data-slide-next class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Next slide">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </button>
 
           <!-- Slider dots -->
           <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
             @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
-              <button type="button" @click="goToSlide({{ $index }})"
+              <button type="button" data-slide-to="{{ $index }}"
                       class="w-2.5 h-2.5 rounded-full transition-colors {{ $index === 0 ? 'bg-white' : 'bg-white/50 hover:bg-white/75' }}"
-                      :class="currentSlide === {{ $index }} ? 'bg-white' : 'bg-white/50 hover:bg-white/75'"
-                      aria-label="Go to slide {{ $index + 1 }}"></button>
+                      aria-label="Go to slide {{ $index + 1 }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}"></button>
             @endforeach
           </div>
         </div>
@@ -425,39 +424,64 @@
 </main>
 
 <script>
-  function heroSlider() {
-    return {
-      currentSlide: 0,
-      slideCount: 4,
-      interval: null,
-      initSlider() {
-        this.startAutoPlay();
-        this.$el.addEventListener('mouseenter', () => this.stopAutoPlay());
-        this.$el.addEventListener('mouseleave', () => this.startAutoPlay());
-      },
-      startAutoPlay() {
-        this.stopAutoPlay();
-        this.interval = setInterval(() => this.nextSlide(), 5000);
-      },
-      stopAutoPlay() {
-        if (this.interval) clearInterval(this.interval);
-      },
-      nextSlide() {
-        this.goToSlide((this.currentSlide + 1) % this.slideCount);
-      },
-      prevSlide() {
-        this.goToSlide((this.currentSlide - 1 + this.slideCount) % this.slideCount);
-      },
-      goToSlide(index) {
-        const slides = this.$el.querySelectorAll('.hero-slide');
-        slides[this.currentSlide].classList.remove('opacity-100', 'z-10');
-        slides[this.currentSlide].classList.add('opacity-0', 'z-0');
-        this.currentSlide = index;
-        slides[this.currentSlide].classList.remove('opacity-0', 'z-0');
-        slides[this.currentSlide].classList.add('opacity-100', 'z-10');
-        this.startAutoPlay();
+  document.querySelectorAll('[data-hero-slider]').forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll('.hero-slide'));
+    const dots = Array.from(slider.querySelectorAll('[data-slide-to]'));
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let currentSlide = 0;
+    let timer = null;
+    let pointerInside = false;
+    let focusInside = false;
+
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    };
+
+    const show = (index) => {
+      slides[currentSlide].classList.remove('opacity-100', 'z-10');
+      slides[currentSlide].classList.add('opacity-0', 'z-0');
+      slides[currentSlide].setAttribute('aria-hidden', 'true');
+      dots[currentSlide].setAttribute('aria-current', 'false');
+
+      currentSlide = (index + slides.length) % slides.length;
+      slides[currentSlide].classList.remove('opacity-0', 'z-0');
+      slides[currentSlide].classList.add('opacity-100', 'z-10');
+      slides[currentSlide].setAttribute('aria-hidden', 'false');
+      dots[currentSlide].setAttribute('aria-current', 'true');
+    };
+
+    const syncTimer = () => {
+      stop();
+      if (pointerInside || focusInside || document.hidden || reduceMotion.matches) return;
+      timer = window.setInterval(() => show(currentSlide + 1), 5000);
+    };
+
+    slider.querySelector('[data-slide-prev]').addEventListener('click', () => {
+      show(currentSlide - 1);
+      syncTimer();
+    });
+    slider.querySelector('[data-slide-next]').addEventListener('click', () => {
+      show(currentSlide + 1);
+      syncTimer();
+    });
+    dots.forEach((dot) => dot.addEventListener('click', () => {
+      show(Number(dot.dataset.slideTo));
+      syncTimer();
+    }));
+
+    slider.addEventListener('mouseenter', () => { pointerInside = true; syncTimer(); });
+    slider.addEventListener('mouseleave', () => { pointerInside = false; syncTimer(); });
+    slider.addEventListener('focusin', () => { focusInside = true; syncTimer(); });
+    slider.addEventListener('focusout', (event) => {
+      if (!slider.contains(event.relatedTarget)) {
+        focusInside = false;
+        syncTimer();
       }
-    }
-  }
+    });
+    document.addEventListener('visibilitychange', syncTimer);
+    reduceMotion.addEventListener?.('change', syncTimer);
+    syncTimer();
+  });
 </script>
 @endsection

@@ -33,11 +33,11 @@
             --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
             --text-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
             --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
-            --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+            --text-xl: clamp(1.125rem, 1.05rem + 0.4vw, 1.375rem);
             --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
             --text-3xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.5rem);
             --text-4xl: clamp(2.25rem, 1.75rem + 2.5vw, 3rem);
-            --text-5xl: clamp(3rem, 2.25rem + 3.75vw, 4rem);
+            --text-5xl: clamp(2.25rem, 1.8rem + 2.8vw, 3.5rem);
             
             /* Shadow System */
             --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
