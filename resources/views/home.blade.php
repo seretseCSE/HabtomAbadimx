@@ -6,114 +6,82 @@
 <main id="main-content" class="bg-white text-gray-900">
 
   <!-- HERO -->
-  <section class="hero-bg min-h-[70vh] flex items-center relative overflow-hidden" aria-labelledby="hero-heading">
-    <!-- Background image overlay -->
-    <div class="absolute inset-0 opacity-20">
-      <img src="{{ asset('img1.png') }}"
-           class="w-full h-full object-cover lazy-load"
-           alt="Ethiopian agricultural landscape showcasing our export products"
-           loading="eager" />
+  <section class="relative min-h-screen flex items-center overflow-hidden bg-gray-950" aria-labelledby="hero-heading">
+    <div data-hero-slider role="region" aria-roledescription="carousel" aria-label="Habtom Abadi business highlights" class="absolute inset-0">
+      @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
+        <div class="hero-slide absolute inset-0 transition-opacity duration-1000 ease-in-out {{ $index === 0 ? 'opacity-100 z-0' : 'opacity-0 z-0' }}"
+             role="group" aria-roledescription="slide" aria-label="Slide {{ $index + 1 }} of 4" aria-hidden="{{ $index === 0 ? 'false' : 'true' }}">
+          <img src="{{ asset($slide) }}" class="w-full h-full object-cover"
+               alt="{{ $index === 0 ? 'Agricultural machinery in Ethiopia' : ($index === 1 ? 'Ethiopian coffee for export' : ($index === 2 ? 'Habtom Abadi team' : 'Imported vehicles and machinery')) }}"
+               loading="eager" />
+        </div>
+      @endforeach
+      <div class="absolute inset-0 z-10 bg-gradient-to-r from-black/75 via-black/55 to-black/20" aria-hidden="true"></div>
+      <div class="absolute inset-0 z-10 bg-gradient-to-t from-black/50 via-transparent to-black/10" aria-hidden="true"></div>
+      <button type="button" data-slide-prev class="absolute z-30 left-4 md:left-8 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/60 text-white rounded-full p-3 transition-colors" aria-label="Previous slide">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <button type="button" data-slide-next class="absolute z-30 right-4 md:right-8 top-1/2 -translate-y-1/2 bg-black/35 hover:bg-black/60 text-white rounded-full p-3 transition-colors" aria-label="Next slide">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7-7-7-7"></path></svg>
+      </button>
+      <div class="absolute z-30 bottom-28 md:bottom-32 right-6 md:right-12 flex items-center gap-3">
+        <button type="button" data-slide-toggle aria-label="Pause slideshow" class="bg-black/35 hover:bg-black/60 text-white rounded-full px-3 py-2 text-xs font-medium transition-colors">Pause</button>
+        <div class="flex gap-2" aria-label="Choose a slide">
+          @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
+            <button type="button" data-slide-to="{{ $index }}" class="w-2.5 h-2.5 rounded-full transition-colors {{ $index === 0 ? 'bg-white' : 'bg-white/50 hover:bg-white/75' }}" aria-label="Go to slide {{ $index + 1 }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}"></button>
+          @endforeach
+        </div>
+      </div>
     </div>
 
     <!-- Enhanced Decorative elements -->
     <div class="absolute top-20 right-0 w-96 h-96 bg-primary-light opacity-10 rounded-full translate-x-1/2 animate-float-continuous" aria-hidden="true"></div>
     <div class="absolute bottom-0 left-0 w-72 h-72 bg-gold opacity-10 rounded-full -translate-x-1/2 translate-y-1/2 animate-float-continuous" aria-hidden="true" style="animation-delay: 1s;"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 pt-32 pb-24 grid md:grid-cols-2 gap-16 items-center">
-      <div class="animate-float">
-        <div class="inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-full px-6 py-3 mb-8 backdrop-blur-sm elevated-card">
-          <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse-glow" aria-hidden="true"></span>
-          <span class="text-green-200 text-xs font-semibold tracking-wider uppercase">Since 2008</span>
-        </div>
+    <div class="relative z-20 w-full max-w-7xl mx-auto px-6 pt-36 pb-40 md:pt-40 md:pb-44">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-full px-4 py-2 mb-6 text-white text-sm font-semibold tracking-wide backdrop-blur-sm">
+          <span class="w-2 h-2 bg-green-400 rounded-full" aria-hidden="true"></span>
+          Serving global trade since 2008
+        </span>
 
-        <h1 id="hero-heading" class="font-display text-hero font-black text-white leading-tight mb-6">
-          Reliable partner<br/>For all
+        <h1 id="hero-heading" class="font-display text-hero font-bold text-white leading-tight mb-5">
+          Ethiopia’s trusted export and import partner
         </h1>
 
-        <p class="text-green-100 text-body-lg leading-relaxed mb-10 max-w-xl">
-            Welcome to Habtom Abadi Import & Export. With over 18 years in the industry, we serve as a trusted bridge between Ethiopia and the global market. We export Ethiopia’s best coffee and crops to international buyers, while importing high-quality vehicles and heavy machinery that help businesses grow and stay profitable
+        <p class="text-green-50 text-body-lg leading-relaxed mb-7 max-w-xl">
+          We connect Ethiopian coffee and agricultural products with global markets, and source quality vehicles and machinery for businesses.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-6">
-          <a href="{{ route('contact') }}" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-white font-bold rounded-full">
-            Contact Us Today
-          </a>
-        </div>
+        <a href="{{ route('contact') }}" class="btn-primary inline-flex items-center justify-center px-7 py-3.5 text-white font-semibold rounded-full">
+          Contact Our Team
+        </a>
       </div>
 
-      <!-- Hero image slider -->
-      <div class="block relative mt-10 md:mt-16 animate-slide-in-right" data-hero-slider role="region" aria-roledescription="carousel" aria-label="Featured business images">
-        <div class="rounded-3xl overflow-hidden border-4 border-white/10 product-card relative">
-          <div class="hero-slider relative w-full h-64 sm:h-80 md:h-96">
-            @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
-              <div class="hero-slide absolute inset-0 transition-opacity duration-700 ease-in-out {{ $index === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0' }}"
-                   role="group" aria-roledescription="slide" aria-label="Slide {{ $index + 1 }} of 4" aria-hidden="{{ $index === 0 ? 'false' : 'true' }}">
-                <img src="{{ asset($slide) }}"
-                     class="w-full h-full object-cover"
-                     alt="{{ $index === 0 ? 'Modern agricultural tractor in Ethiopian farmland' : ($index === 1 ? 'Premium Ethiopian coffee beans' : ($index === 2 ? 'Our dedicated trading team' : 'Quality imported vehicles and machinery')) }}"
-                     loading="{{ $index === 0 ? 'eager' : 'lazy' }}" />
-              </div>
-            @endforeach
-          </div>
-
-          <!-- Slider controls -->
-          <button type="button" data-slide-prev class="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Previous slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-          </button>
-          <button type="button" data-slide-next class="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full p-2 transition-colors" aria-label="Next slide">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-          </button>
-
-          <!-- Slider dots -->
-          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-            @foreach(['img1.png', 'coffee1.jpg', 'aboutus.jpg', 'import.png'] as $index => $slide)
-              <button type="button" data-slide-to="{{ $index }}"
-                      class="w-2.5 h-2.5 rounded-full transition-colors {{ $index === 0 ? 'bg-white' : 'bg-white/50 hover:bg-white/75' }}"
-                      aria-label="Go to slide {{ $index + 1 }}" aria-current="{{ $index === 0 ? 'true' : 'false' }}"></button>
-            @endforeach
-          </div>
-        </div>
-
-        <!-- Enhanced Floating stats cards -->
-        <div class="hidden sm:block absolute -bottom-4 -left-8 elevated-card p-6 animate-float" style="animation-delay: 0.2s;">
-          <div class="text-xs text-gray-500 mb-2 font-semibold">18+ Years</div>
-          <div class="font-bold text-gray-900 text-lg">Trading Excellence</div>
-          <div class="text-primary text-sm font-medium mt-1">Since 2008</div>
-        </div>
-
-        <div class="hidden sm:block absolute -top-6 -right-6 bg-primary rounded-3xl p-6 shadow-2xl text-white animate-float" style="animation-delay: 0.4s;">
-          <div class="text-3xl font-black">15+</div>
-          <div class="text-green-200 text-sm font-medium">Countries Served</div>
-        </div>
-      </div>
     </div>
 
     <!-- Enhanced Stats Bar -->
-    <div class="absolute bottom-0 left-0 right-0">
+    <div class="absolute z-20 bottom-0 inset-x-0 border-t border-white/20 bg-black/25 backdrop-blur-sm">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/10 rounded-t-3xl overflow-hidden backdrop-blur-sm">
-          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">18+</div>
-            <div class="text-green-300 text-sm mt-2">Years Experience</div>
-            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 py-2">
+          <div class="stat-card p-2 md:p-3 text-center text-white">
+            <div class="text-xl md:text-2xl font-bold">18+</div>
+            <div class="text-green-100 text-xs md:text-sm">Years Experience</div>
           </div>
 
-          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">20+</div>
-            <div class="text-green-300 text-sm mt-2">Fuel Trucks</div>
-            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
+          <div class="stat-card p-2 md:p-3 text-center text-white">
+            <div class="text-xl md:text-2xl font-bold">20+</div>
+            <div class="text-green-100 text-xs md:text-sm">Fuel Trucks</div>
           </div>
 
-          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">15+</div>
-            <div class="text-green-300 text-sm mt-2">Countries Served</div>
-            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
+          <div class="stat-card p-2 md:p-3 text-center text-white">
+            <div class="text-xl md:text-2xl font-bold">15+</div>
+            <div class="text-green-100 text-xs md:text-sm">Countries Served</div>
           </div>
 
-          <div class="stat-card p-5 text-center text-white group cursor-pointer" tabindex="0" role="button">
-            <div class="text-4xl font-black mb-3 group-hover:scale-110 transition-transform">2008</div>
-            <div class="text-green-300 text-sm mt-2">Founded</div>
-            <div class="w-0 group-hover:w-full h-0.5 bg-green-300 transition-all duration-500 mt-3"></div>
+          <div class="stat-card p-2 md:p-3 text-center text-white">
+            <div class="text-xl md:text-2xl font-bold">2008</div>
+            <div class="text-green-100 text-xs md:text-sm">Founded</div>
           </div>
         </div>
       </div>
@@ -427,11 +395,10 @@
   document.querySelectorAll('[data-hero-slider]').forEach((slider) => {
     const slides = Array.from(slider.querySelectorAll('.hero-slide'));
     const dots = Array.from(slider.querySelectorAll('[data-slide-to]'));
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const toggle = slider.querySelector('[data-slide-toggle]');
     let currentSlide = 0;
     let timer = null;
-    let pointerInside = false;
-    let focusInside = false;
+    let isPaused = false;
 
     const stop = () => {
       if (timer) window.clearInterval(timer);
@@ -453,7 +420,7 @@
 
     const syncTimer = () => {
       stop();
-      if (pointerInside || focusInside || document.hidden || reduceMotion.matches) return;
+      if (isPaused || document.hidden) return;
       timer = window.setInterval(() => show(currentSlide + 1), 5000);
     };
 
@@ -469,18 +436,13 @@
       show(Number(dot.dataset.slideTo));
       syncTimer();
     }));
-
-    slider.addEventListener('mouseenter', () => { pointerInside = true; syncTimer(); });
-    slider.addEventListener('mouseleave', () => { pointerInside = false; syncTimer(); });
-    slider.addEventListener('focusin', () => { focusInside = true; syncTimer(); });
-    slider.addEventListener('focusout', (event) => {
-      if (!slider.contains(event.relatedTarget)) {
-        focusInside = false;
-        syncTimer();
-      }
+    toggle.addEventListener('click', () => {
+      isPaused = !isPaused;
+      toggle.textContent = isPaused ? 'Play' : 'Pause';
+      toggle.setAttribute('aria-label', isPaused ? 'Resume slideshow' : 'Pause slideshow');
+      syncTimer();
     });
     document.addEventListener('visibilitychange', syncTimer);
-    reduceMotion.addEventListener?.('change', syncTimer);
     syncTimer();
   });
 </script>
